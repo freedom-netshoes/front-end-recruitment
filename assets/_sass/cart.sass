@@ -1,0 +1,43 @@
+/* Import */
+@import 'style'
+@import 'list-products'
+@import 'item-cart'
+
+.cart main
+	float: left
+	width: 515px
+
+	.title
+		margin: 50px 0
+
+		h1
+			color: $white
+			width: 150px
+			height: 40px
+			margin: auto
+			font-weight: 700
+			font-size: $font-large
+			line-height: 40px
+			padding-left: 50px
+			position: relative
+			background: url(../img/ico-cart.png) no-repeat
+
+			span
+				top: 30px
+				left: 15px
+				width: 20px
+				height: 20px
+				color: $black
+				line-height: 20px
+				text-align: center
+				font-size: $font-small
+				position: absolute
+				background: $yellow
+
+				-webkit-border-radius: 50px
+				-moz-border-radius: 50px
+				border-radius: 50px
+
+	.cart-empty
+		color: $yellow
+		text-align: center

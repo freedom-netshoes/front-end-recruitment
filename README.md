@@ -1,23 +1,10 @@
-# Netshoes Cart Test
+Teste Front-end
+===========================
 
-## Expected result
+Teste utilizando Gruntjs, Sass e Js para leitura do Json.
 
-* See a list of products;
-* Be able to add or remove items to the cart and get instant visual feedback;
-* See the products added to the cart.
-
-## Data
-
-The data we provide is a static JSON file under `/public/data`.
-
-## Notes
-
-* You can use whatever stack or tooling you want to help you;
-* Feel free to ask us questions during the process (but trust your guts, please!);
-* You should create a static server in order to access the JSON data provided.
-
-## Bonus
-
-* Persist data on page reload;
-* Test your code;
-* Instructions on how to build/run the project.
+## Comandos para rodar o Gruntjs
+~~~
+  * grunt
+  * grunt watch
+~~~

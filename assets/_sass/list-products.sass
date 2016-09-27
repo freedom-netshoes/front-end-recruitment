@@ -1,0 +1,52 @@
+/* Import */
+@import 'style'
+
+/* List products */
+.cart aside
+	float: left
+	max-width: 215px
+	background: $white
+	padding-top: 105px
+	border-right: 2px solid #ccc
+	
+	.list-product
+		cursor: pointer
+		max-width: 205px
+		text-align: center
+		padding: 15px 0 35px
+
+		&:hover
+			background: $black-5
+
+		img
+			width: 180px
+			height: 230px
+			margin-bottom: 15px
+			display: block
+			margin: auto
+
+		h2
+			font-weight: 300
+			font-size: $font-medium
+
+			&:after
+				content: ""
+				width: 15px
+				height: 2px
+				background: $yellow
+				display: block
+				margin: auto
+		
+		.price > * 
+			font-weight: 400
+		
+		strong
+			display: block
+			font-size: $font-small
+
+			span
+				font-size: $font-large
+				font-weight: 600
+		
+			+ strong
+				color: $silver
