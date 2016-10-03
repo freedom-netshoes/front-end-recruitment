@@ -1,7 +1,8 @@
 module.exports = function(grunt) {
 
   // Project configuration.
-  var libs = ['node_modules/jquery/dist/jquery.js'];
+  var libsjs = ['node_modules/jquery/dist/jquery.js','public/assets/js/vendor/bootstrap.min.js'];
+  var libscss = ['public/assets/css/vendor/bootstrap.min.css','public/assets/css/vendor/animate.min.css'];
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     sass: {
@@ -17,7 +18,7 @@ module.exports = function(grunt) {
     cssmin: {
         target: {
             files: {
-              'public/assets/css/main.min.css': ['public/assets/css/main.min.css']
+              'public/assets/css/main.min.css': ['public/assets/css/main.min.css',libscss]
             }
         }
     },//cssmin
@@ -51,7 +52,7 @@ module.exports = function(grunt) {
       },
       compress : {
         files : {
-          'public/assets/js/main.min.js' : [libs, 'public/assets/js/main.js' ]
+          'public/assets/js/main.min.js' : [libsjs, 'public/assets/js/main.js' ]
         }
       }
     }, //uglify
