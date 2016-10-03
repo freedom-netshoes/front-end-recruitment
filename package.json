@@ -1,0 +1,25 @@
+{
+  "name": "TesteNetshoes",
+  "version": "1.0.0",
+  "description": "Teste para fornt-end",
+  "main": "index.js",
+  "author": "Bruno Soares",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/freedom-netshoes/front-end-recruitment.git"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-cssmin": "^1.0.2",
+    "grunt-contrib-imagemin": "^1.0.1",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-sass": "^1.2.1",
+    "jquery": "^3.1.1",
+    "json-server": "^0.8.21"
+  },
+  "dependencies": {
+    "jquery": "^3.1.1"
+  }
+}

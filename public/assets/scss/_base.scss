@@ -1,0 +1,249 @@
+body{
+	font: normal 14px "OpenSans-Regular", sans-serif;
+}
+
+
+.bag-icon {
+	width: 25px;
+	cursor: pointer;
+
+	img{
+		width: 100%;
+	}
+}
+
+.items-count {
+	min-width: 17px;
+	text-align: center;
+	display: inline-block;
+	background: $gold;
+	color: $medium-grey;
+	font: bold 0.6em "OpenSans-Bold", sans-serif;
+	padding: 4px;
+	border-radius: 50%;
+	position: relative;
+	top: -12px;
+	right: -12px;
+}
+
+#theCart{
+	width: 65%;
+	height: 100vh;
+	position: fixed;
+	overflow: scroll;
+	background: $medium-grey;
+	z-index: 100;
+
+	.close-cart{
+		padding: 20px 0 0 20px;
+		display: block;
+		color: $light;
+		font-size: 1.3em;
+	}
+
+	.title {
+		width: 120px;
+		margin: -15px auto 40px;
+	
+		.bag-icon{
+			float: left;
+			margin-right: 15px;
+		}
+
+		h1 {
+			font: bold 1.3em "OpenSans-Semibold", sans-serif;
+			text-transform: uppercase;
+			color: $light;
+			padding: 5px;
+		}
+	}
+
+	.box-content-cart{
+	    border-top: 2px solid $dark-grey;
+	    margin: 0 20px;
+		
+		.list-product-cart {
+			border-bottom: 2px solid $dark-grey;
+			min-height: 100px;
+			&:hover{
+				opacity: 0.6;
+
+				strong, p{
+					text-decoration: line-through;
+				}
+			}
+			.content-cart{
+				padding: 20px 20px;
+				margin: -2px -20px;
+				min-height: 100px;
+				
+				&:hover{
+					background: $dark-grey;
+
+					.remove-product{
+						color: $light !important;
+					}
+				}
+			}
+
+			.image-product{
+				width: 20%;
+				margin-right: 3%;
+				max-width: 60px;
+				height: 60px;
+				float: left;
+
+				img{
+					width: 100%;
+				}
+			}
+
+			.description-product{
+				width: 60%;
+				float: left;
+				min-height: 60px;
+				
+				strong {
+					font: bold 0.9em "OpenSans-Semibold", sans-serif;
+					color: $light;
+				}
+
+				p {
+					color: #878787;
+					font-size: 0.9em;
+					margin: 0;
+				}
+			}
+
+			.remove-product {
+				display: block;
+				float: right;
+				width: 15%;
+				text-align: right;
+				color: $dark-grey;
+				cursor: pointer;
+
+				&:hover{
+					color: $light;
+				}
+			}
+
+			.price-product {
+				text-align: right;
+				float: right;
+				margin-top: 20px;
+				width: 15%;
+				color: $gold;
+				font: bold 1em "OpenSans-Semibold", sans-serif;
+			}
+		}
+	}
+
+	.cart-total{
+		padding: 0 20px;
+
+		strong{
+			float: left;
+			line-height: 100px;
+			color: #878787;
+		}
+
+		.price-total{
+			float: right;
+			min-height: 100px;
+			text-align: right;
+
+			strong{
+				line-height: inherit;
+				display: block;
+				width: 100%;
+				margin-top: 25px;
+				color: $gold;
+				font-size: 1.5em;
+			}
+
+			span {
+				color: #878787;
+				font-size: 0.9em;
+			}
+		}
+
+	}
+	
+	.button-buy {
+		clear: both;
+		margin-bottom: 30px;
+
+		a {
+			background: $dark-grey;
+			width: 94%;
+			margin: 0 auto;
+			padding: 15px;
+			font: bold 0.9em "OpenSans-Semibold", sans-serif;
+			color: $light;
+			display: block;
+			text-align: center;
+			cursor: pointer;
+			text-decoration: none;
+			outline: none;
+
+			&:hover{
+				background: $light;
+				color:$dark-grey;
+			}
+		}
+	}
+}
+
+header {
+	margin-bottom: 20px;
+	padding: 10px 0;
+	min-height: 50px;
+
+	.bag-icon {
+		float: right;
+		margin-right: 10%;
+	}
+}
+
+
+.container{
+	max-width: 700px;
+}
+
+.products{
+	text-align: center;
+	min-height: 320px;
+	&:hover{
+		background: $gray;
+    	cursor: pointer;
+	}
+	img{
+		width: 100%;
+	}
+
+	h2{
+		font-size: 1em;
+		color: $light-grey;
+	    margin: 10px auto;
+	}
+
+	hr {
+		border: 1.5px solid $gold;
+		width: 20px;
+		margin: 0 auto 10px auto;
+	}
+
+	.full-value{
+		display: block;
+
+		strong{
+			font-size: 1.5em;
+		}
+	}
+
+	.installment {
+		color: #999;
+		font-size: 0.9em;
+	}
+}

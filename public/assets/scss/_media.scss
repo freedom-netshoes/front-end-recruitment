@@ -1,0 +1,22 @@
+@media screen and (max-width: 425px){
+	.products{
+		min-height: 390px;
+	}
+
+	#theCart{
+		width: 100%;
+
+		.list-product-cart{
+			min-height: 130px;
+
+			.image-product{
+				margin-top: 5px;
+		    }
+
+		    .price-product{
+				float: none !important;
+				margin-left: 65px;
+		    }
+		}
+	}
+}
