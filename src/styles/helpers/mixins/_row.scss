@@ -1,0 +1,19 @@
+@charset 'UTF-8';
+
+//
+// Generates CSS to wrap semantic columns
+// in a row.
+//
+// Example: 
+//  `@include row`
+//
+//
+@mixin row {
+	width: 100%;
+
+	&:after {
+		clear: both;
+		content: ' ';
+		display: table;
+	}
+}

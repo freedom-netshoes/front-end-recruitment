@@ -1,0 +1,125 @@
+@charset 'UTF-8';
+
+//------------------------------------
+//  HELPER
+//------------------------------------
+
+.clearfix {
+	&:after {
+		clear: both;
+		content: ' ';
+		display: block;
+		font-size: 0;
+		height: 0;
+		visibility: hidden;
+	}
+}
+* html .clearfix {zoom: 1;}
+*:first-child+html .clearfix {zoom: 1;}
+
+
+// Add/remove floats
+.float-left  { float: left;  }
+.float-right { float: right; }
+.float-none  { float: none;  }
+
+
+// Position elements
+.align-center,
+%align-center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.no-margin { margin: 0; }
+
+
+// Displaying content
+.inline { display: inline; }
+
+// Hide elements
+.hide {
+	display: none!important;
+	visibility: hidden!important;
+}
+
+.show {
+	display: block!important;
+	visibility: visible!important;
+}
+
+.invisible,
+%invisible {
+	background: transparent;
+	border: 0;
+	color: transparent;
+	font-size: 0;
+	height: 0;
+	left: 0;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	text-indent: -99999cm;
+	top: 0;
+	visibility: hidden;
+	width: 0;
+}
+
+.superhide,
+%superhide {
+	@extend %invisible;
+	display: none;
+}
+
+// Hide text
+.screen-reader,
+%screen-reader,
+.text-hide,
+%text-hide {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+
+// Full-width elements
+.full-width { width: 100%; }
+
+img.full-width,
+%full-width-image {
+	display: block;
+	height: auto;
+	max-width: 100%;
+	// width: auto;
+}
+
+
+// Text alignment
+.text-left    { text-align: left;    }
+.text-right   { text-align: right;   }
+.text-center  { text-align: center;  }
+.text-justify { text-align: justify; }
+
+
+// All-caps text
+.text-uppercase { text-transform: uppercase; }
+
+.vertical-image {vertical-align: middle;}
+
+// Fluid container (ideal for img, embed object & iframe )
+.fluid {
+	height: auto;
+	max-width: 100%;
+}
+
+.wFull,
+%wFull {
+	box-sizing: border-box;
+}

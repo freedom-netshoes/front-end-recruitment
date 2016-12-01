@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="description" content="Front end freedom" />
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+
+	<meta name="robots" content="index,follow,noodp" />
+	<meta name="googlebot" content="index,follow" />
+
+	<meta name="theme-color" content="#000" />
+	<meta name="mobile-web-app-capable" content="yes" />
+	<meta name="application-name" content="Front end freedom" />
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="#000" />
+	<meta name="apple-mobile-web-app-title" content="CFront end freedom" />
+
+	<title>Front end freedom</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet" />
+
+	<!--[if lt IE 9]>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	
+	<div id="app">
+		<p class="cart__title text-right no-margin js-cart-title">
+			<span class="cart__icon">
+				<svg xmlns="http://www.w3.org/2000/svg" width="32.969" height="40" viewBox="0 0 32.969 40">
+				  <path id="ico-sacola" data-name="Sacola" class="ico ico-sacola" d="M403.071,86.5a3.869,3.869,0,0,1-3.77-3.351l-1.8-15.239c-0.305-2.575,1.3-4.746,3.6-4.746h20.807c2.3,0,3.905,2.171,3.6,4.746l-1.8,15.239a3.867,3.867,0,0,1-3.769,3.351H403.071ZM421.4,89a4.6,4.6,0,0,0,4.427-4.069l2.117-18.5c0.358-3.126-1.528-5.763-4.228-5.763H399.276c-2.7,0-4.586,2.636-4.228,5.763l2.118,18.5A4.6,4.6,0,0,0,401.592,89H421.4ZM406.206,65.669a2.084,2.084,0,1,1-2.037,2.084A2.061,2.061,0,0,1,406.206,65.669ZM416.8,60.251c0-3.441,0-7.918-5.3-7.918s-5.3,4.477-5.3,7.918-1.222,2.084-1.222,2.084-1.63,3.21-1.63-2.084S404.78,49,411.5,49s8.149,5.958,8.149,11.251c-1.3,1.543-1.63,1.25-1.63,1.25l-1.63.833S417.07,60.686,416.8,60.251Zm0,5.417a2.084,2.084,0,1,1-2.038,2.084A2.061,2.061,0,0,1,416.8,65.669Z" transform="translate(-395.031 -49)"/>
+				</svg>
+				<span class="cart__quantity text-center js-cart-quantity">0</span>
+			</span>
+			Sacola
+		</p>
+
+		<div class="shelf js-shelf container clearfix text-center"></div>
+
+		<div class="minicart">
+			<a href="javascript:void()" class="minicart__close js-close-cart" title="Fechar Carrinho">
+				<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+				  <path id="ico-close" data-name="Close" class="ico ico-close" d="M695.991,166.094l2.1-2.1,11.914,11.914-2.1,2.1Zm11.915-2.1,2.1,2.1-11.914,11.915-2.1-2.1Z" transform="translate(-696 -164)"/>
+				</svg>
+			</a>
+
+			<p class="cart__title cart__title--minicart text-center no-margin js-cart-title">
+				<span class="cart__icon">
+					<svg xmlns="http://www.w3.org/2000/svg" width="32.969" height="40" viewBox="0 0 32.969 40">
+					  <path id="ico-sacola" data-name="Sacola" class="ico ico-sacola" d="M403.071,86.5a3.869,3.869,0,0,1-3.77-3.351l-1.8-15.239c-0.305-2.575,1.3-4.746,3.6-4.746h20.807c2.3,0,3.905,2.171,3.6,4.746l-1.8,15.239a3.867,3.867,0,0,1-3.769,3.351H403.071ZM421.4,89a4.6,4.6,0,0,0,4.427-4.069l2.117-18.5c0.358-3.126-1.528-5.763-4.228-5.763H399.276c-2.7,0-4.586,2.636-4.228,5.763l2.118,18.5A4.6,4.6,0,0,0,401.592,89H421.4ZM406.206,65.669a2.084,2.084,0,1,1-2.037,2.084A2.061,2.061,0,0,1,406.206,65.669ZM416.8,60.251c0-3.441,0-7.918-5.3-7.918s-5.3,4.477-5.3,7.918-1.222,2.084-1.222,2.084-1.63,3.21-1.63-2.084S404.78,49,411.5,49s8.149,5.958,8.149,11.251c-1.3,1.543-1.63,1.25-1.63,1.25l-1.63.833S417.07,60.686,416.8,60.251Zm0,5.417a2.084,2.084,0,1,1-2.038,2.084A2.061,2.061,0,0,1,416.8,65.669Z" transform="translate(-395.031 -49)"/>
+					</svg>
+					<span class="cart__quantity text-center js-cart-quantity">0</span>
+				</span>
+				Sacola
+			</p>
+
+			<div class="minicart__items js-minicart-items">
+				<p class="minicart__empty text-center text-uppercase">Nenhum item no seu carrinho!</p>
+			</div>
+
+			<a href="javascript:void()" class="button minicart__to-cart full-width" title="Comprar">Comprar</a>
+		</div>
+
+		<div class="buy-feedback js-buy-feedback"></div>
+	</div>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<script src="js/app.min.js"></script>
+</body>
+</html>

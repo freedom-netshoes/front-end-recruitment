@@ -1,0 +1,47 @@
+@charset 'UTF-8';
+
+//------------------------------------
+//  MAIN
+//------------------------------------
+
+// Variables
+$font-size: #{($base-font-size / 16px) * 1em};
+$line-height-integer: #{$line-height-ratio};
+
+* {
+	&,
+	&:before,
+	&:after { box-sizing: border-box; }
+}
+
+html,
+body {
+	-moz-font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+	background-color: $website-bg-color;
+	color: $base-font-color;
+	// font: normal normal $font-size/$line-height-integer $base-font-family;
+	font: normal normal 100% $base-font-family;
+	font-smooth: always;
+	height: 100%;
+}
+
+body {
+	overflow-x: hidden;
+
+	&.minicart--is-active:before {
+		content: '';
+		background: rgba(0, 0, 0, .8);
+		height: 100%;
+		position: fixed;
+		width: 100%;
+		z-index: 1;
+
+	}
+}
+
+.container {
+	margin: 0 auto;
+	max-width: 730px;
+	width: 90%;
+}

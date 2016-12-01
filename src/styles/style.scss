@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+/*! =================================================
+	* Theme Name: Layout - PKG_ACCOUNTNAME
+	* Description: CSS desenvolvido para PKG_NAME.
+	* Author: PKG_AUTHOR
+	* Version: PKG_BUILD_VERSION
+	=================================================
+*/
+
+// ===============================================================
+/* @IMPORTS */
+// ===============================================================
+
+@import 'helpers/variables';
+@import 'helpers/functions';
+@import 'helpers/mixins';
+
+//Animations
+@import 'helpers/animate';
+
+// Utility helpers
+@import 'helpers/normalize';
+@import 'helpers/helpers';
+
+
+// Base styles
+@import 'base/fonts';
+@import 'base/main';
+@import 'base/selection';
+
+// Component styles Common
+@import 'components/button';
+@import 'components/cart-title';
+@import 'components/toast-feedback';
+
+// Site components
+@import 'components/card-product';
+@import 'components/minicart';

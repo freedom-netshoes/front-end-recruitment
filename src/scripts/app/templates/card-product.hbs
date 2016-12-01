@@ -1,0 +1,17 @@
+{{#each products}}
+	<div class="card-product">
+		<div class="card-product__image">
+			<img src="img/{{image}}" alt="{{title}}">
+			<div class="card-product__cta">
+				<a href="javascript:void()" class="button card-product__action js-buy-button" title="Comprar" data-sku="{{id}}">Comprar</a>
+			</div>
+		</div>
+		<div class="card-product__info">
+			<p class="card-product__name">{{title}}</p>
+			<div class="card-product__price">
+				<p class="card-product__value"><span class="card-product__currency">{{currencyFormat}}</span> {{[helpers/priceFormat] price}}</p>
+				{{#[helpers/checkInstallment] installments}}<p class="card-product__installments no-margin">ou {{installments}}x de {{currencyFormat}} {{[helpers/calcInstallments] price installments}}</p>{{/[helpers/checkInstallment]}}
+			</div>
+		</div>
+	</div>
+{{/each}}

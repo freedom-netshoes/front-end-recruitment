@@ -1,0 +1,34 @@
+{{#each products}}
+	<div class="minicart__item clearfix">
+		<div class="minicart__item-image float-left">
+			<img class="full-width" src="img/{{image}}" alt="{{title}}">
+		</div>
+		<div class="minicart__item-info float-left">
+			<p class="minicart__item-name no-margin">{{title}}</p>
+			<div class="minicart__item-sub">
+				{{#if style}}<span class="minicart__item-styles">{{style}}</span> | {{/if}}<span class="minicart__item-quantity">Quantidade: {{cartQuantity}}</span>
+			</div>
+		</div>
+		<div class="minicart__item-total float-left text-right">
+			<a href="javascript:void(0)" class="minicart__item-remove js-remove-item" data-sku="{{id}}">
+				<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+					<path id="ico-close" data-name="Close" class="ico ico-close" d="M695.991,166.094l2.1-2.1,11.914,11.914-2.1,2.1Zm11.915-2.1,2.1,2.1-11.914,11.915-2.1-2.1Z" transform="translate(-696 -164)"/>
+				</svg>
+			</a>
+			<p class="minicart__item-price no-margin">{{currencyFormat}} {{[helpers/priceFormat] price false}}</p>
+		</div>
+	</div>
+{{/each}}
+{{#if products.length}}
+<div class="minicart__totals clearfix text-uppercase">
+	<div class="float-left">
+		<p class="minicart__totals-text">Subtotal</p>
+	</div>
+	<div class="float-right text-right">
+		<p class="minicart__totals-value no-margin">{{products.0.currencyFormat}} {{[helpers/priceFormat] totals false}}</p>
+		{{#[helpers/checkInstallment] maxInstallment}}<p class="minicart__totals-installments no-margin">ou em até {{maxInstallment}}x de {{products.0.currencyFormat}} {{[helpers/calcInstallments] totals maxInstallment}}</p>{{/[helpers/checkInstallment]}}
+	</div>
+</div>
+{{else}}
+	<p class="minicart__empty text-center text-uppercase">Nenhum item no seu carrinho!</p>
+{{/if}}

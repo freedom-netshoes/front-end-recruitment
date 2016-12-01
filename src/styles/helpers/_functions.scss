@@ -1,0 +1,26 @@
+@charset 'UTF-8';
+
+//------------------------------------
+//  FUNCTIONS
+//------------------------------------
+
+// Largura fluida em %
+@function fluidWidth($elementoWidth, $contextoWidth: false) {
+	@if($contextoWidth) {
+		@return ($elementoWidth / $contextoWidth) * 100%;
+	}
+
+	@else {
+		@return ($elementoWidth / $base-main) * 100%;
+	}
+}
+
+// Calcular em
+$browser-context: 16;
+@function calculate-em($pixels, $context: $browser-context, $rem: false) {
+	@if $rem == false {
+		@return #{$pixels/$context}em;
+	} @else {
+		@return #{$pixels/$context}rem;
+	}
+}

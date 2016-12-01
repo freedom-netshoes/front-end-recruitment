@@ -1,0 +1,12 @@
+@charset 'UTF-8';
+
+@mixin placeholder($color: $input-color-placeholder, $property: color) {
+	// Firefox
+	&::-moz-placeholder {
+		#{$property}: $color;
+		opacity: 1; // Override Firefox's unusual default opacity; see https: //github.com/twbs/bootstrap/pull/11526
+	}
+	:-moz-placeholder { #{$property}: $color; }
+	&:-ms-input-placeholder { #{$property}: $color; } // Internet Explorer 10+
+	&::-webkit-input-placeholder  { #{$property}: $color; } // Safari and Chrome
+}

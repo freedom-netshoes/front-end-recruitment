@@ -1,0 +1,68 @@
+@charset 'UTF-8';
+
+//------------------------------------
+//  BASE
+//------------------------------------
+
+// Website background (can use color or image)
+$website-bg-color: #fff !default;
+
+
+// Enable font smoothing?
+$enable-font-smoothing: true !default;
+
+
+// Base font sizes and colors
+$base-font-size         : 16px !default;
+$base-line-height       : 24px !default;
+$base-font-color        : #736c6b !default;
+$base-link-color        : #83838f !default;
+$base-heading-color     : #181818 !default;
+$base-sub-heading-color : #808080 !default;
+
+
+// Element spacing and line-height ratio
+$base-spacing-unit: $base-line-height !default;
+$half-spacing-unit: $base-spacing-unit / 2 !default;
+$line-height-ratio: $base-line-height / $base-font-size;
+
+$base-main: 1080px;
+
+//------------------------------------
+//  RESPONSIVE
+//------------------------------------
+
+// Breakpoints
+$breakpoint-map: (
+	'extra-small' : 320px,
+	'small'       : 670px,
+	'medium'      : 769px,
+	'large'       : 980px,
+	'extra-large' : 1900px
+);
+
+//------------------------------------
+//  PATHS
+//------------------------------------
+$img-path	: '/img/';
+
+
+//------------------------------------
+//  COLORS
+//------------------------------------
+$color-one   : #cc0000; // RED
+$color-two   : #333333; // DARK GRAY
+$color-three : #C6c6c6; // GRAY
+
+// Selection colors
+$selection-background:  #777777 !default;
+$selection-color:       #ffffff !default;
+
+
+// Form placeholder colors
+$placeholder-color:     #bbbbbb !default;
+
+// Button font color
+$button-bg-color:         $color-one !default;
+$button-font-color:       #ffffff !default;
+$button-hover-font-color: #ffffff !default;

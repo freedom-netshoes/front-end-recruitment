@@ -1,0 +1,72 @@
+@charset 'UTF-8';
+
+//------------------------------------
+//  CARD PRODUCT
+//------------------------------------
+
+.card-product {
+	@include breakpoint('medium', 'max') {
+		width: 100%;
+	}
+	@include font-responsive(14);
+	color: $color-one;
+	float: left;
+	margin-bottom: 60px;
+	padding: 0 30px;
+	position: relative;
+	width: 33.33333%;
+
+	&:hover {
+		.card-product__cta { opacity: 1 }
+	}
+
+	&__image { position: relative; }
+
+	&__name {
+		min-height: 40px;
+		margin-bottom: 0;
+		position: relative;
+
+		&:before {
+			content: '';
+			background-color: $color-two;
+			bottom: -10px;
+			display: inline-block;
+			height: 2px;
+			left: 50%;
+			position: absolute;
+			width: 15px;
+			transform: translateX(-50%);
+		}
+	}
+
+	&__value { margin-bottom: 0; }
+
+	&__price {
+		@include font-responsive(12, 14);
+		margin-bottom: 0;
+	}
+
+	&__list-price {
+		@include font-responsive(24, 12);
+		font-weight: bold;
+	}
+
+	&__installments { color: $color-three; }
+
+	&__cta {
+		@include breakpoint('medium', 'max') {
+			left: 0;
+			opacity: 1;
+			position: relative;
+			top: 0;
+			transform: none;
+		}
+		left: 50%;
+		opacity: 0;
+		position: absolute;
+		top: 50%;
+		transition: opacity .25s ease;
+		transform: translateX(-50%) translateY(-50%);
+	}
+}

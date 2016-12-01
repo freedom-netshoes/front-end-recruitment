@@ -21,3 +21,9 @@ The data we provide is a static JSON file under `/public/data`.
 * Persist data on page reload;
 * Test your code;
 * Instructions on how to build/run the project.
+
+## Instructions (gfpaiva)
+
+* Open the project folder on CLI and run `npm i` to install all the depedencies
+* Run the command 'npm run dev' to execute the project and open the follow url on your browser: `http://localhost:3000`. Result will be generated on `dist` folder
+* Run the command 'npm run build' to build and bump the final project. Result will be generated on `dist` folder

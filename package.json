@@ -1,0 +1,41 @@
+{
+  "name": "front-end-freedom",
+  "description": "Front end freedom",
+  "version": "1.0.0",
+  "author": "Guilheem Paiva <gf.paiva@yahoo.com.br>",
+  "private": true,
+  "dependencies": {
+    "animate-sass": "tgdev/animate-sass",
+    "handlebars": "^4.0.6",
+    "lodash": "^4.17.2",
+    "normalize.css": "^5.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.3.7",
+    "browser-sync": "^2.14.0",
+    "css-mqpacker": "^5.0.1",
+    "del": "~2.2.1",
+    "expose-loader": "^0.7.1",
+    "gulp": "^3.9.1",
+    "gulp-imagemin": "^3.0.2",
+    "gulp-jshint": "^2.0.1",
+    "gulp-load-plugins": "^1.2.4",
+    "gulp-newer": "^1.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^6.1.1",
+    "gulp-replace": "^0.5.4",
+    "gulp-sass": "^2.3.2",
+    "gulp-sass-lint": "^1.2.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-util": "^3.0.7",
+    "handlebars-loader": "^1.4.0",
+    "jshint": "^2.9.2",
+    "jshint-stylish": "^2.2.0",
+    "vinyl-named": "^1.1.0",
+    "webpack-stream": "^3.2.0"
+  },
+  "scripts": {
+    "dev": "gulp",
+    "build": "gulp deploy"
+  }
+}

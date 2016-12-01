@@ -1,0 +1,33 @@
+@charset 'UTF-8';
+
+//
+// Uses `calculate-rem` to calculate rem font-size and px
+// fallback. line-height is calculated with `calculate-line-height`
+// but passing `false` will prevent that.
+//
+// Parameters:
+//  $font-size: the font size (in pixels) to be converted to rem
+//  $rem-sizing: if you want to convert the font-size to rem or not (default is true)
+//  $line-height: set to false if you wish not to output a calculated line-height (defalt is true)
+//
+// Example:
+//  `@include font-size(24px);`
+//
+//
+// Big thanks to inuitcss for inspiration behind this
+// (https: //github.com/csswizardry/inuit.css/blob/master/generic/_mixins.scss)
+@mixin font-size($font-size, $rem-sizing: true, $line-height: false) {
+	font-size: $font-size;
+
+	@if $rem-sizing == true {
+		font-size: calculate-rem($font-size);
+	}
+
+	@if $line-height == true {
+		line-height: calculate-line-height($font-size);
+	}
+}
+
+@mixin font-responsive($font-size, $context: 16, $rem: false) {
+	font-size: calculate-em($font-size, $context, $rem);
+}

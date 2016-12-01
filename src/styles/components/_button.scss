@@ -1,0 +1,22 @@
+@charset 'UTF-8';
+
+//------------------------------------
+//  BUTTON
+//------------------------------------
+
+.button {
+	@include font-responsive(14);
+	background-color: $button-bg-color;
+	color: $button-font-color;
+	display: inline-block;
+	font-weight: bold;
+	padding: 20px 40px;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: font .25s ease;
+
+	&:hover {
+		@include font-responsive(16, 14);
+	}
+}

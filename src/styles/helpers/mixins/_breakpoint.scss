@@ -1,0 +1,103 @@
+@charset 'UTF-8';
+
+//
+// Loops through all of the values in the `$breakpoints`
+// map and outputs conditional statements used to generate
+// media query code.
+//
+// When calling the mixin, if the parameter matches a key
+// from the `breakpoints` map, a media query is output with
+// that key's value. If an explicit value is set (ex: 360px)
+// then a media query is output with that value.
+//
+// Parameters: 
+//  $point: the breakpoint value for the media query output
+//  $min-max: set whether `min` or `max` is used (default is `min`)
+//
+// Example: 
+//  `@include breakpoint(extra-small) { ... }`
+//
+//  `@include breakpoint(360px, max) { ... }`
+//
+//
+@mixin breakpoint($point, $min-max: 'min') {
+	@if type-of($point) == string {
+		@each $breakpoint-name, $breakpoint-value in $breakpoint-map {
+			@if $point == $breakpoint-name {
+				@media (#{$min-max}-width: $breakpoint-value) {
+					@content;
+				}
+			}
+		}
+	} @else {
+		@media (#{$min-max}-width: $point) {
+			@content;
+		}
+	}
+}
+
+
+//
+// Generates property media queries for any CSS property,
+// value, and set of breakpoints. Allows you to easily change
+// property values based a set of breakpoints.
+//
+// Parameters: 
+//  $properties: what CSS property to output inside of the media queries (can have multiple)
+//  $values: the value for each property (can have multiple)
+//  $responsive-values: what breakpoints to generate media queries for
+//  $use-available-mixins: whether or not to use mixin outputs for properties like `font-size` or `line-height` (default is true)
+//
+// Example: 
+//  @include responsive('font-size', 11px,
+//    (
+//      'small' : 12px,
+//        450px : 13px,
+//       1100px : 14px,
+//      'large' : 15px,
+//       1600px : 16px,
+//    )
+//  );
+//
+//
+// Big thanks to Max Luster for a great article about chained media
+// queries that created the majority of this mixin.
+// (https: //bugsnag.com/blog/responsive-typography-with-chained-media-queries)
+@mixin responsive($properties, $values, $responsive-values, $use-available-mixins: true) {
+	@each $property in $properties {
+		@if $property == 'font-size' and $use-available-mixins == true {
+			#{$property}: $values;
+			#{$property}: ($values / $base-font-size) * 1rem;
+		} @else if $property == 'line-height' and $use-available-mixins == true {
+			#{$property}: ceil($values / $base-line-height) * ($base-line-height / $values);
+		} @else {
+			#{$property}: $values;
+		}
+	}
+
+	@each $breakpoint, $value in $responsive-values {
+		@if type-of($breakpoint) == string {
+			@if(map-has-key($breakpoint-map, $breakpoint)) {
+				$breakpoint: map-get($breakpoint-map, $breakpoint);
+			} @else {
+				$breakpoint: 'null';
+				// @warn "Couldn't find breakpoint: " + $breakpoint;
+			}
+		}
+
+		@if $breakpoint != 'null' {
+			@media (min-width: $breakpoint) {
+				@each $property in $properties {
+					@if $property == 'font-size' and $use-available-mixins == true {
+						#{$property}: #{$value};
+						#{$property}: ($value / $base-font-size) * 1rem;
+					} @else if $property == 'line-height' and $use-available-mixins == true {
+						#{$property}: ceil($value / $base-line-height) * ($base-line-height / $value);
+					} @else {
+						#{$property}: #{$value};
+					}
+				}
+			}
+		}
+	}
+}

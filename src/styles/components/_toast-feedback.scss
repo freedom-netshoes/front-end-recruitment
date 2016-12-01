@@ -1,0 +1,21 @@
+@charset 'UTF-8';
+
+//------------------------------------
+//  TOAST FEEDBACK
+//------------------------------------
+
+.buy-feedback {
+	right: 0;
+	position: fixed;
+	top: 0;
+}
+
+.buy-feedback-item {
+	@include font-responsive(14);
+	background: $color-one;
+	border: 1px solid;
+	color: $color-two;
+	cursor: pointer;
+	font-weight: bold;
+	padding: 1.5em;
+}

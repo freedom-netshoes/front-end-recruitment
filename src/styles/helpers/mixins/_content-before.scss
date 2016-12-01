@@ -1,0 +1,10 @@
+@charset 'UTF-8';
+
+@mixin contentBefore($content: '', $absolute: true) {
+	content: '#{$content}';
+	display: block;
+
+	@if $absolute == true {
+		position: absolute;
+	}
+}

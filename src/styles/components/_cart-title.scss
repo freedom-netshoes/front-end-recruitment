@@ -1,0 +1,40 @@
+@charset 'UTF-8';
+
+//------------------------------------
+//  CART TITLE
+//------------------------------------
+
+.cart {
+	&__title {
+		@include font-responsive(24);
+		cursor: pointer;
+		font-weight: bold;
+		padding: 20px;
+		text-transform: uppercase;
+
+		&--minicart {
+			color: #fff;
+			padding: 0px;
+
+			.ico-sacola { fill: #fff }
+		}
+	}
+
+	&__icon {
+		margin-right: 20px;
+		position: relative;
+	}
+
+	&__quantity {
+		@include font-responsive(12, 24);
+		background: $color-two;
+		border-radius: 50%;
+		bottom: 0;
+		color: $color-one;
+		display: block;
+		height: 20px;
+		position: absolute;
+		right: 0;
+		width: 20px;
+	}
+}
