@@ -24,6 +24,14 @@ The data we provide is a static JSON file under `/public/data`.
 
 ## Instructions (gfpaiva)
 
+To build/run the project u will need:
+* [Node.js ^5.5.0](https://nodejs.org/en/)
+* [Gulp installed globally](http://gulpjs.com/) `npm install gulp -g`
+
+
+## Instructions (gfpaiva)
+
+
 * Open the project folder on CLI and run `npm i` to install all the depedencies
 * Run the command 'npm run dev' to execute the project and open the follow url on your browser: `http://localhost:3000`. Result will be generated on `dist` folder
 * Run the command 'npm run build' to build and bump the final project. Result will be generated on `dist` folder
