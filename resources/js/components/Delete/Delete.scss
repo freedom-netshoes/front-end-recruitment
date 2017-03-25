@@ -1,0 +1,16 @@
+@import '../../../scss/shared';
+
+.close {
+  @include transition();
+
+  &:before {
+    content: "\e606";
+  }
+}
+
+:global(#cart) {
+  :global(.delete) .close,
+  :global(li:hover) .close {
+    color: white;
+  }
+}

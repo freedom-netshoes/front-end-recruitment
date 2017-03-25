@@ -1,0 +1,58 @@
+#products {
+	padding-top: 90px;
+	
+	li {
+		padding-bottom: 1rem;
+		padding-top   : 1rem;
+
+		a {
+			display: block;
+
+			&:hover {
+				.title {
+					text-decoration: underline;
+				}
+				figure img {
+					.transition();
+					.filter(brightness(90%));
+				}
+			}
+		}
+	}
+	.title {
+		color     : @gray;
+		font-size : 14px;
+		margin-top: 8px;
+	}
+	.price {
+		color     : @gray;
+		font-size : 12px;
+		margin-top: 8px;
+
+		strong {
+			.open-sans-bold();
+			font-size: 24px;
+			position : relative;
+
+			&:before {
+				content         : "";
+				background-color: @yellow;
+				display         : block;
+				height          : 2px;
+				left            : 50%;
+				margin-left     : -7.5px;
+				position        : absolute;
+				top             : 0;
+				width           : 15px;
+			}
+		}
+	}
+	.installments {
+		color    : @light-gray;
+		font-size: 14px;
+
+		strong {
+			.open-sans-semi-bold();
+		}
+	}
+}

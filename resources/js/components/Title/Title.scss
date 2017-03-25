@@ -1,0 +1,30 @@
+@import '../../../scss/shared';
+
+:global(#products) {
+
+  :global(li a:hover) .title {
+    text-decoration: underline;
+  }
+
+  .title {
+    color     : $gray;
+    font-size : 14px;
+    margin-top: 8px;
+  }
+}
+
+:global(#cart) {
+
+  :global(.delete) .title {
+    @include opacity(0.2);
+    text-decoration: line-through;
+  }
+
+  .title {
+    @include open-sans-semi-bold();
+    @include transition();
+    color: white;
+    font-size  : 14px;
+    line-height: 18px;
+  }
+}

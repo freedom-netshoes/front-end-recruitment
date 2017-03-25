@@ -1,0 +1,14 @@
+@import '../../../scss/shared';
+
+.products {
+  padding-top: 90px;
+
+  li {
+    padding-bottom: 1rem;
+    padding-top   : 1rem;
+
+    a {
+      display: block;
+    }
+  }
+}

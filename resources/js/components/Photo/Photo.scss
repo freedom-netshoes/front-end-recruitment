@@ -1,0 +1,16 @@
+@import '../../../scss/shared';
+
+:global(#products li a:hover) .photo img {
+  @include transition();
+  @include filter(brightness(90%));
+}
+
+:global(#cart) .photo {
+  @include transition();
+  float: left;
+  margin-right: 1rem;
+}
+
+:global(.delete) .photo {
+  @include opacity(0.5);
+}
