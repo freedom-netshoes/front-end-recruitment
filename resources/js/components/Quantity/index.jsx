@@ -6,16 +6,18 @@ import styles from './Quantity';
 class Quantity extends Component {
 
   static defaultProps = {
-
+    children: ''
   };
 
   static propTypes = {
-
+    children: PropTypes.node
   };
 
   render () {
     return (
-      <p styleName='quantity'>Quantidade: 2</p>
+      <p styleName='quantity'>
+        {this.props.children}
+      </p>
     );
   }
 }

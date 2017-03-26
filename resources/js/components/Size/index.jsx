@@ -6,16 +6,18 @@ import styles from './Size.scss';
 class Size extends Component {
 
   static defaultProps = {
-
+    children: ''
   };
 
   static propTypes = {
-
+    children: PropTypes.node
   };
 
   render () {
     return (
-      <p styleName='size'>GG | Preto e branco</p>
+      <p styleName='size'>
+        {this.props.children}
+      </p>
     );
   }
 }

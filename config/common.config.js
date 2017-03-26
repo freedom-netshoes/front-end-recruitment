@@ -7,23 +7,34 @@ const Config = {};
 Config.bundlePath     = Pj(__dirname, '..', 'public');
 Config.srcPath        = Pj(__dirname, '..', 'resources', 'js');
 Config.scssPath       = Pj(__dirname, '..', 'resources', 'scss');
-Config.entryFile      = Pj(Config.srcPath, 'app.jsx');
-Config.structurePath  = Pj(Config.srcPath, 'structure');
-Config.routesPath     = Pj(Config.srcPath, 'routes');
+Config.actionsPath    = Pj(Config.srcPath, 'actions');
 Config.componentsPath = Pj(Config.srcPath, 'components');
+Config.entryFile      = Pj(Config.srcPath, 'app.jsx');
 Config.helpersPath    = Pj(Config.srcPath, 'helpers');
+Config.reducersPath   = Pj(Config.srcPath, 'reducers');
+Config.routesPath     = Pj(Config.srcPath, 'routes');
+Config.storePath      = Pj(Config.srcPath, 'store');
+Config.structurePath  = Pj(Config.srcPath, 'structure');
 
-const csp  = Config.structurePath;
-const crp  = Config.routesPath;
+
+const cap  = Config.actionsPath;
 const ccp  = Config.componentsPath;
 const chp  = Config.helpersPath;
+const crep = Config.reducersPath;
+const crop = Config.routesPath;
 const cscp = Config.scssPath;
+const cstp = Config.storePath;
+const csp  = Config.structurePath;
 
 Config.aliases = {
   MasterPage: csp,
-  RootRoute : crp,
+  Actions   : cap,
+  Reducers  : crep,
+  RootRoute : crop,
+  Store     : cstp,
 
-  Main        : Pj(crp, 'Main'),
+  AppConfig   : Pj(Config.srcPath, 'AppConfig'),
+  ActionTypes : Pj(cap, 'ActionTypes'),
   Cart        : Pj(ccp, 'Cart'),
   CartTitle   : Pj(ccp, 'CartTitle'),
   Catalog     : Pj(ccp, 'Catalog'),
@@ -36,9 +47,11 @@ Config.aliases = {
   Submit      : Pj(ccp, 'Submit'),
   Subtotal    : Pj(ccp, 'Subtotal'),
   Title       : Pj(ccp, 'Title'),
+  ProductsCart: Pj(crep, 'ProductsCart'),
+  Main        : Pj(crop, 'Main'),
 
-  Request: Pj(chp, 'Request'),
-  Utils  : Pj(chp, 'Utils')
+  Request   : Pj(chp, 'Request'),
+  Utils     : Pj(chp, 'Utils')
 };
 
 Config.resolve = {

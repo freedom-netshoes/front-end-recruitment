@@ -6,16 +6,18 @@ import styles from './Installments.scss';
 class Installments extends Component {
 
   static defaultProps = {
-
+    children: ''
   };
 
   static propTypes = {
-
+    children: PropTypes.node
   };
 
   render () {
     return (
-      <p styleName='installments'>ou 3 x <strong>R$ 25,00</strong></p>
+      <p styleName='installments'>
+        {this.props.children}
+      </p>
     );
   }
 }

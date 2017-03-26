@@ -1,4 +1,6 @@
 import React, {Component, PropTypes} from 'react';
+import {FormatPrice, ToSeo} from 'Utils';
+import AppConfig from 'AppConfig';
 import CartTitle from 'CartTitle';
 import Delete from 'Delete';
 import Installments from 'Installments';
@@ -31,9 +33,44 @@ class Cart extends Component {
         styleName: 'cart'
       }}>
         <form className="col-xs-12" styleName='form' role="form">
-          <CartTitle />
+          <CartTitle bagSize={this.props.bagSize} />
           <ul>
-            <li className='row middle-xs delete' styleName='cart-row'>
+            {this.props.reducedList.map((product, index) => (
+              <li {...{
+                className: 'row middle-xs',
+                key: `product${index}`,
+                styleName: 'cart-row'
+              }}>
+                <hr />
+                <div className='col-xs-12 col-sm-9 start-sm'>
+                  <Photo {...{
+                    attr: {
+                      alt: product.title,
+                      src: `${AppConfig.dirContent + ToSeo(product.title)}_thumb.jpg`
+                    }
+                  }} />
+                  <Title>
+                    {product.title} {product.description}
+                  </Title>
+                  <Size>
+                    {product.availableSizes.join(' ')} | {product.style}
+                  </Size>
+                  <Quantity>
+                    Quantidade: {product.quantity}
+                  </Quantity>
+                </div>
+                <div className='col-xs-12 col-sm-3 end-xs'>
+                  <Delete {...{
+                    product
+                  }} />
+                  <Price>
+                    {product.currencyFormat} <strong>{FormatPrice.getSplit(product.price * product.quantity).int}</strong>,{FormatPrice.getSplit(product.price * product.quantity).float}
+                  </Price>
+                </div>
+              </li>
+            ))}
+
+            {/*<li className='row middle-xs delete' styleName='cart-row'>
               <hr />
               <div className='col-xs-12 col-sm-9 start-sm'>
                 <Photo />
@@ -58,7 +95,7 @@ class Cart extends Component {
                 <Delete />
                 <Price />
               </div>
-            </li>
+            </li>*/}
             <li className='row conclude'>
               <hr />
               <Subtotal />

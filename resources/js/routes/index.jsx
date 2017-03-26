@@ -18,6 +18,14 @@ const RootRoute = {
         .then(loadRoute(cb))
         .catch(errorLoading);
       }
+    },
+    {
+      path: '/:param',
+      getComponent (location, cb) {
+        System.import('Main')
+        .then(loadRoute(cb))
+        .catch(errorLoading);
+      }
     }
   ]
 };

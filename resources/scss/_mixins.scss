@@ -31,11 +31,11 @@
 }
 
 @mixin transition {
-  -webkit-transition: all $timer ease;
-  -moz-transition: all $timer ease;
-  -ms-transition: all $timer ease;
-  -o-transition: all $timer ease;
-  transition: all $timer ease;
+  -webkit-transition: 200ms;
+  -moz-transition: 200ms;
+  -o-transition: 200ms;
+  -ms-transition: 200ms;
+  transition: 200ms;
 }
 
 @mixin user-select ($value: 'none') {

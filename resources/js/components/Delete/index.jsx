@@ -1,16 +1,14 @@
 import React, {Component, PropTypes} from 'react';
+import {DelProduct} from 'Actions';
 import CSSModules from 'react-css-modules';
+import Store from 'Store';
 import styles from './Delete.scss';
 
 @CSSModules(styles)
 class Delete extends Component {
 
-  static defaultProps = {
-
-  };
-
   static propTypes = {
-
+    product: PropTypes.object.isRequired
   };
 
   render () {
@@ -18,6 +16,7 @@ class Delete extends Component {
       <a {...{
         href:'javascript:void(0);',
         className:'ico-cancel33',
+        onClick: () => Store.dispatch(DelProduct(this.props.product)),
         styleName: 'close'
       }} />
     );

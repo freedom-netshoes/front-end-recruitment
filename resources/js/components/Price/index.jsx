@@ -6,16 +6,18 @@ import styles from './Price.scss'
 class Price extends Component {
 
   static defaultProps = {
-
+    children: ''
   };
 
   static propTypes = {
-
+    children: PropTypes.node
   };
 
   render () {
     return (
-      <p styleName='price'>R$ <strong>149</strong>,90</p>
+      <p styleName='price'>
+        {this.props.children}
+      </p>
     );
   }
 }

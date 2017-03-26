@@ -6,16 +6,18 @@ import styles from './Title.scss';
 class Title extends Component {
 
   static defaultProps = {
-
+    children: ''
   };
 
   static propTypes = {
-
+    children: PropTypes.node
   };
 
   render () {
     return (
-      <h4 styleName='title'>Chuteira Nike Mercurial Victory 3 FG - Edição Especial Infantil</h4>
+      <h4 styleName='title'>
+        {this.props.children}
+      </h4>
     );
   }
 }

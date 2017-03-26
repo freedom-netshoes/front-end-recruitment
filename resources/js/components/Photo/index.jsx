@@ -5,18 +5,17 @@ import styles from './Photo.scss';
 @CSSModules(styles)
 class Photo extends Component {
 
-  static defaultProps = {
-
-  };
-
   static propTypes = {
-
+    attr: PropTypes.shape({
+      alt: PropTypes.string.isRequired,
+      src: PropTypes.string.isRequired
+    })
   };
 
   render () {
     return (
       <figure styleName='photo'>
-        <img src='img/calcao-nike-corinthians.jpg' alt='Chuteira Nike' />
+        <img {...this.props.attr} />
       </figure>
     );
   }
