@@ -13,6 +13,9 @@ class Main extends Component {
 
   constructor (props) {
     super(props);
+
+    console.log('teste', props.params.param);
+
     this.state = {
       cartClass: props.params.param === 'cart' ? 'open' : '',
       products: []
@@ -32,7 +35,6 @@ class Main extends Component {
   async getProducts () {
     await GetProducts(AppConfig.productsAPI)
       .then(result => {
-        console.log('result', result);
         this.setState({
           products: result.response.products
         })

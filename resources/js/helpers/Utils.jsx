@@ -79,8 +79,6 @@ const ReduceCart = products => {
 
 // Seta a quantidade de produtos no carrinho
 const SetQuantity = (list, product) => {
-  product.quantity = GetQuantity(list, product);
-
   list.forEach(item => {
     if (item.id === product.id) {
       item.quantity = GetQuantity(list, product);
@@ -89,7 +87,6 @@ const SetQuantity = (list, product) => {
 
   return list;
 };
-
 
 const ToSeo = function (str) {
   const withAccent = 'áàãâäéèêëíìîïóòõôöúùûüçÁÀÃÂÄÉÈÊËÍÌÎÏÓÒÕÖÔÚÙÛÜÇ/';
