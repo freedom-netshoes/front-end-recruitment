@@ -6,16 +6,18 @@ import styles from './Subtotal.scss';
 class Subtotal extends Component {
 
   static defaultProps = {
-
+    children: ''
   };
 
   static propTypes = {
-
+    children: PropTypes.node
   };
 
   render () {
     return (
-      <p className='col-xs-12 col-sm-6 start-sm' styleName='subtotal'>Subtotal</p>
+      <p className='col-xs-12 col-sm-6 start-sm' styleName='subtotal'>
+        {this.props.children}
+      </p>
     );
   }
 }

@@ -7,7 +7,14 @@ import styles from './Delete.scss';
 @CSSModules(styles)
 class Delete extends Component {
 
+  static defaultProps = {
+    onMouseOut: () => {},
+    onMouseOver: () => {}
+  };
+
   static propTypes = {
+    onMouseOut: PropTypes.func,
+    onMouseOver: PropTypes.func,
     product: PropTypes.object.isRequired
   };
 
@@ -16,7 +23,12 @@ class Delete extends Component {
       <a {...{
         href:'javascript:void(0);',
         className:'ico-cancel33',
-        onClick: () => Store.dispatch(DelProduct(this.props.product)),
+        onClick: () => {
+          Store.dispatch(DelProduct(this.props.product));
+          this.props.onMouseOut();
+        },
+        onMouseOut: this.props.onMouseOut,
+        onMouseOver: this.props.onMouseOver,
         styleName: 'close'
       }} />
     );

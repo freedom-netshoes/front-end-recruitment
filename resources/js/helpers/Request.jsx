@@ -17,9 +17,8 @@ async function GetProducts (url) {
         message: 'Consulta feita com sucesso',
         response
       });
-
     });
-  })
+  });
 }
 
 export default GetProducts;

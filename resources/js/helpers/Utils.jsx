@@ -1,8 +1,42 @@
+// Calcula o total do carrinho
+const CalcTotal = products => {
+  let currencyFormat = '';
+  let installments = getGreaterInstallment(products);
+  let price = 0;
+
+  if (products.length === 1) {
+    currencyFormat = products[0].currencyFormat;
+    installments = products[0].installments;
+    price += products[0].quantity * products[0].price;
+  } else {
+    price = products.reduce((previous, current, index) => {
+      if (index === 1) {
+        return previous.quantity * previous.price + current.quantity * current.price;
+      } else {
+        return previous + current.quantity * current.price;
+      }
+    });
+  }
+
+  return {
+    currencyFormat,
+    installments,
+    price
+  };
+};
+
+// Retorna o maior parcelamento
+const getGreaterInstallment = products => Math.max.apply(Math, products.map(item => item.installments));
+
 const FormatPrice = {
   // Splita o número fracionário
   getSplit: price => {
-    price = price.toFixed(2).toString().split('.');
-    return {int: price[0], float: price[1]};
+    try {
+      price = price.toFixed(2).toString().split('.');
+      return {int: price[0], float: price[1]};
+    } catch (err) {
+      return 0;
+    }
   },
   // Calcula o valor da parcela e retorna com vírgula
   getInstallments: (installments, price) => (
@@ -35,13 +69,27 @@ const ReduceCart = products => {
       }
     });
     // Transforma em array se não for array
-    newProducts = Array.isArray(newProducts) ? newProducts.sort() : [newProducts];
+    newProducts = Array.isArray(newProducts) ? newProducts : [newProducts];
     // Ordena o carrinho por título em ordem alfabética
     newProducts = newProducts.sort((a, b) => a.title > b.title);
   }
 
   return newProducts;
-}
+};
+
+// Seta a quantidade de produtos no carrinho
+const SetQuantity = (list, product) => {
+  product.quantity = GetQuantity(list, product);
+
+  list.forEach(item => {
+    if (item.id === product.id) {
+      item.quantity = GetQuantity(list, product);
+    }
+  });
+
+  return list;
+};
+
 
 const ToSeo = function (str) {
   const withAccent = 'áàãâäéèêëíìîïóòõôöúùûüçÁÀÃÂÄÉÈÊËÍÌÎÏÓÒÕÖÔÚÙÛÜÇ/';
@@ -58,4 +106,4 @@ const ToSeo = function (str) {
   return newStr.toLowerCase().replace(/ /g, '-');
 };
 
-export {FormatPrice, GetQuantity, ReduceCart, ToSeo};
+export {CalcTotal, FormatPrice, GetQuantity, ReduceCart, SetQuantity, ToSeo};

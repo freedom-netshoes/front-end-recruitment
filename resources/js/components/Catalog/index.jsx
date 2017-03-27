@@ -14,22 +14,33 @@ import styles from './Catalog.scss';
 class Catalog extends Component {
 
   static defaultProps = {
+    cartMouseMove: () => {},
+    cartOpen: () => {},
     products: []
   };
 
   static propTypes = {
+    cartMouseMove: PropTypes.func,
+    cartOpen: PropTypes.func,
     products: PropTypes.array
   };
 
   render () {
+    const {
+      cartMouseMove,
+      cartOpen,
+      products
+    } = this.props;
+
     return (
       <section {...{
         className: 'col-xs-12',
         id: 'products',
+        onMouseMove: cartMouseMove,
         styleName: 'products'
       }}>
         <ul className='row'>
-          {this.props.products.map(product => (
+          {products.map(product => (
             <li {...{
               className: 'col-md-4 col-sm-6 col-xs-12 center-xs',
               key: product.id
@@ -38,6 +49,7 @@ class Catalog extends Component {
                 href: 'javascript:void(0);',
                 onClick: () => {
                   Store.dispatch(AddProduct(product));
+                  cartOpen();
                 },
                 title: product.title
               }}>
@@ -53,9 +65,11 @@ class Catalog extends Component {
                 <Price>
                   {product.currencyFormat} <strong>{FormatPrice.getSplit(product.price).int}</strong>,{FormatPrice.getSplit(product.price).float}
                 </Price>
-                <Installments>
-                  ou {product.installments} x <strong>{product.currencyFormat} {FormatPrice.getInstallments(product.installments, product.price)}</strong>
-                </Installments>
+                {product.installments > 0 ? (
+                  <Installments>
+                    ou {product.installments} x <strong>{product.currencyFormat} {FormatPrice.getInstallments(product.installments, product.price)}</strong>
+                  </Installments>
+                ) : ''}
               </a>
             </li>
           ))}
