@@ -34,5 +34,5 @@ The data we provide is a static JSON file under `/public/data`.
 ## Como rodar o projeto
 
 Rodar no terminal:
-- `npm start`: roda o projeto em ambiente local em **http://localhost:8000** (**/cart** para abrir com o carrinho aberto) com watch para alterações
+- `npm start`: roda o projeto em ambiente local em **http://localhost:8080** (**/cart** para abrir com o carrinho aberto) com watch para alterações
 - `npm run build`: para gerar os arquivos estáticos para produção dentro da pasta public
