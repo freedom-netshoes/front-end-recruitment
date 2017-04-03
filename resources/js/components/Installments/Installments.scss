@@ -1,0 +1,16 @@
+@import '../../../scss/shared';
+
+:global(#products) .installments {
+  color    : $light-gray;
+  font-size: 14px;
+
+  strong {
+    @include open-sans-semi-bold();
+  }
+}
+
+:global(.conclude) .installments {
+  color         : $light-gray;
+  font-size     : 12px;
+  text-transform: uppercase;
+}

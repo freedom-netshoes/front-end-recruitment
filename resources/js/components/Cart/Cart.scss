@@ -1,0 +1,51 @@
+@import '../../../scss/shared';
+
+.form {
+  background-color: $dark-gray;
+  height          : 100%;
+}
+
+.cart {
+  @include transition();
+  @include user-select(none);
+  height  : 100%;
+  overflow: hidden;
+  right   : 0;
+  position: absolute;
+  top     : 0;
+  width   : 1px;
+  //min-width   : 66.66%;
+
+  li {
+    padding-bottom: 1rem;
+    text-align    : left;
+
+    &.cart-row {
+      @include transition();
+      cursor: pointer;
+
+      &:hover {
+        background-color: $darker-gray;
+      }
+    }
+
+    hr {
+      margin          : 0 1rem 1rem;
+      background-color: $darker-gray;
+      border          : none;
+      height          : 2px;
+      width           : 100%;
+    }
+  }
+}
+
+:global {
+  .open {
+    box-shadow: -2px 0px 1px $light-gray;
+    width     : 66.66%;
+  }
+
+  .delete {
+    background-color: $darker-gray;
+  }
+}

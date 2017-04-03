@@ -1,0 +1,16 @@
+@import '../../../scss/shared';
+
+:global(#cart) {
+
+  :global(.delete) .quantity {
+    @include opacity(0.2);
+    text-decoration: line-through;
+  }
+
+  .quantity {
+    @include open-sans-light();
+    @include transition();
+    color    : $light-gray;
+    font-size: 12px;
+  }
+}
