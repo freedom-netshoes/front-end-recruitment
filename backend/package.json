@@ -1,0 +1,18 @@
+{
+    "name": "backend-netshoes-teste",
+    "version": "1.0.0",
+    "description": "(Backend) Teste André Evangelista para Netshoes",
+    "main": "./src/loader.js",
+    "scripts": {
+        "dev": "nodemon",
+        "production": "pm2 start src/loader.js --name netshoes-backend"
+    },
+    "author": "André Evangelista",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.15.3",
+        "node-restful": "^0.2.6",
+        "nodemon": "^1.11.0",
+        "pm2": "^2.5.0"
+    }
+}
