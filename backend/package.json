@@ -1,7 +1,7 @@
 {
     "name": "backend-netshoes-teste",
     "version": "1.0.0",
-    "description": "(Backend) Teste André Evangelista para Netshoes",
+    "description": "(Backend) Teste André Evangelista - Netshoes",
     "main": "./src/loader.js",
     "scripts": {
         "dev": "nodemon",
@@ -11,16 +11,15 @@
         "type": "git",
         "url": "git+https://github.com/andreluisce/front-end-recruitment.git"
     },
-    "author": "André Evangelista <andreluisce@gmail.com>",
-    "license": "MIT",
+    "author": "André Evangelista",
+    "license": "ISC",
     "bugs": {
         "url": "https://github.com/andreluisce/front-end-recruitment.git/issues"
     },
     "homepage": "https://github.com/andreluisce/front-end-recruitment.git#readme",
-    "author": "André Evangelista",
-    "license": "ISC",
     "dependencies": {
         "express": "^4.15.3",
+        "lowdb": "^0.16.2",
         "node-restful": "^0.2.6",
         "nodemon": "^1.11.0",
         "pm2": "^2.5.0"

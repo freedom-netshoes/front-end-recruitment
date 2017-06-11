@@ -1,9 +1,12 @@
 {
   "name": "frontend-netshoes-teste",
   "version": "1.0.0",
-  "description": "(Frontend) Teste André Evangelista para Netshoes",
+  "description": "(Frontend) Teste André Evangelista - Netshoes",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "dev": "webpack-dev-server --progress --colors --inline --hot",
+    "production": "webpack --progress -p"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/andreluisce/front-end-recruitment.git"
@@ -22,13 +25,19 @@
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "bootstrap": "^3.3.7",
     "css-loader": "^0.28.4",
     "extract-text-webpack-plugin": "^2.1.2",
     "file-loader": "^0.11.2",
+    "node-sass": "^4.5.3",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "react-redux": "^5.0.5",
     "react-router": "^4.1.1",
+    "sass-loader": "^6.0.5",
     "style-loader": "^0.18.2",
+    "url-loader": "^0.5.8",
     "webpack": "^2.6.1",
     "webpack-dev-server": "^2.4.5"
   }
