@@ -7,6 +7,16 @@
         "dev": "nodemon",
         "production": "pm2 start src/loader.js --name netshoes-backend"
     },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/andreluisce/front-end-recruitment.git"
+    },
+    "author": "André Evangelista <andreluisce@gmail.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/andreluisce/front-end-recruitment.git/issues"
+    },
+    "homepage": "https://github.com/andreluisce/front-end-recruitment.git#readme",
     "author": "André Evangelista",
     "license": "ISC",
     "dependencies": {
