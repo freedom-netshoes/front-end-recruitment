@@ -3,8 +3,10 @@ const host = "http://localhost"
 const endpoints = {
     "product": "api/products"
 }
-const WebConfig = {
+export const WebConfig = {
     apiProductUrl: `${host}:${port}/${endpoints['product']}`
 };
 
-export default WebConfig;
+export const appSettings = {
+    imgUrl: "images/"
+}

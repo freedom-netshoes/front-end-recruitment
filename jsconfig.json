@@ -1,0 +1,10 @@
+{
+
+    "compilerOptions": {
+        "target": "ES7",
+        "module": "commonjs",
+        "experimentalDecorators": true
+
+    }
+
+}
