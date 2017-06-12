@@ -6,7 +6,7 @@ product.route('get', (req, res) => {
     debugger;
     const productsList = db.get('products')
         .value()
-    console.log(productsList)
+        //console.log(productsList)
     res.send(productsList)
 });
 

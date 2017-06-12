@@ -1,6 +1,7 @@
 const webpack = require('webpack')
 const { resolve } = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+
 module.exports = {
     entry: ['babel-polyfill', './src/index.jsx'],
     output: {
@@ -45,8 +46,8 @@ module.exports = {
                             options: {
                                 importLoaders: 1,
                                 localIdentName: '[name]__[local]__[hash:base64:5]',
-                                minimize: true,
-                                module: true
+                                minimize: false,
+                                modules: true
                             }
                         },
                         {
