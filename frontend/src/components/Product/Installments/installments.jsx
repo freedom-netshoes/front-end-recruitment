@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
+import { InstallmentsFormat } from '../../../resources/helpers.js'
 import CSSModules from 'react-css-modules';
 import styles from './installments.scss';
 
@@ -20,12 +21,13 @@ export default class Installment extends Component {
 
 	render() {
 		const {
-      price,
+            price,
 			installments,
-    } = this.props;
+        } = this.props;
 
 		if (!!this.props.installments) {
-			return <p styleName='installments'> ou {this.props.installments} x <strong>R$ {this.props.price}</strong></p>
+			return <p styleName='installments' > ou {installments}
+				x < strong >{InstallmentsFormat(price, installments)} </strong></p>
 		}
 		return <p styleName='installments'> à vista </p>
 	}

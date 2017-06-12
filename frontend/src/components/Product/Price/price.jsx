@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
+import { PriceFormat } from '../../../resources/helpers.js'
 import CSSModules from 'react-css-modules';
+
 import styles from './price.scss';
+
 
 @CSSModules(styles)
 export default class Price extends Component {
@@ -17,7 +20,11 @@ export default class Price extends Component {
 	};
 
 	render() {
-		return <p styleName='price'> R$ <strong> {this.props.price} </strong></p>
-
+		return (
+			<p styleName='price'> R$
+			<strong> {PriceFormat(this.props.price).integer}</strong>
+				<span>,{PriceFormat(this.props.price).decimal}</span>
+			</p>
+		)
 	}
 }
