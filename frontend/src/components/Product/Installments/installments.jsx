@@ -27,6 +27,6 @@ export default class Installment extends Component {
 		if (!!this.props.installments) {
 			return <p styleName='installments'> ou {this.props.installments} x <strong>R$ {this.props.price}</strong></p>
 		}
-		return null
+		return <p styleName='installments'> à vista </p>
 	}
 }

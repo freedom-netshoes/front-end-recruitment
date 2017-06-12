@@ -1,0 +1,25 @@
+  @import '../../../styles/_var.scss';
+  @import '../../../styles/_mixins.scss';
+  @import '../../../styles/main.scss';
+  .price {
+      @include open-sans-regular();
+      color: $gray;
+      font-size: 0.875em;
+      margin-top: 8px;
+      strong {
+          @include open-sans-bold();
+          font-size: 1.5em;
+          position: relative;
+          &:before {
+              content: "";
+              background-color: $yellow;
+              display: block;
+              height: 2px;
+              left: 50%;
+              margin-left: -20px;
+              position: absolute;
+              top: 0;
+              width: 24px;
+          }
+      }
+  }

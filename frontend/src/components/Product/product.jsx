@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import CSSModules from 'react-css-modules';
 import { PropTypes } from 'prop-types';
 import styles from './product.scss'
-import Installments from './installments'
+import Installments from './installments/installments'
+import Price from './Price/price'
+import Image from './Image/image'
 
 @CSSModules(styles)
 export default class Product extends Component {
@@ -26,7 +28,6 @@ export default class Product extends Component {
   };
 
   render() {
-    //console.log(this.props)
     const {
       title,
       sku,
@@ -35,12 +36,10 @@ export default class Product extends Component {
       installments,
     } = this.props;
 
-    return (<div {... { href: 'javascript:void(0);', title: this.props.title, styleName: styles.product } } >
-      <figure>
-        <img {... { src: `images/${this.props.sku}.jpg`, alt: this.props.title } } />
-      </figure>
-      <h3 styleName='title'> {this.props.title}</h3>
-      <p styleName='price' > R$ < strong > {this.props.price} </strong></p>
+    return (<div {... { href: 'javascript:void(0);', title: title, styleName: styles.product } } >
+     <Image { ...this.props }/> 
+      <h3 styleName='title'> {title}</h3>
+      <Price { ...this.props } />
       <Installments { ...this.props } />
     </div>
     );
