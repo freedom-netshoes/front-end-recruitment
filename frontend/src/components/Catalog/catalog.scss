@@ -9,6 +9,10 @@
     }
 }
 
+.price {
+    color: red
+}
+
 :global(#products) .price {
     color: $gray;
     font-size: 12px;
