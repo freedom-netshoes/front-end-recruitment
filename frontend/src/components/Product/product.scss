@@ -1,10 +1,18 @@
-@import '../../styles/_var.scss';
-@import '../../styles/_mixins.scss';
-@import '../../styles/main.scss';
-.title {
-    @include open-sans-regular();
-    color: $gray;
-    font-size: 0.875em;
+:global {
+    .product:hover .title {
+        text-decoration: underline;
+    }
+    .title {
+        color: #313135;
+        font-size: 0.875em;
+        margin-top: 8px;
+    }
+    .product {
+        margin-bottom: 25px;
+        cursor: pointer;
+    }
 }
 
-.product {}
+.sticky {
+    bottom: 0px;
+}

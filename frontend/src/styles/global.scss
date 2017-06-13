@@ -1,44 +1,18 @@
-     :global {
-        p,
-        a,
-        a:focus,
-        em,
-        i,
-        b,
-        strong,
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6,
-        figure,
-        img,
-        caption,
-        ul,
-        li,
-        ol,
-        article,
-        table,
-        thead,
-        tbody,
-        th,
-        tr,
-        td,
-        input {
-            text-decoration: none;
-            margin: 0;
-            padding: 0;
-            color: inherit;
-            outline: none;
-            font-size: inherit;
-            font-weight: normal;
-        }
-        ul,
-        li {
-            list-style: none;
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
+:global {
+    * {
+        font-size: 1em;
+        font-family: 'Open Sans';
+        font-weight: 400;
+        text-decoration: none;
+        margin: 0;
+        padding: 0;
+        outline: none;
     }
+    ul,
+    li {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        list-style-type: none;
+    }
+}

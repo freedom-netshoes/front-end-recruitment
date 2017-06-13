@@ -36,11 +36,13 @@ export default class Product extends Component {
       installments,
     } = this.props;
 
-    return (<div {... { href: 'javascript:void(0);', title: title, styleName: styles.product } } >
-     <Image { ...this.props }/> 
-      <h3 styleName='title'> {title}</h3>
-      <Price { ...this.props } />
-      <Installments { ...this.props } />
+    return (<div {... { title: title, className: 'product' } } >
+      <Image { ...this.props } />
+      <h3 className='title'> {title}</h3>
+      <div styleName='sticky'>
+        <Price { ...this.props } />
+        <Installments { ...this.props } />
+      </div>
     </div>
     );
   }

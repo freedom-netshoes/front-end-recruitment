@@ -1,18 +1,4 @@
-//Fonts
-@mixin open-sans-light() {
-    font-family: $open-sans;
-    font-weight: 300;
-}
-
-@mixin open-sans-regular() {
-    font-family: $open-sans;
-    font-weight: 400;
-}
-
-@mixin open-sans-semi-bold() {
-    font-family: $open-sans;
-    font-weight: 600;
-}
+@mixin open-sans-semi-bold() {}
 
 @mixin open-sans-bold() {
     font-family: $open-sans;
@@ -38,11 +24,4 @@
     transition: 200ms;
 }
 
-@mixin user-select ($value: 'none') {
-    -webkit-touch-callout: $value;
-    -webkit-user-select: $value;
-    -khtml-user-select: $value;
-    -moz-user-select: $value;
-    -ms-user-select: $value;
-    user-select: $value;
-}
+@mixin user-select ($value: 'none') {}

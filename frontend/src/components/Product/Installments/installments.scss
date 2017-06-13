@@ -1,11 +1,8 @@
-  @import '../../../styles/_var.scss';
-  @import '../../../styles/_mixins.scss';
-  @import '../../../styles/main.scss';
   .installments {
-      color: $light-gray;
+      color: #999;
       font-size: 0.875em;
-      @include open-sans-regular();
       strong {
-          @include open-sans-semi-bold();
+          font-family: "Open Sans";
+          font-weight: 600;
       }
   }

@@ -1,25 +1,22 @@
-  @import '../../../styles/_var.scss';
-  @import '../../../styles/_mixins.scss';
-  @import '../../../styles/main.scss';
-  .price {
-      @include open-sans-regular();
-      color: $gray;
-      font-size: 0.875em;
-      margin-top: 8px;
-      strong {
-          @include open-sans-bold();
-          font-size: 1.5em;
-          position: relative;
-          &:before {
-              content: "";
-              background-color: $yellow;
-              display: block;
-              height: 2px;
-              left: 50%;
-              margin-left: -25%;
-              position: absolute;
-              top: 0;
-              width: 24px;
-          }
-      }
-  }
+.price {
+    color: #313135;
+    font-size: 0.875em;
+    margin-top: 8px;
+    strong {
+        font-family: "Open Sans";
+        font-weight: 600;
+        font-size: 1.5em;
+        position: relative;
+        &:before {
+            content: "";
+            background-color: #dfbd00;
+            display: block;
+            height: 2px;
+            left: 50%;
+            margin-left: -25%;
+            position: absolute;
+            top: 0;
+            width: 24px;
+        }
+    }
+}

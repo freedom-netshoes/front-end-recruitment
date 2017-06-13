@@ -1,0 +1,119 @@
+:global {
+    #cart {
+        position: fixed;
+        height: 100%;
+        top: 0px;
+        right: 0px;
+        transition: 200ms;
+        height: 100%;
+        overflow: hidden;
+        li {
+            padding-bottom: 1rem;
+            text-align: left;
+            hr {
+                margin: 0 1rem 1rem;
+                background-color: #131316;
+                border: none;
+                height: 2px;
+                width: 100%;
+            }
+        }
+    }
+    .quantity {
+        font-family: "Open Sans";
+        font-weight: 300;
+        color: #999;
+        font-size: 12px;
+    }
+    .open {
+        box-shadow: -2px 0px 1px #999;
+        width: 66.66%;
+    }
+    .close {
+        &:before {
+            content: "\2716";
+            color: black;
+            font-weight: bolder;
+        }
+    }
+    .close:hover {
+        &:before {
+            color: white;
+        }
+    }
+    .delete {
+        background-color: #131316;
+        .quantity {
+            opacity: 0.2;
+            text-decoration: line-through;
+        }
+    }
+    aside {
+        background-color: #202025;
+    }
+    .cart-title {
+        font-family: "Open Sans";
+        font-weight: 300;
+        color: white;
+        font-size: 24px;
+        padding-bottom: 50px;
+        padding-top: 40px;
+        text-transform: uppercase;
+    }
+    .bag {
+        //background: url('./bag.svg') 0 0 no-repeat;
+        display: inline-block;
+        height: 40px;
+        margin-right: 30px;
+        position: relative;
+        width: 34px;
+        top: 8px;
+    }
+    .total {
+        font-family: "Open Sans";
+        font-weight: 600;
+        background-color: #dfbd00;
+        border-radius: 50%;
+        bottom: -7px;
+        color: black;
+        display: inline-block;
+        font-size: 12px;
+        height: 20px;
+        line-height: 20px;
+        position: absolute;
+        right: -6px;
+        width: 20px;
+    }
+    .delete .price {
+        opacity: 0.2;
+        .title {
+            text-decoration: line-through;
+        }
+    }
+    .conclude {
+        .installments {
+            color: #999;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+        .price {
+            font-size: 24px;
+        }
+    }
+    .price {
+        color: #dfbd00;
+        font-size: 14px;
+        margin-top: 10px;
+        strong {
+            font-family: "Open Sans";
+            font-weight: 600;
+        }
+    }
+    figure {
+        float: left;
+        margin-right: 1rem;
+    }
+    .delete figure {
+        opacity: 0.5;
+    }
+}
