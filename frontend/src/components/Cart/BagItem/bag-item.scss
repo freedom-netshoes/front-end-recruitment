@@ -1,0 +1,43 @@
+    .delete {
+        margin: 0 1rem 1rem;
+        .quantity {
+            opacity: 0.2;
+            text-decoration: line-through;
+        }
+        figure {
+            opacity: 0.5;
+        }
+    }
+    
+    figure {
+        float: left;
+        margin-right: 1rem;
+        position: relative;
+        height: 78px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .title {
+        font-weight: 600;
+        color: white;
+        font-size: 14px;
+        line-height: 18px;
+    }
+    
+    .size {
+        font-weight: 300;
+        color: #999;
+        font-size: 12px;
+    }
+    
+    .quantity {
+        font-weight: 300;
+        color: #999;
+        font-size: 12px;
+    }
+    
+    .adjust-end-xs {
+        padding-right: 0
+    }
