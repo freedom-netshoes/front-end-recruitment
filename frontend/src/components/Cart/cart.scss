@@ -20,11 +20,6 @@
             }
         }
     }
-    .quantity {
-        font-weight: 300;
-        color: #999;
-        font-size: 12px;
-    }
     .open {
         border-left: #999 2px solid;
     }
@@ -40,53 +35,10 @@
             color: white;
         }
     }
-    .delete {
-        background-color: #131316;
-        .quantity {
-            opacity: 0.2;
-            text-decoration: line-through;
-        }
-    }
     aside {
         background-color: #202025;
     }
-    .cart-title {
-        font-weight: 300;
-        color: white;
-        font-size: 24px;
-        padding-bottom: 50px;
-        padding-top: 40px;
-        text-transform: uppercase;
-    }
-    .bag {
-        display: inline-block;
-        height: 40px;
-        margin-right: 30px;
-        position: relative;
-        width: 34px;
-        top: 8px;
-    }
-    .total {
-        font-weight: 600;
-        background-color: #dfbd00;
-        border-radius: 50%;
-        bottom: -7px;
-        color: black;
-        display: inline-block;
-        font-size: 12px;
-        height: 20px;
-        line-height: 20px;
-        position: absolute;
-        right: -6px;
-        width: 20px;
-    }
-    .delete .price {
-        opacity: 0.2;
-        .title {
-            text-decoration: line-through;
-        }
-    }
-    .conclude {
+    .complete-purchase {
         .installments {
             color: #999;
             font-size: 12px;
@@ -103,13 +55,6 @@
         strong {
             font-weight: 600;
         }
-    }
-    figure {
-        float: left;
-        margin-right: 1rem;
-    }
-    .delete figure {
-        opacity: 0.5;
     }
     .btn-buy-container {
         margin-top: 30px;
@@ -129,17 +74,6 @@
             color: #999;
             padding: 13px 0 11px;
         }
-    }
-    .title {
-        font-weight: 600;
-        color: white;
-        font-size: 14px;
-        line-height: 18px;
-    }
-    .size {
-        font-weight: 300;
-        color: #999;
-        font-size: 12px;
     }
     .subtotal {
         color: #999;
