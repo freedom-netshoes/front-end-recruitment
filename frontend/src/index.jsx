@@ -16,4 +16,4 @@ const store = applyMiddleware(promise)(createStore)(reducers, devTools)
 
 ReactDOM.render(<Provider store={store} >
     < App />
-    </Provider>, document.getElementById('app'))
+</Provider>, document.getElementById('app'))

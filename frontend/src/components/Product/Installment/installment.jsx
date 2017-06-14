@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
-import { InstallmentsFormat } from '../../../resources/helpers.js'
+import { InstallmentsFormat } from '../../../resources/helpers'
 import CSSModules from 'react-css-modules';
-import styles from './installments.scss';
+import styles from './installment.scss';
 
 @CSSModules(styles)
 export default class Installment extends Component {

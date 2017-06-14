@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import CSSModules from 'react-css-modules';
 import { PropTypes } from 'prop-types';
 import styles from './product.scss'
-import Installments from './installments/installments'
+import Installments from './installment/installment'
 import Price from './Price/price'
 import Image from './Image/image'
 

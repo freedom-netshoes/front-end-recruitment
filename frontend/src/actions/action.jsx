@@ -1,7 +1,7 @@
-import { PRODUCTS_LOADED } from './Types';
+import { PRODUCTS_LOADED } from './types';
 
 import axios from 'axios'
-import { WebConfig } from '../resources/appSettings.js'
+import { WebConfig } from '../resources/appSettings'
 
 export const productsListLoaded = () => {
     let request = axios.get(WebConfig.apiProductUrl)

@@ -5,7 +5,18 @@
     "main": "index.js",
     "scripts": {
         "dev": "webpack-dev-server --progress --colors --inline --hot",
-        "production": "webpack --progress -p"
+        "production": "webpack --progress -p",
+        "test": "jest --watch --coverage",
+        "start": "npm run dev"
+    },
+    "jest": {
+        "transform": {
+            ".*": "<rootDir>/node_modules/babel-jest"
+        },
+        "moduleNameMapper": {
+            "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+            "^.+\\.(s)?css$": "identity-obj-proxy"
+        }
     },
     "repository": {
         "type": "git",
@@ -30,10 +41,20 @@
         "babel-preset-stage-0": "^6.24.1",
         "bootstrap": "^3.3.7",
         "css-loader": "^0.28.4",
+        "enzyme": "^2.8.2",
+        "eslint": "^4.0.0",
+        "eslint-config-airbnb": "^15.0.1",
+        "eslint-plugin-import": "^2.3.0",
+        "eslint-plugin-jsx-a11y": "^5.0.3",
+        "eslint-plugin-react": "^7.1.0",
         "extract-text-webpack-plugin": "^2.1.2",
         "file-loader": "^0.11.2",
+        "identity-obj-proxy": "^3.0.0",
+        "jest": "^20.0.4",
+        "jscs": "^3.0.7",
         "node-sass": "^4.5.3",
         "react": "^15.5.4",
+        "react-addons-test-utils": "^15.5.1",
         "react-css-modules": "^4.3.0",
         "react-dom": "^15.5.4",
         "react-redux": "^5.0.5",
@@ -45,5 +66,8 @@
         "url-loader": "^0.5.8",
         "webpack": "^2.2.0",
         "webpack-dev-server": "^2.4.5"
+    },
+    "dependencies": {
+        "redux-persist": "^4.8.0"
     }
 }

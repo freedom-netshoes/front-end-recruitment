@@ -20,7 +20,7 @@ export default class Cart extends Component {
 
   render() {
     return (
-      <aside id='cart' className='open'>
+      <aside id='cart' className='open col-xs-12'>
         <div className="col-xs-12">
           <h1 className='cart-title'>
             <span className='bag'>

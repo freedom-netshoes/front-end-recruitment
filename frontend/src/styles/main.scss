@@ -1,3 +1,19 @@
-@import "./vendors/grid_flexbox.scss";
-@import "./_mixins.scss";
-@import "./global.scss";
+@import "./vendors/fbgrid.scss";
+:global {
+    * {
+        font-size: 1em;
+        font-family: 'Open Sans';
+        font-weight: 400;
+        text-decoration: none;
+        margin: 0;
+        padding: 0;
+        outline: none;
+    }
+    ul,
+    li {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        list-style-type: none;
+    }
+}

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
-import { PriceFormat } from '../../../resources/helpers.js'
+import { PriceFormat } from '../../../resources/helpers.jsx'
 import CSSModules from 'react-css-modules';
 
 import styles from './price.scss';
