@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 import CSSModules from 'react-css-modules';
-
+import Header from './Header/header'
+import BagItem from './BagItem/bag-item'
 import styles from './cart.scss';
 
 
@@ -22,44 +23,12 @@ export default class Cart extends Component {
     return (
       <aside id='cart' className='open col-xs-12'>
         <div className="col-xs-12">
-          <h1 className='cart-title'>
-            <span className='bag'>
-              <div className='total-itens'>3</div>
-            </span>
-            Sacola
-            </h1>
+          <Header />
           <ul>
-            <li className='row middle-xs delete'>
-              <hr />
-              <div className='col-sm-8 col-xs-12'>
-                <figure>
-                  <img src='images/876661122392077_thumb.jpg' alt='Chuteira Nike' />
-                </figure>
-                <h2 className='title'>Chuteira Nike Mercurial Victory 3 FG - Edição Especial Infantil</h2>
-                <p className='size'>GG | Preto e branco</p>
-                <p className='quantity'>Quantidade: 2</p>
-              </div>
-              <div className='col-xs-12 col-sm-3 end-xs'>
-                <a href='javascript:void(0);' className='close ico-cancel33' />
-                <p className='price'>R$ <strong>149</strong>,90</p>
-              </div>
-            </li>
-            <li className='row middle-xs'>
-              <hr />
-              <div className='col-sm-8 col-xs-12'>
-                <figure>
-                  <img src='images/18532669286405342_thumb.jpg' alt='Chuteira Nike' />
-                </figure>
-                <h2 className='title'>Chuteira Nike Mercurial Victory 3 FG - Edição Especial Infantil</h2>
-                <p className='size'>GG | Preto e branco</p>
-                <p className='quantity'>Quantidade: 2</p>
-              </div>
-              <div className='col-xs-12 col-sm-3 end-xs'>
-                <a href='javascript:void(0);' className='close ico-cancel33' />
-                <p className='price'>R$ <strong>149</strong>,90</p>
-              </div>
-            </li>
-            <li className='row conclude'>
+          <BagItem />
+          <BagItem />
+
+            <li className='row complete-purchase'>
               <hr />
               <p className='subtotal col-xs-12 col-sm-6'>Subtotal</p>
               <div className='col-xs-12 col-sm-6 end-sm'>
@@ -71,6 +40,7 @@ export default class Cart extends Component {
               </div>
             </li>
           </ul>
+
         </div>
       </aside>
     )

@@ -1,4 +1,4 @@
-import { PRODUCTS_LOADED } from './types';
+import { PRODUCTS_LOADED, PRODUCT_ADDED, PRODUCT_DELETED } from './types';
 
 import axios from 'axios'
 import { WebConfig } from '../resources/appSettings'
