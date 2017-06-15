@@ -29,7 +29,9 @@
         "no-unused-vars": 0,
         "max-len": 0,
         "camelcase": 1,
-        "no-debugger": "warn",
+        "no-debugger": "off",
+        "no-console": "off",
+        "no-case-declarations": "off",
         "no-duplicate-imports": "warn",
         "jsx-quotes": "warn",
         "no-else-return": "warn",
@@ -43,7 +45,8 @@
         "window": true,
         "module": true,
         "__dirname": true,
-        "console": true
+        "console": true,
+        "localStorage": true
 
     }
 }

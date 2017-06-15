@@ -1,12 +1,16 @@
 import { PRODUCTS_LOADED, PRODUCT_ADDED, PRODUCT_DELETED } from './types';
 
-import axios from 'axios'
-import { WebConfig } from '../resources/appSettings'
-
-export const productsListLoaded = () => {
-    let request = axios.get(WebConfig.apiProductUrl)
+export const addProductCart = (product) => {
     return {
-        type: PRODUCTS_LOADED,
-        payload: request
+        type: PRODUCT_ADDED,
+        payload: product
+    }
+}
+
+export const removeProductCart = (product) => {
+
+    return {
+        type: PRODUCT_DELETED,
+        payload: product
     }
 }

@@ -3,7 +3,7 @@ const { resolve } = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
-    entry: ['babel-polyfill', './src/index.jsx'],
+    entry: ['babel-polyfill','./src/index.jsx'],
     output: {
         filename: 'app.js',
         path: resolve(__dirname + 'public'),
@@ -27,38 +27,36 @@ module.exports = {
     },
     module: {
         rules: [{
-                test: /\.jsx$/,
+            test: /\.jsx$/,
+            use: [
+                "babel-loader",
+            ],
+            exclude: /node_modules/
+        },
+        {
+            test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+            use: 'url-loader?limit=100000'
+        },
+        {
+            test: /\.(css|less)$/,
+            use: ExtractTextPlugin.extract({
+                fallback: 'style-loader',
                 use: [
-                    "babel-loader",
-                ],
-                exclude: /node_modules/
-            },
-            {
-                test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
-                use: 'url-loader?limit=100000'
-            },
-            {
-                test: /\.(css|scss)$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: [{
-                            loader: 'css-loader',
-                            options: {
-                                importLoaders: 1,
-                                localIdentName: '[name]__[local]__[hash:base64:5]',
-                                minimize: false,
-                                modules: true
-                            }
+                    {
+                        loader: 'css-loader', options: {
+                            importLoaders: 1, localIdentName: '[name]__[local]__[hash:base64:5]', minimize: false, modules: true, sourceMap: true
                         },
-                        {
-                            loader: 'sass-loader',
-                            options: {
-                                sourceMap: true
-                            }
-                        }
-                    ]
-                })
-            }
+                    },
+                    { loader: 'less-loader', options: { sourceMap: true } }
+                ]
+            })
+        },
+        {
+            test: /\.css$/,
+            use: [
+                { loader: 'postcss-loader', options: { syntax: 'sugarss' } }
+            ]
+        }
         ],
     },
     plugins: [

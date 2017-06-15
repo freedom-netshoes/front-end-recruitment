@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 import { InstallmentsFormat } from '../../../resources/helpers'
 import CSSModules from 'react-css-modules';
-import styles from './installment.scss';
+import styles from './installment.less';
 
 @CSSModules(styles)
 export default class Installment extends Component {
@@ -25,10 +25,10 @@ export default class Installment extends Component {
 			installments,
         } = this.props;
 
-		if (!!this.props.installments) {
-			return <p styleName='installments' > ou {installments}
+		if (this.props.installments) {
+			return <p styleName="installments" > ou {installments}
 				x < strong >{InstallmentsFormat(price, installments)} </strong></p>
 		}
-		return <p styleName='installments'> à vista </p>
+		return <p styleName="installments"> à vista </p>
 	}
 }

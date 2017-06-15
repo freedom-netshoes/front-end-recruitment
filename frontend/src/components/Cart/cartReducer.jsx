@@ -1,20 +1,18 @@
-import { persistStore, getStoredState } from 'redux-persist'
 import * as actionTypes from '../../actions/types';
+import { loadState } from '../../resources/localStorage'
 
-async function getStore() {
-	await getStoredState({ whitelist: ['catalog'] }, (err, restoredState) => {
-		return restoredState || []
-	})
+const INITIAL_STATE = {
+	shopCart: loadState("shopCart") || []
 }
 
-
-const cartReducer = (state = getStore(), action) => {
+const cartReducer = (state = INITIAL_STATE, action) => {
 	switch (action.type) {
-		case actionTypes.ADD_PRODUCT:
-
-			persistStore(state)
-			break
-		case actionTypes.DEL_PRODUCT:
+		case actionTypes.PRODUCT_ADDED:
+			debugger;
+			let list = [...state.shopCart]; 
+			list.push(action.payload)
+			return { ...state, shopCart: list }
+		case actionTypes.PRODUCT_REMOVED:
 			break
 		default:
 			return state;

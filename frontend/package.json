@@ -52,16 +52,15 @@
     "extract-text-webpack-plugin": "^2.1.2",
     "file-loader": "^0.11.2",
     "identity-obj-proxy": "^3.0.0",
+    "immutable": "^3.8.1",
     "jest": "^20.0.4",
     "jscs": "^3.0.7",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.4",
     "node-sass": "^4.5.3",
-    "react": "^15.5.4",
+    "postcss-loader": "^2.0.6",
     "react-addons-test-utils": "^15.5.1",
     "react-css-modules": "^4.3.0",
-    "react-dom": "^15.5.4",
-    "react-redux": "^5.0.5",
-    "react-router": "^4.1.1",
-    "redux": "^3.6.0",
     "redux-promise": "^0.5.3",
     "sass-loader": "^6.0.5",
     "style-loader": "^0.18.2",
@@ -70,6 +69,11 @@
     "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
-    "redux-persist": "^4.8.0"
+    "react-dom": "^15.5.4",
+    "react-redux": "^5.0.5",
+    "react-router": "^4.1.1",
+    "redux": "^3.6.0",
+    "redux-persist": "^4.8.0",
+    "redux-thunk": "^2.2.0"
   }
 }

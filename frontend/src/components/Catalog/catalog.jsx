@@ -1,33 +1,48 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { productsListLoaded } from '../../actions/action'
-import { appSettings } from '../../resources/appSettings'
+import { productsListLoaded, addProductCart } from '../../actions/action'
+import { WebConfig } from '../../resources/appSettings'
+import CSSModules from 'react-css-modules';
+import axios from 'axios'
+
+import styles from './catalog.less';
 
 import Product from '../Product/product'
 
+@CSSModules(styles)
 class Catalog extends Component {
 	constructor(props) {
 		super(props)
+		this.state = {
+			products: []
+		}
 	}
 
 	componentDidMount() {
-		this.props.productsListLoaded();
+		this.loadItems();
+	}
+
+	loadItems = () => {
+		axios.get(WebConfig.apiProductUrl).then(res => this.setState({ ...this.state, products: res.data }))
 	}
 
 	render() {
 		return (
-			<div className='row center-xs'>
-				<section id='products' className='col-xs-7'>
-					<ul className='row'>
+			<div className="row center-xs">
+				<section id="products" className="col-xs-7">
+					<ul className="row">
 						{
-							this.props.products.map(product => (
+							this.state.products.map(product =>
 								<li {...{
-									className: 'col-md-4 col-sm-6 col-xs-12 center-xs', key: product.id
+									onClick: () => {
+										this.props.dispatch(addProductCart(product))
+									},
+									className: 'col-md-4 col-sm-6 col-xs-12', styleName: 'row', key: product.id
 								}}>
-								<Product {...{...product}} />
+									<Product {...{ ...product }} />
 								</li>
-							))
+							)
 						}
 					</ul>
 				</section>
@@ -36,6 +51,4 @@ class Catalog extends Component {
 	}
 }
 
-const mapStateToProps = state => ({ products: state.catalog.productsList })
-const mapDispatchToProps = dispatch => bindActionCreators({ productsListLoaded }, dispatch)
-export default connect(mapStateToProps, mapDispatchToProps)(Catalog)
+export default connect()(Catalog)

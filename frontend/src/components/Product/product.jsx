@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 import CSSModules from 'react-css-modules';
 import { PropTypes } from 'prop-types';
-import styles from './product.scss'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+
+import {addProductCart} from '../../actions/action'
+
 import Installments from './installment/installment'
 import Price from './Price/price'
 import Image from './Image/image'
+import Title from './Title/title'
+import styles from './product.less'
 
 @CSSModules(styles)
 export default class Product extends Component {
@@ -36,14 +42,14 @@ export default class Product extends Component {
       installments,
     } = this.props;
 
-    return (<div {... { title: title, className: 'product' } } >
+    return <div {... { title: title, styleName: 'product' } } >
       <Image { ...this.props } />
-      <h3 className='title'> {title}</h3>
-      <div styleName='sticky'>
-        <Price { ...this.props } />
-        <Installments { ...this.props } />
-      </div>
+      <Title {...this.props}/>
+      <Price { ...this.props } />
+      <Installments { ...this.props } />
     </div>
-    );
   }
 }
+
+// const mapDispatchToProps = dispatch => bindActionCreators({ addProductCart }, dispatch)
+// export default connect(mapDispatchToProps)(Product)

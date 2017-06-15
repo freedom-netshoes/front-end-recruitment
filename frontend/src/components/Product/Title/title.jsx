@@ -2,30 +2,25 @@ import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 import CSSModules from 'react-css-modules';
 
-import styles from './header.less';
+import styles from './title.less';
 
 
 @CSSModules(styles)
-export default class Header extends Component {
+export default class Title extends Component {
 	constructor(props) {
 		super(props)
 	}
 	static defaultProps = {
-		price: 0
+		title: ""
 	};
 
 	static propTypes = {
-		price: PropTypes.number
+		title: PropTypes.string
 	};
 
 	render() {
 		return (
-			<h1 styleName="cart-title">
-				<span styleName="bag">
-					<div styleName="total-items">3</div>
-				</span>
-				Sacola
-      </h1>
+			<h3 styleName="title"> {this.props.title}</h3>
 		)
 	}
 }

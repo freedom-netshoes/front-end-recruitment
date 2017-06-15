@@ -1,8 +1,11 @@
-@import "./vendors/fbgrid.scss";
+@import "./vendors/normalize.less";
+@import "./vendors/grid.less";
+@import "./_less-variables.less";
+
 :global {
     * {
         font-size: 1em;
-        font-family: 'Open Sans';
+        font-family: @font;
         font-weight: 400;
         text-decoration: none;
         margin: 0;
