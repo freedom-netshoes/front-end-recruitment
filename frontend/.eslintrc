@@ -4,7 +4,10 @@
         "ecmaFeatures": {
             "jsx": true,
             "modules": true,
-            "experimentalObjectRestSpread": true
+            "experimentalObjectRestSpread": true,
+            "sourceType": "module",
+            "allowImportExportEverywhere": false,
+            "codeFrame": false
 
         },
         "sourceType": "module",
@@ -19,7 +22,9 @@
         "jsx-a11y",
         "import"
     ],
+    "parser": "babel-eslint",
     "rules": {
+        "strict": 0,
         "import/newline-after-import": "off",
         "no-unused-vars": 0,
         "max-len": 0,
