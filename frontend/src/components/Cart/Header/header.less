@@ -6,8 +6,9 @@
         padding-top: 40px;
         text-transform: uppercase;
     }
-    
+
     .bag {
+       /*background: url('~sbag.png') 0 0 no-repeat;*/
         display: inline-block;
         height: 40px;
         margin-right: 30px;
@@ -15,7 +16,7 @@
         width: 34px;
         top: 8px;
     }
-    
+
     .total-items {
         font-weight: 600;
         background-color: #dfbd00;
@@ -29,4 +30,23 @@
         position: absolute;
         right: -6px;
         width: 20px;
+    }
+
+    .close {
+        position: absolute;
+        top: 40px;
+        left: 40px;
+        color: #999;
+        cursor: pointer;
+        &:before {
+            content: "\2716";
+            color: #999;
+            font-weight: bolder;
+        }
+    }
+
+    .close:hover {
+        &:before {
+            color: white;
+        }
     }

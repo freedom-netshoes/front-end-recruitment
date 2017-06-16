@@ -10,12 +10,14 @@ export default class Image extends Component {
 	}
 	static defaultProps = {
 		sku: "",
-		title: ""
+		title: "",
+		isThumb: false
 	};
 
 	static propTypes = {
 		sku: PropTypes.string,
-		title: PropTypes.string
+		title: PropTypes.string,
+		isThumb: PropTypes.bool
 	};
 
 	render() {
@@ -23,10 +25,18 @@ export default class Image extends Component {
       title,
 			sku
     } = this.props;
+		if (!this.props.isThumb) {
+			return (
+				<figure {...{ styleName: 'photo' }}  >
+					<img {... { src: `images/${sku}.jpg`, alt: title } } />
+				</figure>
+			)
+		}
 		return (
-			<figure {...{styleName: 'photo'}}  >
-				<img {... { src: `images/${sku}.jpg`, alt: title } } />
-			</figure>
-		)
+				<figure {...{ styleName: 'photo' }}  >
+					<img {... { src: `images/${sku}_thumb.jpg`, alt: title } } />
+				</figure>
+			)
+
 	}
 }

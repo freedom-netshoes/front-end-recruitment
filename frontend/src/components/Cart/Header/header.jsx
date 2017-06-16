@@ -11,18 +11,19 @@ export default class Header extends Component {
 		super(props)
 	}
 	static defaultProps = {
-		price: 0
+		size: 0
 	};
 
 	static propTypes = {
-		price: PropTypes.number
+		size: PropTypes.number
 	};
 
 	render() {
 		return (
 			<h1 styleName="cart-title">
+				<span styleName="close"></span>
 				<span styleName="bag">
-					<div styleName="total-items">3</div>
+					<div styleName="total-items">{this.props.size}</div>
 				</span>
 				Sacola
       </h1>

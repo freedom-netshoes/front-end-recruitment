@@ -1,22 +1,20 @@
 import * as actionTypes from '../../actions/types';
-import { loadState } from '../../resources/localStorage'
-
-const INITIAL_STATE = {
-	shopCart: loadState("shopCart") || []
-}
-
-const cartReducer = (state = INITIAL_STATE, action) => {
+import { ReduceList } from '../../resources/helpers'
+const cartReducer = (state = [], action) => {
 	switch (action.type) {
 		case actionTypes.PRODUCT_ADDED:
-			debugger;
-			let list = [...state.shopCart]; 
-			list.push(action.payload)
-			return { ...state, shopCart: list }
+			return [...state, action.payload];
 		case actionTypes.PRODUCT_REMOVED:
-			break
+			const index = state.findIndex(i => i.id === action.payload.id);
+			return [
+				...state.slice(0, index),
+				...state.slice(index + 1)
+			]
+
 		default:
-			return state;
+			return state
 	}
 };
+
 
 export default cartReducer;

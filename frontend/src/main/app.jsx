@@ -11,7 +11,7 @@ export default class App extends Component {
     return (
       <div className="row center-xs">
           <Catalog />
-          {/*<Cart />*/}
+          <Cart />
       </div>
     )
   }

@@ -1,4 +1,4 @@
-import { PRODUCTS_LOADED, PRODUCT_ADDED, PRODUCT_DELETED } from './types';
+import { PRODUCTS_LOADED, PRODUCT_ADDED, PRODUCT_REMOVED } from './types';
 
 export const addProductCart = (product) => {
     return {
@@ -10,7 +10,7 @@ export const addProductCart = (product) => {
 export const removeProductCart = (product) => {
 
     return {
-        type: PRODUCT_DELETED,
+        type: PRODUCT_REMOVED,
         payload: product
     }
 }

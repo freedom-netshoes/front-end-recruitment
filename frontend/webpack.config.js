@@ -14,7 +14,7 @@ module.exports = {
         port: 8080,
         contentBase: './public',
     },
-    devtool: 'inline-source-map',
+    devtool: 'source-map',
     resolve: {
         extensions: ['.js', '.jsx'],
         alias: {
@@ -47,7 +47,7 @@ module.exports = {
                             importLoaders: 1, localIdentName: '[name]__[local]__[hash:base64:5]', minimize: false, modules: true, sourceMap: true
                         },
                     },
-                    { loader: 'less-loader', options: { sourceMap: true } }
+                    { loader: 'less-loader?relativeUrls&noIeCompat', options: { sourceMap: true, relativeUrls:true } }
                 ]
             })
         },

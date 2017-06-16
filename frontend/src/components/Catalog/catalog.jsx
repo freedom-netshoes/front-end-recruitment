@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
 import { productsListLoaded, addProductCart } from '../../actions/action'
 import { WebConfig } from '../../resources/appSettings'
 import CSSModules from 'react-css-modules';

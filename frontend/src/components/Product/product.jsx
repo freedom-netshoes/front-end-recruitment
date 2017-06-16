@@ -50,6 +50,3 @@ export default class Product extends Component {
     </div>
   }
 }
-
-// const mapDispatchToProps = dispatch => bindActionCreators({ addProductCart }, dispatch)
-// export default connect(mapDispatchToProps)(Product)

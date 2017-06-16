@@ -1,5 +1,5 @@
 :global {
-    #cart {
+    #cart-shop {
         font-family: "Open Sans";
         position: fixed;
         height: 100%;
@@ -7,7 +7,7 @@
         right: 0px;
         transition: 200ms;
         height: 100%;
-        overflow: hidden;
+        overflow: scroll;
         li {
             padding-bottom: 1rem;
             text-align: left;
@@ -22,18 +22,6 @@
     }
     .open {
         border-left: #999 2px solid;
-    }
-    .close {
-        &:before {
-            content: "\2716";
-            color: black;
-            font-weight: bolder;
-        }
-    }
-    .close:hover {
-        &:before {
-            color: white;
-        }
     }
     aside {
         background-color: #202025;

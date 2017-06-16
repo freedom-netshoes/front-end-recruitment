@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { ReduceList } from '../../resources/helpers'
+
 import CSSModules from 'react-css-modules';
 import Header from './Header/header'
 import BagItem from './BagItem/bag-item'
@@ -7,27 +11,36 @@ import styles from './cart.less';
 
 
 @CSSModules(styles)
-export default class Cart extends Component {
+class Cart extends Component {
   constructor(props) {
     super(props)
   }
-  static defaultProps = {
-    price: 0
-  };
-
-  static propTypes = {
-    price: PropTypes.number
-  };
+  componentWillReceiveProps(nextProps) {
+    try {
+      this.setState({
+        bagItems: ReduceList(nextProps.fullBag),
+        totalItems: nextProps.fullBag.length
+      })
+    }
+    catch (e) {
+      //
+    }
+  }
 
   render() {
     return (
-      <aside id="cart" className="open col-xs-12">
+      <aside id="cart-shop" className="open col-xs-12">
         <div className="col-xs-12">
-          <Header />
+          <Header {...{ size: this.props.totalItems }} />
           <ul>
-          <BagItem />
-          <BagItem />
+            {
+              this.props.bagItems.map(product =>
 
+                <BagItem {...{ product: product, key: product.id }} />
+
+
+              )
+            }
             <li className="row complete-purchase">
               <hr />
               <p className="subtotal col-xs-12 col-sm-6">Subtotal</p>
@@ -40,9 +53,21 @@ export default class Cart extends Component {
               </div>
             </li>
           </ul>
-
         </div>
       </aside>
     )
   }
 }
+const mapStateToProps = state => {
+  console.log("MAP STATE")
+  const totalItems = state.shopCart || []
+  const bagItems = ReduceList(state.shopCart)
+  const total = totalItems.length
+  return {
+    fullBag: totalItems,
+    bagItems: bagItems,
+    totalItems: total
+  }
+
+}
+export default connect(mapStateToProps)(Cart)
