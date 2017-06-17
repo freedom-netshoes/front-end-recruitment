@@ -1,26 +1,25 @@
-import React, { Component } from 'react';
-import { PropTypes } from 'prop-types';
-import CSSModules from 'react-css-modules';
+import React, { Component } from 'react'
+import { PropTypes } from 'prop-types'
+import CSSModules from 'react-css-modules'
 
-import styles from './quantity.less';
-
+import styles from './quantity.less'
 
 @CSSModules(styles)
 export default class Quantity extends Component {
-	constructor(props) {
-		super(props)
-	}
-	static defaultProps = {
-		quantity: 0
-	};
+  constructor (props) {
+    super(props)
+  }
+ static defaultProps = {
+   quantity: 0
+ };
 
-	static propTypes = {
-		quantity: PropTypes.number
-	};
+ static propTypes = {
+   quantity: PropTypes.number
+ };
 
-	render() {
-		return (
-			<p styleName="quantity">Quantidade: {this.props.quantity}</p>
-		)
-	}
+ render () {
+    return (
+      <p styleName="quantity">Quantidade: {this.props.quantity}</p>
+    )
+  }
 }

@@ -1,12 +1,12 @@
 const port = 3004
-const host = "http://localhost"
+const host = 'http://localhost'
 const endpoints = {
-    "product": "api/products"
+  'product': 'api/products'
 }
 export const WebConfig = {
-    apiProductUrl: `${host}:${port}/${endpoints['product']}`
-};
+  apiProductUrl: `${host}:${port}/${endpoints['product']}`
+}
 
 export const appSettings = {
-    imgUrl: "images/"
+  imgUrl: 'images/'
 }

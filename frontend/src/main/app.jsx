@@ -1,18 +1,32 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import Catalog from '../components/Catalog/catalog'
 import Cart from '../components/Cart/cart'
+import { connect } from 'react-redux'
+import CSSModules from 'react-css-modules'
 
-export default class App extends Component {
-  constructor(props) {
-    super(props);
-  }
+import { toggleCart } from '../actions/action'
+import styles from './app.less'
 
-  render() {
+@CSSModules(styles)
+class App extends Component {
+  render () {
     return (
       <div className="row center-xs">
-          <Catalog />
-          <Cart />
+        <Catalog />
+        <Cart />
+        <div
+          {...{
+            onClick: () => {
+              this.props.dispatch(toggleCart(true))
+            },
+            styleName: 'abrirCarrinho',
+            title: 'Abrir Carrinho'
+          }}
+        >
+        </div>
       </div>
     )
   }
 }
+
+export default connect()(App)

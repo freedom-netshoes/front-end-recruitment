@@ -5,9 +5,12 @@
         height: 100%;
         top: 0px;
         right: 0px;
-        transition: 200ms;
-        height: 100%;
+        transition: 500ms;
+        transition-timing-function: ease;
+        direction: ltr;
         overflow: scroll;
+        overflow-x: hidden;
+        z-index: 999;
         li {
             padding-bottom: 1rem;
             text-align: left;
@@ -20,8 +23,17 @@
             }
         }
     }
+    .show {
+        display: block;
+    }
+    .hide {
+        display: none;
+    }
     .open {
         border-left: #999 2px solid;
+    }
+    .close {
+        width: 0px
     }
     aside {
         background-color: #202025;

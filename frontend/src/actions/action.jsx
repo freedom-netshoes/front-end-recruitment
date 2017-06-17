@@ -1,16 +1,23 @@
-import { PRODUCTS_LOADED, PRODUCT_ADDED, PRODUCT_REMOVED } from './types';
+import * as actions from './action-types'
 
 export const addProductCart = (product) => {
-    return {
-        type: PRODUCT_ADDED,
-        payload: product
-    }
+  return {
+    type: actions.PRODUCT_ADDED,
+    payload: product
+  }
 }
 
 export const removeProductCart = (product) => {
+  return {
+    type: actions.PRODUCT_REMOVED,
+    payload: product
+  }
+}
 
-    return {
-        type: PRODUCT_REMOVED,
-        payload: product
-    }
+export const toggleCart = (open) => {
+  let action = open ? actions.OPEN_CART : actions.CLOSE_CART
+  return {
+    type: action,
+    payload: undefined
+  }
 }
