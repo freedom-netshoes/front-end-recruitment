@@ -47,7 +47,7 @@ class BagItem extends Component {
         </div>
         <div className="col-md-3 end-md">
           <ButtonDismiss {...{
-            onClick: () => {
+            clickButton: () => {
               this.props.dispatch(removeProductCart(this.props.product))
             }
           }} />
