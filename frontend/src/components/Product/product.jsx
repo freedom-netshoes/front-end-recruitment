@@ -42,7 +42,7 @@ export default class Product extends Component {
     return <div {... { title: title, styleName: 'product' } } >
       <Image {...{sku: sku, title: title}} />
       <Title {...{title: title}} />
-      <Price {...{price: price}} />
+      <Price {...{price: price, type: 'full'}} />
       <Installments {...{price: price, installments: installments}}/>
     </div>
   }

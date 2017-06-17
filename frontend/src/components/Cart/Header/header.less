@@ -1,11 +1,9 @@
     @import '../../../styles/_less-mixins.less';
     .cart-title {
         .fontBold();
-        color: white;
+        color: @white;
         font-size: 24px;
-        padding-bottom: 50px;
-        padding-left: 60px;
-        padding-top: 40px;
+        padding: 48px 0;
         text-transform: uppercase;
     }
 
@@ -13,15 +11,16 @@
         background: url('\./bag.png') 0 0 no-repeat;
         height: 40px;
         width: 33px;
+        display: inline-block;
         position: relative;
-        top: 32px;
-        left: 65px;
+        top: 10px;
+        margin-right: 20px;
     }
 
     .total-items {
         .fontBold();
         background-color: #dfbd00;
-        color: black;
+        color: @black;
         border-radius: 50%;
         bottom: -8px;
         right: -8px;
@@ -44,10 +43,9 @@
             color: #999;
             font-weight: bolder;
         }
-    }
-
-    .close:hover {
-        &:before {
-            color: white;
+        &:hover {
+            &:before {
+                color: @white;
+            }
         }
     }

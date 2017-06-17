@@ -5,7 +5,10 @@ import CSSModules from 'react-css-modules'
 import Image from '../../Product/Image/image'
 import Quantity from './Quantity/quantity'
 import Title from '../../Product/Title/title'
-import { PriceFormat } from '../../../resources/helpers'
+import ItemSize from './ItemSize/item-size'
+import Price from '../../Product/Price/price'
+import ButtonDismiss from '../BagItem/ButtonDismiss/button-dismiss'
+
 import { removeProductCart } from '../../../actions/action'
 
 import styles from './bag-item.less'
@@ -30,23 +33,25 @@ class BagItem extends Component {
       availableSizes,
       installments
     } = this.props.product
+
     return (
-      <li className="row middle-xs delete">
+      <li className="bag-item row middle-xs">
         <hr />
-        <div className="col-sm-9 col-xs-12">
+        <div {...{ className: 'col-md-2 start-md', styleName: 'image-container' }}>
           <Image {...{ sku: sku, title: title, isThumb: true }} />
+        </div>
+        <div className="col-md-7 start-md">
           <Title {...{ title: title }} />
-          <p styleName="size">{availableSizes.join(' | ')}</p>
+          <ItemSize {...{ sizes: availableSizes.join(' | ') }} />
           <Quantity {...{ quantity: quantity }} />
         </div>
-        <div className="col-xs-12 col-sm-3 end-xs" styleName="adjust-end-xs">
-          <span {...{
+        <div className="col-md-3 end-md">
+          <ButtonDismiss {...{
             onClick: () => {
               this.props.dispatch(removeProductCart(this.props.product))
-            },
-            styleName: 'close'
-          }}></span>
-          <p className="price"><strong>{PriceFormat(price * quantity).integer}</strong>,{PriceFormat(price * quantity).decimal}</p>
+            }
+          }} />
+          <Price {...{ value: price, type: 'separated' }} />
         </div>
       </li>
     )

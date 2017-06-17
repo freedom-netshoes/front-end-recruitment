@@ -25,9 +25,9 @@ class Header extends Component {
           },
           styleName: 'close'
         }}></span>
-        <div styleName="bag">
-          <div styleName="total-items">{this.props.size}</div>
-        </div>
+        <span styleName="bag">
+          <span styleName="total-items">{this.props.size}</span>
+        </span>
         Sacola
       </h1>
     )

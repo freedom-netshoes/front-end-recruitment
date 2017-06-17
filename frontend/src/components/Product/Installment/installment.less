@@ -1,8 +1,24 @@
-  .installments {
-      color: #999;
-      font-size: 0.875em;
-      strong {
-          font-family: "Open Sans";
-          font-weight: 600;
-      }
-  }
+@import '../../../styles/_less-variables.less';
+@import '../../../styles/_less-mixins.less';
+:global {
+    #cart-shop {
+        .subtotal-installments {
+            .installments {
+                color: @lighterGray;
+                font-size: 12px;
+                margin-top: 5px;
+                .text {
+                    text-transform: uppercase;
+                    margin: 0 5px;
+                }
+                .multiplier {
+                    margin: 0 2px;
+                }
+                .price {
+                    .fontBold();
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+}

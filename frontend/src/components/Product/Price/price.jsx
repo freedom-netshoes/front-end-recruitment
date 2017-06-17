@@ -7,23 +7,32 @@ import styles from './price.less'
 
 @CSSModules(styles)
 export default class Price extends Component {
-  constructor (props) {
-    super(props)
-  }
- static defaultProps = {
-   price: 0
- };
+  static defaultProps = {
+    value: 0,
+    type: 'full'
+  };
 
- static propTypes = {
-   price: PropTypes.number
- };
+  static propTypes = {
+    value: PropTypes.number,
+    type: PropTypes.oneOf(['full', 'separated'])
+  };
 
- render () {
+  render () {
+    const priceFormatted = PriceFormat(this.props.value)
+    if (this.props.type === 'separated') {
+      return (
+        <span className="price">
+          <span className="price-symbol">{priceFormatted.currencySymbol}</span>
+          <span className="price-integer">{priceFormatted.integer}</span>
+          <span className="price-separator">{priceFormatted.decimalSeparator}</span>
+          <span className="price-decimal">{priceFormatted.decimal}</span>
+        </span>
+      )
+    }
     return (
-      <p styleName="price"> R$
-        <strong> {PriceFormat(this.props.price).integer}</strong>
-        <span>,{PriceFormat(this.props.price).decimal}</span>
-      </p>
+      <span className="price">
+        {priceFormatted.toStringPrice}
+      </span>
     )
   }
 }

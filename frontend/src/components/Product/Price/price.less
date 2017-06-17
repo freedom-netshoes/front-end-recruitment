@@ -1,22 +1,15 @@
-.price {
-    color: #313135;
-    font-size: 0.875em;
-    margin-top: 8px;
-    strong {
-        font-family: "Open Sans";
-        font-weight: 600;
-        font-size: 1.5em;
-        position: relative;
-        &:before {
-            content: "";
-            background-color: #dfbd00;
-            display: block;
-            height: 2px;
-            left: 50%;
-            margin-left: -25%;
-            position: absolute;
-            top: 0;
-            width: 24px;
+@import '../../../styles/_less-variables.less';
+@import '../../../styles/_less-mixins.less';
+:global {
+    #cart-shop {
+        color: @gold;
+        .subtotal-price {
+            .price {
+                font-size: 40px;
+            }
+        }
+        .price-integer {
+            .fontBold();
         }
     }
 }

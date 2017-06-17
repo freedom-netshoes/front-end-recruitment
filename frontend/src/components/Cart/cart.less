@@ -1,22 +1,22 @@
+@import '../../styles/_less-mixins.less';
+@import '../../styles/_less-variables.less';
 :global {
     #cart-shop {
-        font-family: "Open Sans";
         position: fixed;
         height: 100%;
         top: 0px;
-        right: 0px;
-        transition: 500ms;
-        transition-timing-function: ease;
-        direction: ltr;
-        overflow: scroll;
-        overflow-x: hidden;
         z-index: 999;
+        background-color: @darkGray;
+        font-family: @font;
+
+        .transition();
         li {
-            padding-bottom: 1rem;
-            text-align: left;
+            margin: 0;
+            height: 100px;
+
             hr {
-                margin: 0 1rem 1rem;
-                background-color: #131316;
+                margin: 0 2px 2px;
+                background-color: @darkerGray;
                 border: none;
                 height: 2px;
                 width: 100%;
@@ -30,49 +30,29 @@
         display: none;
     }
     .open {
+        right: 0px;
         border-left: #999 2px solid;
     }
     .close {
-        width: 0px
+        right: -500px;
     }
-    aside {
-        background-color: #202025;
-    }
-    .complete-purchase {
-        .installments {
-            color: #999;
-            font-size: 12px;
-            text-transform: uppercase;
-        }
-        .price {
-            font-size: 24px;
-        }
-    }
-    .price {
-        color: #dfbd00;
-        font-size: 14px;
-        margin-top: 10px;
-        strong {
-            font-weight: 600;
-        }
-    }
+
     .btn-buy-container {
         margin-top: 30px;
     }
     .btn-buy {
-        font-weight: 700;
-        background-color: black;
+        .fontBold();
+        background-color: @black;
         border-radius: 2px;
         box-shadow: 0 2px 1px #202025;
+        color: @white;
         border: none;
-        color: white;
         font-size: 14px;
-        padding: 12px 0;
         text-transform: uppercase;
         width: 100%;
+        height: 50px;
         &:hover {
             color: #999;
-            padding: 13px 0 11px;
         }
     }
     .subtotal {
@@ -80,5 +60,15 @@
         font-size: 14px;
         margin-top: 14px;
         text-transform: uppercase;
+    }
+    @media only screen and (min-width: 500px) {
+        #cart-shop {
+            width: 500px;
+        }
+    }
+    @media only screen and (max-width: 499px) {
+        #cart-shop {
+            width: 100%
+        }
     }
 }

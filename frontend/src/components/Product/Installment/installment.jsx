@@ -1,31 +1,51 @@
 import React, { Component } from 'react'
 import { PropTypes } from 'prop-types'
-import { InstallmentsFormat } from '../../../resources/helpers'
 import CSSModules from 'react-css-modules'
 import styles from './installment.less'
+import Price from '../Price/price'
 
 @CSSModules(styles)
 export default class Installment extends Component {
- static defaultProps = {
-   price: 0,
-   installments: 0
- };
+  static defaultProps = {
+    value: 0,
+    installments: 0,
+    type: 'simple'
+  };
 
- static propTypes = {
-   price: PropTypes.number,
-   installments: PropTypes.number
- };
+  static propTypes = {
+    value: PropTypes.number,
+    installments: PropTypes.number,
+    type: PropTypes.oneOf(['simple', 'complete'])
+  };
 
- render () {
+  render () {
     const {
-      price,
+      value,
       installments
     } = this.props
-
+    const installmentValue = value / installments
     if (this.props.installments) {
-      return <p styleName="installments" > ou {installments}
-				x < strong >{InstallmentsFormat(price, installments)} </strong></p>
+      if (this.props.type === 'simple') {
+        return (
+          <div>
+            <span className="text">ou</span>
+            {installments}
+            <span className="multiplier">x</span>
+            <Price {...{ value: value, type: 'full' }} />
+          </div>
+        )
+      }
+      return (
+        <div className="installments">
+          <span className="text">ou em até</span>
+          <span className="value">
+            {installments}
+          </span>
+
+          <span className="multiplier">x</span>
+          <Price {...{ value: installmentValue, type: 'separated' }} />
+        </div>
+      )
     }
-    return <p styleName="installments"> à vista </p>
   }
 }

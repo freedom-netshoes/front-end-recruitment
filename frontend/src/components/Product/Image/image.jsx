@@ -25,15 +25,15 @@ export default class Image extends Component {
       title,
       sku
     } = this.props
-		if (!this.props.isThumb) {
+    if (!this.props.isThumb) {
       return (
-        <figure {...{ styleName: 'photo' }} >
+        <figure {...{ className: 'photo' }} >
           <img {... { src: `images/${sku}.jpg`, alt: title } } />
         </figure>
       )
     }
     return (
-      <figure {...{ styleName: 'photo' }} >
+      <figure {...{ className: 'photo' }} >
         <img {... { src: `images/${sku}_thumb.jpg`, alt: title } } />
       </figure>
     )

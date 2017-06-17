@@ -6,9 +6,6 @@ import styles from './quantity.less'
 
 @CSSModules(styles)
 export default class Quantity extends Component {
-  constructor (props) {
-    super(props)
-  }
  static defaultProps = {
    quantity: 0
  };
