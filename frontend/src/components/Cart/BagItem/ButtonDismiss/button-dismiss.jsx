@@ -7,17 +7,23 @@ import styles from './button-dismiss.less'
 @CSSModules(styles)
 export default class ButtonDismiss extends Component {
   static defaultProps = {
-    clickButton: null
+    clickButton: null,
+    mouseEnter: null,
+    mouseLeave: null
   };
 
   static propTypes = {
-    clickButton: PropTypes.func
+    clickButton: PropTypes.func,
+    mouseEnter: PropTypes.func,
+    mouseLeave: PropTypes.func
   };
 
   render () {
     return (
       <span {...{
         onClick: this.props.clickButton,
+        onMouseEnter: this.props.mouseEnter,
+        onMouseLeave: this.props.mouseLeave,
         className: 'button'
       }}></span>
     )

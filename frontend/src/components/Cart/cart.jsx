@@ -8,7 +8,7 @@ import CSSModules from 'react-css-modules'
 import Header from './Header/header'
 import BagItem from './BagItem/bag-item'
 import Price from '../Product/Price/price'
-import Installments from '../Product/Installment/installment'
+import Installment from '../Product/Installment/installment'
 import styles from './cart.less'
 
 @CSSModules(styles)
@@ -42,7 +42,7 @@ class Cart extends Component {
                   }} />
                 </div>
                 <div className="subtotal-installments">
-                  <Installments {...{
+                  <Installment {...{
                     value: this.props.priceTotal,
                     installments: this.props.maxInstallment,
                     type: 'complete'

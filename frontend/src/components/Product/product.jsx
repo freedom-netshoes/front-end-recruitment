@@ -6,7 +6,7 @@ import { bindActionCreators } from 'redux'
 
 import { addProductCart } from '../../actions/action'
 
-import Installments from './installment/installment'
+import Installment from './installment/installment'
 import Price from './Price/price'
 import Image from './Image/image'
 import Title from './Title/title'
@@ -43,7 +43,7 @@ export default class Product extends Component {
       <Image {...{sku: sku, title: title}} />
       <Title {...{title: title}} />
       <Price {...{price: price, type: 'full'}} />
-      <Installments {...{price: price, installments: installments}}/>
+      <Installment {...{price: price, installments: installments}}/>
     </div>
   }
 }
