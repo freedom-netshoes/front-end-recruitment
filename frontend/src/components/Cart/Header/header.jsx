@@ -3,7 +3,7 @@ import { PropTypes } from 'prop-types'
 import { connect } from 'react-redux'
 import CSSModules from 'react-css-modules'
 import { toggleCart } from '../../../actions/action'
-
+import ButtonDismiss from '../../crossComponents/ButtonDismiss/button-dismiss'
 import styles from './header.less'
 
 @CSSModules(styles)
@@ -18,13 +18,13 @@ class Header extends Component {
 
   render () {
     return (
-      <h1 styleName="cart-title">
-        <span {...{
-          onClick: () => {
+      <h1 className="cart-title">
+        <ButtonDismiss {...{
+          clickButton: () => {
             this.props.dispatch(toggleCart(false))
-          },
-          styleName: 'close'
-        }}></span>
+          }
+        }}
+        />
         <span styleName="bag">
           <span styleName="total-items">{this.props.size}</span>
         </span>

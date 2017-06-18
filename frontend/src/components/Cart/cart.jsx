@@ -7,8 +7,7 @@ import { ReduceList, PriceFormat } from '../../resources/helpers'
 import CSSModules from 'react-css-modules'
 import Header from './Header/header'
 import BagItem from './BagItem/bag-item'
-import Price from '../Product/Price/price'
-import Installment from '../Product/Installment/installment'
+import SubTotal from './Subtotal/sub-total'
 import styles from './cart.less'
 
 @CSSModules(styles)
@@ -31,32 +30,15 @@ class Cart extends Component {
                 }} />
               )
             }
-            <li className={this.props.fullBag.length ? 'show row complete-purchase' : 'hide'}>
-              <hr />
-              <p className="subtotal col-xs-12 col-sm-6">Subtotal</p>
-              <div className="col-xs-12 col-sm-6 end-sm">
-                <div className="subtotal-price">
-                  <Price {...{
-                    value: this.props.priceTotal,
-                    type: 'separated'
-                  }} />
-                </div>
-                <div className="subtotal-installments">
-                  <Installment {...{
-                    value: this.props.priceTotal,
-                    installments: this.props.maxInstallment,
-                    type: 'complete'
-                  }} />
-                </div>
-              </div>
-              <div className="col-xs-12 btn-buy-container">
-                <button className="btn-buy">Comprar</button>
-              </div>
+            <hr />
+            <li className={this.props.fullBag.length ? 'show' : 'hide'} >
+              <SubTotal {...{
+                maxInstallment: this.props.maxInstallment,
+                priceTotal: this.props.priceTotal
+              }} />
             </li>
-            <li className={this.props.fullBag.length <= 0 ? 'show row complete-purchase' : 'hide'}>
-              <hr />
+            <li className={!this.props.fullBag.length ? 'show' : 'hide'} >
               <p className="subtotal col-xs-12 col-sm-6">Seu carrinho está vazio.</p>
-
             </li>
           </ul>
         </div>

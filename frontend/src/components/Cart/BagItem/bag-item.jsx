@@ -2,15 +2,14 @@ import React, { Component } from 'react'
 import { PropTypes } from 'prop-types'
 import { connect } from 'react-redux'
 import CSSModules from 'react-css-modules'
-import Image from '../../Product/Image/image'
+
 import Quantity from './Quantity/quantity'
-import Title from '../../Product/Title/title'
 import ItemSize from './ItemSize/item-size'
-import Price from '../../Product/Price/price'
-import ButtonDismiss from '../BagItem/ButtonDismiss/button-dismiss'
-
+import Image from '../../crossComponents/Image/image'
+import Title from '../../crossComponents/Title/title'
+import Price from '../../crossComponents/Price/price'
+import ButtonDismiss from '../../crossComponents/ButtonDismiss/button-dismiss'
 import { removeProductCart } from '../../../actions/action'
-
 import styles from './bag-item.less'
 
 @CSSModules(styles)
@@ -71,10 +70,11 @@ class BagItem extends Component {
               this.props.dispatch(removeProductCart(this.props.product))
             },
             mouseEnter: this.mouseEnter.bind(this),
-            mouseLeave: this.mouseLeave.bind(this)
+            mouseLeave: this.mouseLeave.bind(this),
+            extraCssClass: 'col-xs-offset-11'
           }}
           />
-          <Price {...{ value: price, type: 'separated' }} />
+          <Price {...{ value: price * quantity, type: 'separated' }} />
         </div>
       </li>
     )

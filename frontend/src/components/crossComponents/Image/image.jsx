@@ -2,39 +2,38 @@ import React, { Component } from 'react'
 import CSSModules from 'react-css-modules'
 import { PropTypes } from 'prop-types'
 import styles from './image.less'
+import { appSettings } from '../../../resources/appSettings'
 
 @CSSModules(styles)
 export default class Image extends Component {
-  constructor (props) {
-    super(props)
-  }
- static defaultProps = {
-   sku: '',
-   title: '',
-   isThumb: false
- };
+  static defaultProps = {
+    sku: '',
+    title: '',
+    isThumb: false
+  };
 
- static propTypes = {
-   sku: PropTypes.string,
-   title: PropTypes.string,
-   isThumb: PropTypes.bool
- };
+  static propTypes = {
+    sku: PropTypes.string,
+    title: PropTypes.string,
+    isThumb: PropTypes.bool
+  };
 
- render () {
+  render () {
     const {
       title,
       sku
     } = this.props
+    const partialUrl = `${appSettings.imgUrl}${sku}`
     if (!this.props.isThumb) {
       return (
         <figure {...{ className: 'photo' }} >
-          <img {... { src: `images/${sku}.jpg`, alt: title } } />
+          <img {... { src: `${partialUrl}.jpg`, alt: title } } />
         </figure>
       )
     }
     return (
       <figure {...{ className: 'photo' }} >
-        <img {... { src: `images/${sku}_thumb.jpg`, alt: title } } />
+        <img {... { src: `${partialUrl}_thumb.jpg`, alt: title } } />
       </figure>
     )
   }

@@ -6,15 +6,15 @@ import styles from './title.less'
 
 @CSSModules(styles)
 export default class Title extends Component {
- static defaultProps = {
-   title: ''
- };
+  static defaultProps = {
+    title: ''
+  };
 
- static propTypes = {
-   title: PropTypes.string
- };
+  static propTypes = {
+    title: PropTypes.string
+  };
 
- render () {
+  render () {
     return (
       <h3 className="title"> {this.props.title}</h3>
     )

@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { PropTypes } from 'prop-types'
 import CSSModules from 'react-css-modules'
-import styles from './installment.less'
+import styles from './installments.less'
 import Price from '../Price/price'
 
 @CSSModules(styles)
-export default class Installment extends Component {
+export default class Installments extends Component {
   static defaultProps = {
     value: 0,
     installments: 0,
@@ -27,11 +27,13 @@ export default class Installment extends Component {
     if (this.props.installments) {
       if (this.props.type === 'simple') {
         return (
-          <div>
+          <div className="installments">
             <span className="text">ou</span>
-            {installments}
+            <span className="value">
+              {installments}
+            </span>
             <span className="multiplier">x</span>
-            <Price {...{ value: value, type: 'full' }} />
+            <Price {...{ value: installmentValue, type: 'full' }} />
           </div>
         )
       }
@@ -41,9 +43,8 @@ export default class Installment extends Component {
           <span className="value">
             {installments}
           </span>
-
           <span className="multiplier">x</span>
-          <Price {...{ value: installmentValue, type: 'separated' }} />
+          <Price {...{ value: installmentValue, type: 'full' }} />
         </div>
       )
     }

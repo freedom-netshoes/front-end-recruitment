@@ -9,13 +9,15 @@ export default class ButtonDismiss extends Component {
   static defaultProps = {
     clickButton: null,
     mouseEnter: null,
-    mouseLeave: null
+    mouseLeave: null,
+    extraCssClass: ''
   };
 
   static propTypes = {
     clickButton: PropTypes.func,
     mouseEnter: PropTypes.func,
-    mouseLeave: PropTypes.func
+    mouseLeave: PropTypes.func,
+    extraCssClass: PropTypes.string
   };
 
   render () {
@@ -24,7 +26,7 @@ export default class ButtonDismiss extends Component {
         onClick: this.props.clickButton,
         onMouseEnter: this.props.mouseEnter,
         onMouseLeave: this.props.mouseLeave,
-        className: 'button'
+        className: `button ${this.props.extraCssClass}`
       }}></span>
     )
   }

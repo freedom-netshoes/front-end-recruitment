@@ -19,7 +19,7 @@ class App extends Component {
             onClick: () => {
               this.props.dispatch(toggleCart(true))
             },
-            styleName: 'abrirCarrinho',
+            styleName: this.props.cartState ? 'hide-cart-icon' : 'show-cart-icon',
             title: 'Abrir Carrinho'
           }}
         >
@@ -28,5 +28,9 @@ class App extends Component {
     )
   }
 }
-
-export default connect()(App)
+const mapStateToProps = state => {
+  return {
+    cartState: state.cartState
+  }
+}
+export default connect(mapStateToProps)(App)

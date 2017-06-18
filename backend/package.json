@@ -5,7 +5,8 @@
     "main": "./src/loader.js",
     "scripts": {
         "dev": "nodemon",
-        "production": "pm2 start src/loader.js --name netshoes-backend"
+        "production": "pm2 start src/loader.js --name netshoes-backend",
+        "start": "npm run dev"
     },
     "repository": {
         "type": "git",

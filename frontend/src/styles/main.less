@@ -1,21 +1,19 @@
-@import "./vendors/normalize.less";
-@import "./vendors/grid.less";
-@import "./_less-variables.less";
-@import "./_less-mixins.less";
-
+//@import url('./vendors/normalize.less');
+@import url('./vendors/grid.less');
+@import url('./_less-variables.less');
+@import url('./_less-mixins.less');
 :global {
     * {
         .fontRegular();
-        text-decoration: none;
         margin: 0;
-        padding: 0;
         outline: none;
-    }
-    ul,
-    li {
         padding: 0;
-        margin: 0;
+        text-decoration: none;
+    }
+    ul, li {
         list-style: none;
         list-style-type: none;
+        margin: 0;
+        padding: 0;
     }
 }

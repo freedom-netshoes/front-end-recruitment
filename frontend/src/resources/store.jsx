@@ -7,13 +7,13 @@ import reducers from '../reducers/mainReducer'
 const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ &&
   window.__REDUX_DEVTOOLS_EXTENSION__()
 
-  // Be sure to ONLY add this middleware in development!
+// Be sure to ONLY add this middleware in development!
 const middleware = process.env.NODE_ENV !== 'production'
   ? [require('redux-immutable-state-invariant').default(), thunk]
   : [thunk]
 
 const compressor = createCompressor()
-const middlewares = [thunk]
+const middlewares = [...middleware]
 
 export default function getStore (preloadedState = []) {
   const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
