@@ -1,7 +1,7 @@
 /* global describe, it, expect */
 import React from 'react'
 import Header from './header'
-import { shallow, mount } from 'enzyme'
+import { shallow } from 'enzyme'
 import getStore from '../../../resources/store'
 
 describe('Testing <Header /> component', () => {

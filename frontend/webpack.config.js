@@ -1,5 +1,6 @@
 // const webpack = require('webpack')
 const { resolve } = require('path')
+const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
@@ -63,6 +64,18 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin('app.css')
+    new ExtractTextPlugin('app.css'),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      cacheFolder: resolve(`${__dirname}'public'`),
+      debug: true,
+      compress: { warnings: false },
+      output: { comments: false },
+      sourceMap: true
+    })
   ]
 }

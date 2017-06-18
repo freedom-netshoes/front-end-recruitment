@@ -5,6 +5,7 @@
     "main": "index.js",
     "scripts": {
         "dev": "webpack-dev-server --progress --colors --inline --hot",
+        "build": "webpack",
         "production": "webpack --progress -p",
         "lint": "cd src && standard --parser babel-eslint --verbose | snazzy",
         "test": "jest --watch --verbose --coverage",
