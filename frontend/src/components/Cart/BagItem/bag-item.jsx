@@ -56,15 +56,15 @@ class BagItem extends Component {
     return (
       <li className={`bag-item row middle-xs${this.state.mouseOver ? ' remove' : ''}`}>
         <hr />
-        <div {...{ className: 'col-md-2 start-md', styleName: 'image-container' }}>
+        <div {...{ className: 'col-xs-2 start-xs', styleName: 'image-container' }}>
           <Image {...{ sku: sku, title: title, isThumb: true }} />
         </div>
-        <div className="col-md-7 start-md">
+        <div className="col-xs-7 start-xs">
           <Title {...{ title: title }} />
           <ItemSize {...{ sizes: availableSizes.join(' | ') }} />
           <Quantity {...{ quantity: quantity }} />
         </div>
-        <div className="col-md-3 end-md">
+        <div className="col-xs-3 end-xs">
           <ButtonDismiss {...{
             clickButton: () => {
               this.props.dispatch(removeProductCart(this.props.product))
