@@ -55,7 +55,7 @@ class BagItem extends Component {
       installments
     } = this.props.product
     return (
-      <li className={this.state.mouseOver ? 'bag-item row middle-xs remove' : 'bag-item row middle-xs'}>
+      <li className={`bag-item row middle-xs${this.state.mouseOver ? ' remove' : ''}`}>
         <hr />
         <div {...{ className: 'col-md-2 start-md', styleName: 'image-container' }}>
           <Image {...{ sku: sku, title: title, isThumb: true }} />
