@@ -8,4 +8,11 @@ describe('Testing <Title /> component', () => {
     const component = shallow(<Title />)
     expect(component).toHaveLength(1)
   })
+
+  it('Testing <Title /> snapshop', () => {
+    const component = shallow(<Title {...{
+      title: 'Camisa Nike Corinthians II'
+    }} />)
+    expect(component).toMatchSnapshot()
+  })
 })

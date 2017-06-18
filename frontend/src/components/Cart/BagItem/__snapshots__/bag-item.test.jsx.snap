@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing <BagItem /> component Testing snapshop in BagItem  1`] = `
+<BagItem
+  dispatch={[Function]}
+  product={
+    Object {
+      "availableSizes": Array [
+        "S",
+        "G",
+        "GG",
+        "GGG",
+      ],
+      "currencyFormat": "R$",
+      "currencyId": "BRL",
+      "description": "14/15 s/nº",
+      "id": 1,
+      "installments": 9,
+      "isFreeShipping": true,
+      "price": 229.9,
+      "quantity": 2,
+      "sku": "18644119330491312",
+      "style": "Preta com listras brancas",
+      "title": "Camisa Nike Corinthians II",
+    }
+  }
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+/>
+`;

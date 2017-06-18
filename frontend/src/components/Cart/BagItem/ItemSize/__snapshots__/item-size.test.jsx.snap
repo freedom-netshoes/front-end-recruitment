@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing <ItemSize /> component Testing snapshop in <ItemSize > 1`] = `
+<p
+  className="size"
+>
+  S | G | GG | GGG
+</p>
+`;

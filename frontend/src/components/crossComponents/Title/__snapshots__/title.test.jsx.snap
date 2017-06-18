@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing <Title /> component Testing <Title /> snapshop 1`] = `
+<h3
+  className="title"
+>
+   
+  Camisa Nike Corinthians II
+</h3>
+`;

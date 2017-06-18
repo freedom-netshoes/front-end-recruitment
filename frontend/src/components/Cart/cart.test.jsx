@@ -9,4 +9,9 @@ describe('Testing <Cart /> component', () => {
     const component = shallow(<Cart store={getStore()} />)
     expect(component).toHaveLength(1)
   })
+
+  it('testing <Cart /> snapshot', () => {
+    const component = shallow(<Cart store={getStore()} />)
+    expect(component).toMatchSnapshot()
+  })
 })

@@ -8,4 +8,12 @@ describe('Testing <SubTotal /> component', () => {
     const component = shallow(<SubTotal />)
     expect(component).toHaveLength(1)
   })
+
+  it('Testing <Subtotal /> snapshop', () => {
+    const component = shallow(<SubTotal {...{
+      priceTotal: 795.22,
+      maxInstallment: 5
+    }} />)
+    expect(component).toMatchSnapshot()
+  })
 })

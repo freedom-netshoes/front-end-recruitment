@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing <Product /> component Testing snapshop in Product  1`] = `
+<div
+  className="product"
+  title=""
+>
+  <Image
+    isThumb={false}
+    sku=""
+    title=""
+  />
+  <Title
+    title=""
+  />
+  <div
+    className="container"
+  >
+    <Price
+      type="separated"
+      value={0}
+    />
+    <Installments
+      installments={0}
+      type="simple"
+      value={0}
+    />
+  </div>
+</div>
+`;

@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing <Quantity /> component testando snapshot do componente passando prop quantity 1`] = `
+<p
+  className="quantity"
+>
+  Quantidade: 
+  12
+</p>
+`;

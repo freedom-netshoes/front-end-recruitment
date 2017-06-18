@@ -8,4 +8,9 @@ describe('Testing <ItemSize /> component', () => {
     const component = shallow(<ItemSize />)
     expect(component).toHaveLength(1)
   })
+
+  it('Testing snapshop in <ItemSize >', () => {
+    let component = shallow(<ItemSize sizes={['S', 'G', 'GG', 'GGG'].join(' | ')} />)
+    expect(component).toMatchSnapshot()
+  })
 })

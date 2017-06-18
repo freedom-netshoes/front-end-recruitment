@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing <SubTotal /> component Testing <Subtotal /> snapshop 1`] = `
+<div
+  className="row sub-total"
+>
+  <p
+    className="col-xs-12 col-sm-6 start-sm subtotal"
+  >
+    Subtotal
+  </p>
+  <div
+    className="col-xs-12 col-sm-6 end-sm"
+  >
+    <div
+      className="subtotal-price"
+    >
+      <Price
+        type="separated"
+        value={795.22}
+      />
+    </div>
+    <div
+      className="subtotal-installments"
+    >
+      <Installments
+        installments={5}
+        type="complete"
+        value={795.22}
+      />
+    </div>
+  </div>
+  <div
+    className="col-xs-12 btn-buy-container"
+  >
+    <button
+      className="btn-buy"
+    >
+      Comprar
+    </button>
+  </div>
+</div>
+`;
