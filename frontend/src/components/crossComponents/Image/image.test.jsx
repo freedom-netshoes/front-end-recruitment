@@ -1,11 +1,11 @@
 /* global describe, it, expect */
 import React from 'react'
-import Image from './Image'
+import Image from './image'
 import { shallow } from 'enzyme'
 
 describe('Testing <Image /> component', () => {
   it('renders the Image component', () => {
-    const component = shallow(< Image / >)
+    const component = shallow(< Image />)
     expect(component).toHaveLength(1)
   })
 })

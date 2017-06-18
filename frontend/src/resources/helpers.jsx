@@ -6,7 +6,6 @@ export const PriceFormat = (price) => {
 
   // retorna todos os não numericos excetos os pontos
   let symbols = fullString.split(/[\d\.]+/).filter(e => e.replace(/(\r\n|\n|\r)/gm, ''))
-
   return {
     integer: numbers[0],
     decimal: numbers[1],

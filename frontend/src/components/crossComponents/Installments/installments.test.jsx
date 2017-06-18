@@ -5,7 +5,7 @@ import { shallow } from 'enzyme'
 
 describe('Testing <Installments /> component', () => {
   it('renders the Installments component', () => {
-    const component = shallow(< Installments / >)
+    const component = shallow(<Installments />)
     expect(component).toHaveLength(1)
   })
 })

@@ -14,7 +14,7 @@ const middleware = process.env.NODE_ENV !== 'production'
 const compressor = createCompressor()
 const middlewares = [...middleware]
 
-export default function getStore (preloadedState = []) {
+export default function getStore (preloadedState) {
   const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
   const store = createStore(
     reducers,

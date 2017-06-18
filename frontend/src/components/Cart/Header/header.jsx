@@ -18,15 +18,15 @@ class Header extends Component {
 
   render () {
     return (
-      <h1 className='cart-title'>
+      <h1 className="cart-title">
         <ButtonDismiss {...{
           clickButton: () => {
             this.props.dispatch(toggleCart(false))
           }
         }}
         />
-        <span styleName='bag'>
-          <span styleName='total-items'>{this.props.size}</span>
+        <span styleName="bag">
+          <span styleName="total-items">{this.props.size}</span>
         </span>
         Sacola
       </h1>
