@@ -1,0 +1,147 @@
+// |------------------------------------------------------
+// |------------------------------------------------------
+// | Tables
+// |------------------------------------------------------
+// |------------------------------------------------------
+
+.gh-table {
+	position: relative;
+	width: 100%;
+	max-width: 100%;
+	margin-bottom: 30px;
+
+	// Fixed Header
+	&.gh-fixed-header {
+		margin-top: 50px;
+	    
+	    > thead {
+			@include position(fixed, 0 0 null 0);
+			width: 100%;
+	    	display: table;
+	    }
+	} 
+	
+	> thead,
+	> tbody,
+	> tfoot {
+		> tr {
+			table-layout: fixed;
+			transition: all .3s ease;
+			background-color: white;
+			> th,
+			> td {
+				color: black;
+				text-align: left;
+				padding: $table-padding;
+				width: 25%;
+				border-bottom: 1px solid $table-border;
+				@include transition(all 0.125s ease-out);
+			}
+		}
+	}
+	
+	// Last Child			
+	> tbody > tr:last-child td {
+		border-bottom: none;
+	}
+
+	// Sorter
+	> thead > tr {
+		th.header {
+			cursor: pointer;
+			&.headerSortUp {
+				background-color: blue;
+			}
+			&.headerSortDown {
+				background-color: green;
+			}
+		}
+	}
+	
+	//  Header
+	> thead > tr > th {
+		height: 50px;
+		width: 25%;
+		border-bottom: 2px solid $table-head-border;
+	}
+	
+	// Stripes
+	> tbody > tr:nth-child(odd) {
+		> td,
+		> th {
+			background-color: $table-background;
+		}
+	}
+
+	// Hover
+	> tbody > tr:hover {
+		> td,
+		> th {
+			background-color: $table-head-border;
+			border-bottom-color: $table-head-border;
+		}
+		> td, > th, a, p, span {
+			color: white;
+		}
+	}
+
+}
+
+// Responsive
+.gh-responsive-table {
+
+	@include screen('tablet landscape'){
+
+		// Tighten up spacing
+		> .gh-table {
+
+			> thead,
+			> tfoot {
+				display: none;
+			}
+
+			> tbody {
+				//display: block;
+
+				> tr {
+					display: block;
+					border: 1px solid $table-border;
+					border-radius: 3px;
+					margin: 0 20px 20px 20px;
+
+					> td {
+						width: 100%;
+						background-color: $table-background;
+						display: block; 
+						vertical-align: middle;
+						text-align: right;
+					}
+
+					> td[data-title]:before {
+						content: attr(data-title);
+						float: left;
+						font-size: inherit;
+					}
+
+				}
+			}
+
+			// Hover
+			> tbody {
+			> tr:hover > td,
+				> tr:hover {
+					background-color: $table-head-border;
+					border-color: $table-head-border;
+				}
+				> tr:hover,
+				> tr > td:hover {
+					color: white; 
+				}
+				> tr:hover > td {
+					border-color: darken($table-head-border, 10%);
+				}
+			}
+		}
+	}
+
+}

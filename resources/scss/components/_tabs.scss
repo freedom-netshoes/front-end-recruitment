@@ -1,0 +1,43 @@
+// |------------------------------------------------------
+// |------------------------------------------------------
+// | Tabs
+// |------------------------------------------------------
+// |------------------------------------------------------
+
+
+.gh-tabs {
+	margin-top: 50px;
+	
+	.gh-tabs__content {
+		color: #ccc;
+		text-align: center;
+		padding: 100px 0;
+		font-size: em(30px);
+		background: white;
+		border-radius: 0 0 3px 3px;
+	}
+
+	.gh-tabs__navigation {
+		
+		.gh-tabs__navigation__item {
+			display: inline-block;
+			
+			a {
+				display: block;
+				background: $primary-color;
+				color: white;
+				padding: 10px 15px;
+				font-size: 18px;
+				text-transform: uppercase;
+				margin: 0 1px 0 0;
+				border-radius: 3px 3px 0 0;
+			}
+
+			&.active a {
+				color: $primary-color;
+				background: white;
+			}
+
+		}
+	}
+}

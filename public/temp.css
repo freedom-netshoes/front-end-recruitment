@@ -1,0 +1,225 @@
+.catalogo__item, 
+.carrinho__item, 
+.carrinho__rodape .comprar{
+    cursor: pointer;
+}
+
+/* --- CATALOGO --- */
+
+.catalogo {    
+    width: 730px;    
+    margin: 0 auto;
+    font-family: 'Open Sans';
+    color: #313135;
+    padding-top: 75px;
+    position: relative;
+    display: block;
+    background-color: #ffffff;
+}
+
+.catalogo__item{
+    margin: 15px 0;    
+    padding: 10px 0;
+}
+
+.catalogo__item:hover{
+    background-color: #dfdfdf;
+}
+
+.catalogo__item .titulo{
+    font-size: 14px;
+    min-height: 40px;
+}
+
+
+.catalogo__item .preco{    
+    position: relative;
+    display: block;
+    font-size: 12px;    
+    margin-top: 2px;
+}
+
+.catalogo__item .preco::before{
+    content: "";
+    background-color: #dfbd00;
+    display: block;
+    height: 2px;
+    left: 50%;
+    margin-left: -7.5px;
+    position: absolute;
+    top: 0;
+    width: 15px;
+}
+
+.catalogo__item .preco .valor{
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.catalogo__item .preco .centavos{
+    margin-left: -3px;
+}
+
+.catalogo__item .parcelamento{
+    color: #999999;
+}
+
+/* --- CARRINHO ---- */
+
+.carrinho{
+    font-family: 'Open Sans';
+    width: 520px;
+    background-color: #202025;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.carrinho__cabecalho{
+    position: relative;   
+    height: 140px;    
+    padding-top: 60px;
+    margin: 0;
+}
+
+.carrinho__cabecalho .icone{
+    margin-top: -15px;
+}
+
+.carrinho__cabecalho .contador{
+    position: absolute;
+    top: 74px;
+    right: 296px;
+    background-color: #dfbd00;
+    color: #000;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 10px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+}
+
+.carrinho__cabecalho .titulo{    
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    margin-left: 20px;
+}
+
+.carrinho__itens{
+    padding: 0;
+}
+
+.carrinho__item{
+    position: relative;
+    border-top: 2px solid #131316;
+    margin: 0;
+    text-align: justify;
+    padding: 15px;    
+    font-size: 12px;
+    color: #999;       
+}
+
+.carrinho__item:hover{
+    background-color: #131316;    
+}
+
+.carrinho__item p{
+    line-height: 18px;
+}
+
+.carrinho__item .descricao .titulo{
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;    
+}
+
+.carrinho__item .descricao .subtitulo{ 
+}
+
+.carrinho__item .direita .remover{
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    width: 15px;
+    height: 15px;
+    background-color: red;    
+}
+
+.carrinho__item .direita .remover:hover{
+    background-color: green;
+}
+
+.carrinho__item .direita .preco{
+    position: absolute;    
+    top: 55px;
+    right: 15px;
+    font-size: 14px;
+    color: #dfbd00;
+}
+
+.carrinho__item .direita .preco .valor{
+    font-weight: bold;
+}
+    
+.carrinho__item .direita .preco .centavos{
+    margin-left: -3px;
+}
+
+.carrinho__item--remove{
+    background-color: #131316; 
+    text-decoration: line-through;    
+    opacity: 0.5;
+}
+
+.carrinho__item--remove span{
+   text-decoration: line-through;    
+}
+
+.carrinho__rodape .subtotal{
+    position: relative;
+    min-height: 100px;
+}
+
+.carrinho__rodape .subtotal .titulo{
+    position: absolute;
+    top: 40px;
+    left: 15px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.carrinho__rodape .subtotal__info .preco{
+    position: absolute;
+    top: 40px;
+    right: 15px;
+    font-size: 24px;
+    color: #dfbd00;
+}
+
+.carrinho__rodape .subtotal__info .preco .valor{
+    font-weight: bold;
+}
+
+.carrinho__rodape .subtotal__info .preco .centavos{
+    margin-left: -7px;
+}
+
+.carrinho__rodape .subtotal__info .parcelamento{
+    position: absolute;
+    top: 70px;
+    right: 15px;
+    font-size: 12px;
+    color: #fff;
+}
+
+.carrinho__rodape .comprar{
+    background-color: #000;    
+    height: 50px;
+    line-height: 50px;
+    margin: 20px;
+    color: #fff;    
+}
+    

@@ -1,0 +1,32 @@
+// |------------------------------------------------------
+// |------------------------------------------------------
+// | Media Queries
+// | Usage: @include breakpoint(1024) {...}
+// | 		@include screen('mobile') {...}
+// |------------------------------------------------------
+// |------------------------------------------------------
+
+@mixin breakpoint($size) {
+    @media only screen and (max-width : $size + px) {
+    	@content;
+    }
+}
+
+$breakpoints: (
+    'mobile':        	 480px,
+    'mobile landscape':  767px,
+    'tablet': 			 820px,
+    'tablet landscape':  991px
+);
+
+@mixin screen($width, $type: max) {
+    @if map_has_key($breakpoints, $width) {
+        $width: map_get($breakpoints, $width);
+        //@if $type == max {
+        //    $width: $width - 1px;
+        //}
+        @media only screen and (#{$type}-width: $width) {
+            @content;
+        }
+    }
+}

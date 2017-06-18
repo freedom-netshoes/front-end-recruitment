@@ -1,0 +1,81 @@
+// |------------------------------------------------------
+// |------------------------------------------------------
+// | Accordion
+// |------------------------------------------------------
+// |------------------------------------------------------
+
+.gh-accordion {
+
+	&__button {
+	    display: flex;
+	    flex-direction: row;
+	    justify-content: space-between;
+	    position: relative;
+	    background-color: $accordion-button-color;
+	    color: white;
+	    cursor: pointer;
+	    font-size: em(20px);
+	    padding: $accordion-button-padding;
+	    border: none;
+	    text-align: left;
+	    outline: none;
+		border-bottom: 1px solid darken($accordion-button-color, 15%);
+	    transition: 0.4s;
+
+		&:hover {
+			background-color: darken($accordion-button-color, 15%);
+		}
+
+	    &__icon {
+	    	width: $accordion-icon-size;
+	    	height: $accordion-icon-size;
+			@include position(relative, 3px null null null);
+
+			&:before,
+			&:after {
+			    content: '';
+            	@include size(3px $accordion-icon-size);
+            	@include position(absolute, 0px null null);
+			    position: absolute;
+			    background-color: $accordion-icon-color;
+			    transition: 0.35s ease-out;
+			}
+			&:after {
+			    transform: rotate(90deg);
+			}
+
+		}
+
+		&--active {
+			background-color: darken($accordion-button-color, 15%);
+		}
+
+		&--active & {
+			&__icon {
+				&:after {
+				    opacity: 0;
+				}
+				&:before {
+				    transform: rotate(90deg);
+				}
+			}
+		}
+	}
+
+	&__panel {
+		display: block;
+        @include size(100% 0);
+	    padding: 0 18px;
+	    background-color: white;
+	    overflow: hidden;
+	    transition: height 0.2s ease-in-out;
+
+		p {
+			font-size: em(18px);
+			line-height: em(25px);
+			padding: 20px 0;
+		}
+
+	}
+
+}
