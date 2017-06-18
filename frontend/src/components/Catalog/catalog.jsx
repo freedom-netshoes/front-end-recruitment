@@ -22,15 +22,15 @@ class Catalog extends Component {
     this.loadItems()
   }
 
- loadItems = () => {
-   axios.get(WebConfig.apiProductUrl).then(res => this.setState({ ...this.state, products: res.data }))
- }
+  loadItems = () => {
+    axios.get(WebConfig.apiProductUrl).then(res => this.setState({ ...this.state, products: res.data }))
+  }
 
- render () {
+  render () {
     return (
-      <div className="row center-xs" styleName={this.props.cartState ? 'fixed' : ''}>
-        <section id="products" className="col-xs-7">
-          <ul className="row">
+      <div className='row center-xs' styleName={this.props.cartState ? 'fixed' : ''}>
+        <section id='products' className='col-xs-7'>
+          <ul className='row'>
             {
               this.state.products.map(product =>
                 <li {...{

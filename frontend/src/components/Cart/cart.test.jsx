@@ -1,3 +1,4 @@
+/* global describe, it, expect */
 import React from 'react'
 import Cart from './Cart'
 import { shallow } from 'enzyme'

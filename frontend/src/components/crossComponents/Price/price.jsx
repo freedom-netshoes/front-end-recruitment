@@ -21,16 +21,16 @@ export default class Price extends Component {
     const priceFormatted = PriceFormat(this.props.value)
     if (this.props.type === 'separated') {
       return (
-        <span className="price">
-          <span className="price-symbol">{priceFormatted.currencySymbol}</span>
-          <span className="price-integer">{priceFormatted.integer}</span>
-          <span className="price-separator">{priceFormatted.decimalSeparator}</span>
-          <span className="price-decimal">{priceFormatted.decimal}</span>
+        <span className='price'>
+          <span className='price-symbol'>{priceFormatted.currencySymbol}</span>
+          <span className='price-integer'>{priceFormatted.integer}</span>
+          <span className='price-separator'>{priceFormatted.decimalSeparator}</span>
+          <span className='price-decimal'>{priceFormatted.decimal}</span>
         </span>
       )
     }
     return (
-      <span className="price">
+      <span className='price'>
         {priceFormatted.toStringPrice}
       </span>
     )

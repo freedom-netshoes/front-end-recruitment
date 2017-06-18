@@ -27,13 +27,13 @@ export default class Image extends Component {
     if (!this.props.isThumb) {
       return (
         <figure {...{ className: 'photo' }} >
-          <img {... { src: `${partialUrl}.jpg`, alt: title } } />
+          <img {... { src: `${partialUrl}.jpg`, alt: title }} />
         </figure>
       )
     }
     return (
       <figure {...{ className: 'photo' }} >
-        <img {... { src: `${partialUrl}_thumb.jpg`, alt: title } } />
+        <img {... { src: `${partialUrl}_thumb.jpg`, alt: title }} />
       </figure>
     )
   }

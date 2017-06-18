@@ -1,10 +1,11 @@
+/* global describe, it, expect */
 import React from 'react'
-import Price from './price'
+import Title from './title'
 import { shallow } from 'enzyme'
 
-describe('Testing <Price /> component', () => {
-  it('renders the Price component', () => {
-    const component = shallow(<Price />)
+describe('Testing <Title /> component', () => {
+  it('renders the Title component', () => {
+    const component = shallow(<Title />)
     expect(component).toHaveLength(1)
   })
 })

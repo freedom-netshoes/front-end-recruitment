@@ -27,7 +27,7 @@ export default class ButtonDismiss extends Component {
         onMouseEnter: this.props.mouseEnter,
         onMouseLeave: this.props.mouseLeave,
         className: `button ${this.props.extraCssClass}`
-      }}></span>
+      }} />
     )
   }
 }

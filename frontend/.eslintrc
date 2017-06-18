@@ -15,7 +15,10 @@
     },
     "env": {
         "es6": true,
-        "jest": true
+        "jest": true,
+        "node": true,
+        "mocha": true
+
     },
     "plugins": [
         "react",
@@ -37,7 +40,8 @@
         "no-else-return": "warn",
         "no-extra-parens": "warn",
         "no-extra-semi": "warn",
-        "constructor-super": "warn"
+        "constructor-super": "warn",
+        "no-useless-escape": "off"
     },
 
     "globals": {
@@ -46,7 +50,9 @@
         "module": true,
         "__dirname": true,
         "console": true,
-        "localStorage": true
+        "localStorage": true,
+        "it": true,
+        "describe": true
 
     }
 }

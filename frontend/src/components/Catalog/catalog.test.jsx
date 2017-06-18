@@ -1,6 +1,7 @@
-import React from 'react'
-import Catalog from './catalog'
-import { shallow, render, mount } from 'enzyme'
+/* global describe, it, expect */
+// import React from 'react'
+// import Catalog from './catalog'
+// import { shallow, render, mount } from 'enzyme'
 
 describe('Testing <Catalog /> component', () => {
   it('renders the Catalog component', () => {

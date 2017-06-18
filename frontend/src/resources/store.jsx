@@ -4,8 +4,7 @@ import { compose, applyMiddleware, createStore } from 'redux'
 import createCompressor from 'redux-persist-transform-compress'
 import reducers from '../reducers/mainReducer'
 
-const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ &&
-  window.__REDUX_DEVTOOLS_EXTENSION__()
+// const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 
 // Be sure to ONLY add this middleware in development!
 const middleware = process.env.NODE_ENV !== 'production'

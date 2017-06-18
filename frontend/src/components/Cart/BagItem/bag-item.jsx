@@ -43,15 +43,12 @@ class BagItem extends Component {
   }
 
   render () {
-    let mouseOver = false
     const {
       title,
       sku,
-      products,
       price,
       quantity,
-      availableSizes,
-      installments
+      availableSizes
     } = this.props.product
     return (
       <li className={`bag-item row middle-xs${this.state.mouseOver ? ' remove' : ''}`}>
@@ -59,12 +56,12 @@ class BagItem extends Component {
         <div {...{ className: 'col-xs-2 start-xs', styleName: 'image-container' }}>
           <Image {...{ sku: sku, title: title, isThumb: true }} />
         </div>
-        <div className="col-xs-7 start-xs">
+        <div className='col-xs-7 start-xs'>
           <Title {...{ title: title }} />
           <ItemSize {...{ sizes: availableSizes.join(' | ') }} />
           <Quantity {...{ quantity: quantity }} />
         </div>
-        <div className="col-xs-3 end-xs">
+        <div className='col-xs-3 end-xs'>
           <ButtonDismiss {...{
             clickButton: () => {
               this.props.dispatch(removeProductCart(this.props.product))

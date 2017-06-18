@@ -11,7 +11,7 @@ import styles from './app.less'
 class App extends Component {
   render () {
     return (
-      <div className="row center-xs">
+      <div className='row center-xs'>
         <Catalog />
         <Cart />
         <div
@@ -22,8 +22,7 @@ class App extends Component {
             styleName: this.props.cartState ? 'hide-cart-icon' : 'show-cart-icon',
             title: 'Abrir Carrinho'
           }}
-        >
-        </div>
+         />
       </div>
     )
   }

@@ -6,17 +6,17 @@ import styles from './quantity.less'
 
 @CSSModules(styles)
 export default class Quantity extends Component {
- static defaultProps = {
-   quantity: 0
- };
+  static defaultProps = {
+    quantity: 0
+  };
 
- static propTypes = {
-   quantity: PropTypes.number
- };
+  static propTypes = {
+    quantity: PropTypes.number
+  };
 
- render () {
+  render () {
     return (
-      <p styleName="quantity">Quantidade: {this.props.quantity}</p>
+      <p styleName='quantity'>Quantidade: {this.props.quantity}</p>
     )
   }
 }

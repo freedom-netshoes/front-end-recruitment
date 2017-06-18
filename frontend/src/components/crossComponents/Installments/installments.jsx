@@ -27,23 +27,23 @@ export default class Installments extends Component {
     if (this.props.installments) {
       if (this.props.type === 'simple') {
         return (
-          <div className="installments">
-            <span className="text">ou</span>
-            <span className="value">
+          <div className='installments'>
+            <span className='text'>ou</span>
+            <span className='value'>
               {installments}
             </span>
-            <span className="multiplier">x</span>
+            <span className='multiplier'>x</span>
             <Price {...{ value: installmentValue, type: 'full' }} />
           </div>
         )
       }
       return (
-        <div className="installments">
-          <span className="text">ou em até</span>
-          <span className="value">
+        <div className='installments'>
+          <span className='text'>ou em até</span>
+          <span className='value'>
             {installments}
           </span>
-          <span className="multiplier">x</span>
+          <span className='multiplier'>x</span>
           <Price {...{ value: installmentValue, type: 'full' }} />
         </div>
       )

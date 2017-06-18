@@ -1,3 +1,4 @@
+/* global describe, it, expect */
 import { PRODUCTS_LOADED } from './types'
 import { productsListLoaded } from './action'
 

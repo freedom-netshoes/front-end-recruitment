@@ -19,16 +19,16 @@ export default class SubTotal extends Component {
 
   render () {
     return (
-      <div className="row sub-total">
-        <p className="col-xs-12 col-sm-6 start-sm" styleName="subtotal">Subtotal</p>
-        <div className="col-xs-12 col-sm-6 end-sm">
-          <div className="subtotal-price">
+      <div className='row sub-total'>
+        <p className='col-xs-12 col-sm-6 start-sm' styleName='subtotal'>Subtotal</p>
+        <div className='col-xs-12 col-sm-6 end-sm'>
+          <div className='subtotal-price'>
             <Price {...{
               value: this.props.priceTotal,
               type: 'separated'
             }} />
           </div>
-          <div className="subtotal-installments">
+          <div className='subtotal-installments'>
             <Installments {...{
               value: this.props.priceTotal,
               installments: this.props.maxInstallment,
@@ -36,8 +36,8 @@ export default class SubTotal extends Component {
             }} />
           </div>
         </div>
-        <div className="col-xs-12" styleName="btn-buy-container">
-          <button styleName="btn-buy">Comprar</button>
+        <div className='col-xs-12' styleName='btn-buy-container'>
+          <button styleName='btn-buy'>Comprar</button>
         </div>
       </div>
     )

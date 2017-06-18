@@ -16,7 +16,7 @@ export default class ItemSize extends Component {
 
   render () {
     return (
-      <p styleName="size">{this.props.sizes}</p>
+      <p styleName='size'>{this.props.sizes}</p>
     )
   }
 }

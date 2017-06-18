@@ -1,5 +1,5 @@
 import * as actionTypes from '../actions/action-types'
-import { ReduceList } from '../resources/helpers'
+
 const cartReducer = (state = [], action) => {
   switch (action.type) {
     case actionTypes.PRODUCT_ADDED:
