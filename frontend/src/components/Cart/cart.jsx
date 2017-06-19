@@ -12,8 +12,8 @@ import styles from './cart.less'
 class Cart extends Component {
   render () {
     return (
-      <aside id="cart-shop" className={this.props.cartState ? 'open' : 'close'}>
-        <div className="col-xs-12">
+      <aside id='cart-shop' className={this.props.cartState ? 'open' : 'close'}>
+        <div className='col-xs-12'>
           <Header {...{
             size: this.props.fullBag.length,
             onClick: this.closeBag
@@ -36,7 +36,7 @@ class Cart extends Component {
               }} />
             </li>
             <li className={!this.props.fullBag.length ? 'show' : 'hide'} >
-              <p className="subtotal col-xs-12 col-sm-6">Seu carrinho está vazio.</p>
+              <p className='col-xs-12' styleName='subtotal'>Seu carrinho está vazio.</p>
             </li>
           </ul>
         </div>

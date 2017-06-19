@@ -1,4 +1,3 @@
-// const webpack = require('webpack')
 const { resolve } = require('path')
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
@@ -7,7 +6,7 @@ module.exports = {
   entry: ['babel-polyfill', './src/index.jsx'],
   output: {
     filename: 'app.js',
-    path: resolve(`${__dirname}'public'`),
+    path: resolve(`${__dirname}/public`),
     publicPath: '/'
 
   },
