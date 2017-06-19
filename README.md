@@ -1,3 +1,5 @@
 # Teste NETSHOES
 
-[Instruções para execução do teste](NETSHOES.md)
+* [Instruções para execução do teste](NETSHOES.md)
+
+* [Instruções do Teste do André](ANDRE.md)
