@@ -1,6 +1,16 @@
-.container {
-  background-color: #fff;
-  max-width: 740px;
-  position: relative;
-  width: 740px;
+.catalogo{
+    width: 730px;    
+    margin: 0 auto;
+    font-family: 'Open Sans';
+    color: #313135;
+    padding-top: 75px;
+    position: relative;
+    display: block;
+    background-color: #ffffff;
+}
+
+:global{
+    .moeda{
+        margin-right: 5px;
+    }
 }

@@ -1,0 +1,41 @@
+.catalogo__item {
+    margin: 15px 0;
+    padding: 10px 0;
+    cursor: pointer;
+    .titulo {
+        font-size: 14px;
+        min-height: 40px;
+    }
+    .preco {
+        position: relative;
+        display: block;
+        font-size: 12px;
+        margin-top: 2px;
+        .moeda{}
+        .valor {
+            font-weight: bold;
+            font-size: 24px;
+        }
+    }
+    .preco::before {
+        content: "";
+        background-color: #dfbd00;
+        display: block;
+        height: 2px;
+        left: 50%;
+        margin-left: -7.5px;
+        position: absolute;
+        top: 0;
+        width: 15px;
+    }
+    .parcelamento {
+        color: #999999;
+        .descricao{}
+        .moeda{}
+        .valor{}
+    }
+}
+
+.catalogo__item:hover {
+    background-color: #dfdfdf;
+}

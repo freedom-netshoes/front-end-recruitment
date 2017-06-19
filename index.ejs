@@ -4,7 +4,7 @@
 <head>
     <meta content="text/html;charset=UTF-8" />
     <meta charset="utf-8" />
-    <title>Netshoes Front end Recruiment</title>
+    <title>Netshoes - Front end Recruiment</title>
     <link rel="icon" type="image/png" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta content="Netshoes Front end Recruiment" name="description" />
@@ -15,8 +15,8 @@
 
     <body>
         <div class="row">
-            <div class='main-app col-xs-12' data-js="app"></div>
-            <div class='main-app col-xs-12'>
+            <div class='main-app' data-js="app"></div>
+            <div class='main-app' style="">               
                 <div class="catalogo center-xs">
                     <ul class="col-xs-12 row">
                         <li class="catalogo__item col-xs-4 center-xs">
@@ -116,14 +116,14 @@
                             </p>
                         </li>
                     </ul>
-                    <div class="carrinho">
+                    <div class="carrinho" onmouseover="adicionarClasse('carrinho','carrinho--aberto')" onmouseout="removerClasse('carrinho','carrinho--aberto')">
                         <div class="carrinho__cabecalho center-xs row">
                             <figure class="icone">
                                 <img src="img/bag.svg" alt="SACOLA" />
                             </figure>
                             <div class="contador">3</div>
                             <div class="titulo">
-                                <p>SACOLA</p>
+                                SACOLA
                             </div>
 
                         </div>
@@ -133,15 +133,9 @@
                                     <img src="img/calcao-nike-corinthians_thumb.jpg" alt="" />
                                 </figure>
                                 <div class="descricao col-xs-9">
-                                    <div class="titulo">
-                                        <p>Camiseta Corinthians muitcho loucaCamiseta Corinthians muitcho louca</p>
-                                    </div>
-                                    <div class="subtitulo">
-                                        <p>GG | Preto e branco</p>
-                                    </div>
-                                    <div class="quantidade">
-                                        <p>Quantidade: 2</p>
-                                    </div>
+                                    <h4 class="titulo">Camiseta Corinthians muitcho loucaCamiseta Corinthians muitcho louca</h4>
+                                    <div class="subtitulo">GG | Preto e branco</div>
+                                    <div class="quantidade">Quantidade: 2</div>
                                 </div>
                                 <div class="direita">
                                     <span class="remover"></span>
@@ -198,10 +192,20 @@
                             <div class="comprar">COMPRAR</div>
                         </div>
                     </div>
+                    
                 </div>
+                <div class="aba" onmouseover="adicionarClasse('carrinho','carrinho--aberto')"></div>                
             </div>
         </div>
-        <script type="text/javascript" src="pt-br.index.js"></script>
+        <script>
+            function adicionarClasse(classeSeletora, classe){
+                document.getElementsByClassName(classeSeletora)[0].classList.add(classe);
+            }
+            function removerClasse(classeSeletora, classe){
+                document.getElementsByClassName(classeSeletora)[0].classList.remove(classe);
+            }
+            
+        </script>
     </body>
 
 </html>

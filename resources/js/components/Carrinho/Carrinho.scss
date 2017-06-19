@@ -1,0 +1,18 @@
+.carrinho{
+    font-family: 'Open Sans';
+    width: 520px;
+    background-color: #202025;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* display: none; */
+}
+
+.carrinho--aberto{
+    display: block;
+}
+
+.carrinho__itens{
+    padding: 0;
+}

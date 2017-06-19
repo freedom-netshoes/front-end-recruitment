@@ -4,12 +4,10 @@
 // |------------------------------------------------------
 // |------------------------------------------------------
 
-h1 {
-	color: $primary-color;
+h1 {	
 	letter-spacing: -0.05em;
 }
 
 h2 {
-	color: lighten($primary-color, 15%);
-	letter-spacing: -0.05em;
+    letter-spacing: -0.05em;
 }

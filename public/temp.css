@@ -4,6 +4,21 @@
     cursor: pointer;
 }
 
+.main-app{    
+    margin: 0 auto;
+    position: relative;
+}
+
+/* --- ABA --- */
+.aba{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 100%;
+    background-color: #202025;     
+}
+
 /* --- CATALOGO --- */
 
 .catalogo {    
@@ -74,6 +89,11 @@
     position: absolute;
     top: 0;
     right: 0;
+    display: none;
+}
+
+.carrinho--aberto{
+    display: block;
 }
 
 .carrinho__cabecalho{
@@ -106,6 +126,7 @@
     font-weight: bold;
     color: #fff;
     margin-left: 20px;
+    line-height: 20px;
 }
 
 .carrinho__itens{

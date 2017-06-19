@@ -7,13 +7,8 @@ const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 require("babel-core/register");
 require("babel-polyfill");
 
-const languages = {
-  'pt-br': null,
-  'en-us': require('../languages/en-us.json'),
-};
-
-module.exports = Object.keys(languages).map(language => ({
-  name: language,
+module.exports = {
+  name: "index",
   entry: {
     index: [
       'babel-polyfill',
@@ -21,7 +16,7 @@ module.exports = Object.keys(languages).map(language => ({
     ]
   },
   output: {
-    filename: `${language}.[name].js`,
+    filename: `index.js`,
     path    : Config.bundlePath
   },
   resolve: Config.resolve,
@@ -48,11 +43,6 @@ module.exports = Object.keys(languages).map(language => ({
       stripPrefix: Config.bundlePath,
       staticFileGlobsIgnorePatterns: [/.*\.html/]
     }),
-    /*new Webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      filename: 'vendor.js',
-      minChunks: Infinity
-    }),*/
     new Webpack.optimize.UglifyJsPlugin({
       cacheFolder: Config.bundlePath,
       debug      : true,
@@ -62,4 +52,4 @@ module.exports = Object.keys(languages).map(language => ({
     }),
     ...Config.plugins
   ]
-}));
+};
