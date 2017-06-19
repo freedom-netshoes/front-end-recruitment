@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing <Price /> component Testing <Price /> snapshop [Full] 1`] = `
+<span
+  className="price"
+>
+  R$ 0.00
+</span>
+`;
+
+exports[`Testing <Price /> component Testing <Price /> snapshop [Separated] 1`] = `
+<span
+  className="price"
+>
+  <span
+    className="price-symbol"
+  >
+    R$ 
+  </span>
+  <span
+    className="price-integer"
+  >
+    0.00
+  </span>
+  <span
+    className="price-separator"
+  />
+  <span
+    className="price-decimal"
+  />
+</span>
+`;

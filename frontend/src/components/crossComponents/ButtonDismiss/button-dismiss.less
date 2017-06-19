@@ -1,0 +1,21 @@
+@import url('../../../styles/_less-variables.less');
+@import url('../../../styles/_less-mixins.less');
+:global {
+    .button {
+        cursor: pointer;
+        display: block;
+        position: relative;
+        top: -17px;
+        width: 17px;
+        &:before {
+            color: @black;
+            content: "\2716";
+            font-weight: bolder;
+        }
+    }
+    .button:hover {
+        &:before {
+            color: @white;
+        }
+    }
+}

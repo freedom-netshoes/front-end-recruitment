@@ -1,0 +1,19 @@
+@import '../styles/_less-mixins.less';
+.show-cart-icon {
+		.transition();
+    background: url('\./cart.png') 0 0 no-repeat;
+    background-size: 50px;
+    cursor: pointer;
+    height: 50px;
+    position: fixed;
+    right: 0px;
+    top: 50px;
+    width: 50px;
+    z-index: 1;
+}
+
+.hide-cart-icon {
+    right: -50px;
+    height: 0;
+    width: 0;
+}

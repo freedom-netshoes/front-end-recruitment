@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing <Image /> component Testing <Image /> snapshop 1`] = `
+<figure
+  className="photo"
+>
+  <img
+    alt="Camisa Nike Corinthians II"
+    src="images/18644119330491312.jpg"
+  />
+</figure>
+`;

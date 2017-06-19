@@ -1,0 +1,36 @@
+@import url('../../../styles/_less-mixins.less');
+@import url('../../../styles/_less-variables.less');
+:global {
+    .sub-total {
+        height: 100px;
+        margin: 20px 0 0 !important;
+        width: 100%;
+    }
+}
+
+.subtotal {
+    color: @lighterGray;
+    font-size: 14px;
+    margin-top: 14px;
+    text-transform: uppercase;
+}
+
+.btn-buy-container {
+    margin-top: 30px;
+}
+
+.btn-buy {
+    .fontBold();
+    background-color: @black;
+    border: none;
+    border-radius: 2px;
+    box-shadow: 0 2px 1px @darkGray;
+    color: @white;
+    font-size: 14px;
+    height: 50px;
+    text-transform: uppercase;
+    width: 100%;
+    &:hover {
+        color: @lighterGray;
+    }
+}

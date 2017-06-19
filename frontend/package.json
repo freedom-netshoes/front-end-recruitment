@@ -1,0 +1,89 @@
+{
+    "name": "frontend-netshoes-teste",
+    "version": "1.0.0",
+    "description": "(Frontend) Teste André Evangelista - Netshoes",
+    "main": "index.js",
+    "scripts": {
+        "dev": "webpack-dev-server --progress --colors --inline --hot",
+        "production": "webpack --progress -p",
+        "lint": "standard --parser babel-eslint --verbose",
+        "test": "jest --watch --verbose --coverage",
+        "start": "npm run dev"
+
+    },
+    "jest": {
+        "snapshotSerializers": [
+            "<rootDir>/node_modules/enzyme-to-json/serializer"
+        ],
+        "transform": {
+            ".*": "<rootDir>/node_modules/babel-jest"
+        },
+        "moduleNameMapper": {
+            "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+            "^.+\\.less$": "identity-obj-proxy"
+        }
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/andreluisce/front-end-recruitment.git"
+    },
+    "author": "André Evangelista <andreluisce@gmail.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/andreluisce/front-end-recruitment.git/issues"
+    },
+    "homepage": "https://github.com/andreluisce/front-end-recruitment.git#readme",
+    "devDependencies": {
+        "babel-core": "^6.25.0",
+        "babel-eslint": "^7.2.3",
+        "babel-jest": "^20.0.3",
+        "babel-loader": "^7.0.0",
+        "babel-plugin-react-html-attrs": "^2.0.0",
+        "babel-plugin-transform-decorators-legacy": "^1.3.4",
+        "babel-plugin-transform-object-rest-spread": "^6.23.0",
+        "babel-polyfill": "^6.23.0",
+        "babel-preset-es2015": "^6.24.1",
+        "babel-preset-react": "^6.24.1",
+        "babel-preset-stage-0": "^6.24.1",
+        "css-less-loader": "^0.1.0",
+        "css-loader": "^0.28.4",
+        "enzyme": "^2.8.2",
+        "enzyme-to-json": "^1.5.1",
+        "eslint-config-standard": "^10.2.1",
+        "eslint-plugin-standard": "^3.0.1",
+        "extract-text-webpack-plugin": "^2.1.2",
+        "file-loader": "^0.11.2",
+        "identity-obj-proxy": "^3.0.0",
+        "jest": "^20.0.4",
+        "jest-cli": "^20.0.4",
+        "less": "^2.7.2",
+        "less-loader": "^4.0.4",
+        "postcss-loader": "^2.0.6",
+        "react-addons-test-utils": "^15.6.0",
+        "react-css-modules": "^4.3.0",
+        "react-logger": "^1.1.0",
+        "redux-immutable-state-invariant": "^2.0.0",
+        "redux-persist-transform-compress": "^4.2.0",
+        "redux-promise": "^0.5.3",
+        "regenerator-runtime": "^0.10.5",
+        "sass-loader": "^6.0.5",
+        "semistandard-loader": "0.0.4",
+        "snazzy": "^7.0.0",
+        "standard": "^10.0.2",
+        "style-loader": "^0.18.2",
+        "url-loader": "^0.5.8",
+        "webpack": "^2.2.0",
+        "webpack-dev-server": "^2.4.5"
+    },
+    "dependencies": {
+        "axios": "^0.16.2",
+        "deep-freeze": "0.0.1",
+        "react": "^15.6.1",
+        "react-dom": "^15.5.4",
+        "react-redux": "^5.0.5",
+        "react-router": "^4.1.1",
+        "redux": "^3.6.0",
+        "redux-persist": "^4.8.0",
+        "redux-thunk": "^2.2.0"
+    }
+}

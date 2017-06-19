@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing <ButtonDismiss /> component Testing <ButtonDismiss /> snapshop 1`] = `
+<span
+  className="button "
+  onClick={null}
+  onMouseEnter={null}
+  onMouseLeave={null}
+/>
+`;

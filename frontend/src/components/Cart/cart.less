@@ -1,0 +1,53 @@
+@import url('../../styles/_less-mixins.less');
+@import url('../../styles/_less-variables.less');
+:global {
+    #cart-shop {
+        .transition();
+        background-color: @darkGray;
+        font-family: @font;
+        height: 100%;
+        position: fixed;
+        top: 0px;
+        z-index: 999;
+        li {
+            height: 100px;
+            margin: 0;
+        }
+        hr {
+            background-color: @darkerGray;
+            border: none;
+            height: 2px;
+            margin: 0 2px 2px;
+            width: 100%;
+        }
+    }
+    .open {
+        border-left: @lighterGray 2px solid;
+        right: 0px;
+    }
+    .close {
+        right: -500px;
+    }
+    .show {
+        display: block;
+    }
+    .hide {
+        display: none;
+    }
+    @media only screen and (min-width:500px) {
+        #cart-shop {
+            width: 500px;
+        }
+    }
+    @media only screen and (max-width:499px) {
+        #cart-shop {
+            width: 100%;
+        }
+    }
+}
+
+.subtotal {
+    .fontSemiBold();
+    font-size: 30px;
+    margin-top: 20px;
+}

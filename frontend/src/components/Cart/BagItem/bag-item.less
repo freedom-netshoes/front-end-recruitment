@@ -1,0 +1,33 @@
+@import url('../../../styles/_less-variables.less');
+@import url('../../../styles/_less-mixins.less');
+:global {
+    #cart-shop {
+        .bag-item {
+            transition: opacity .2s ease-in-out;
+						position: relative;
+            &.remove {
+                opacity: 0.2;
+                h3,
+                p,
+                .price {
+                    text-decoration: line-through;
+                }
+            }
+            .price {
+                font-size: 18px;
+            }
+            figure {
+                height: 50px;
+                margin: 0;
+                width: 50px;
+            }
+        }
+    }
+}
+
+.image-container {
+    align-items: center;
+    display: flex;
+    height: 90px;
+    justify-content: center;
+}

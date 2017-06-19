@@ -1,23 +1,13 @@
-# Netshoes Cart Test
+# Teste NETSHOES
 
-## Expected result
+* [Instruções para Execução do Teste](NETSHOES.md)
 
-* See a list of products;
-* Be able to add or remove items to the cart and get instant visual feedback;
-* See the products added to the cart.
-
-## Data
-
-The data we provide is a static JSON file under `/public/data`.
-
-## Notes
-
-* You can use whatever stack or tooling you want to help you;
-* Feel free to ask us questions during the process (but trust your guts, please!);
-* You should create a static server in order to access the JSON data provided.
-
-## Bonus
-
-* Persist data on page reload;
-* Test your code;
-* Instructions on how to build/run the project.
+* [Instruções do Teste do André](ANDRE.md)
+	* [Introdução](https://github.com/andreluisce/front-end-recruitment/blob/master/ANDRE.md#introdução)
+ 		* [Como Executar a Aplicação](https://github.com/andreluisce/front-end-recruitment/blob/master/ANDRE.md#como-executar-a-aplicação)
+  	* [Configuração Básica](https://github.com/andreluisce/front-end-recruitment/blob/master/ANDRE.md#configuração-básica) 
+		* [Executando o Servidor](https://github.com/andreluisce/front-end-recruitment/blob/master/ANDRE.md#configuração-básica)
+		* [Executando a Aplicação Frontend](https://github.com/andreluisce/front-end-recruitment/blob/master/ANDRE.md#executando-a-aplicação-frontend)
+	* [Extras](https://github.com/andreluisce/front-end-recruitment/blob/master/ANDRE.md#extras)
+		* [Testes](https://github.com/andreluisce/front-end-recruitment/blob/master/ANDRE.md#testes)
+		* [Linting](https://github.com/andreluisce/front-end-recruitment/blob/master/ANDRE.md#linting)

@@ -1,0 +1,21 @@
+@import '../../../styles/_less-variables.less';
+@import '../../../styles/_less-mixins.less';
+:global {
+    .price {
+        font-size: 30px;
+    }
+    .price-integer {
+        .fontBold();
+    }
+    #cart-shop {
+        color: @gold;
+    }
+    #products {
+        .price-symbol,
+        .price-separator,
+        .price-decimal {
+            font-size: 20px
+        }
+
+    }
+}

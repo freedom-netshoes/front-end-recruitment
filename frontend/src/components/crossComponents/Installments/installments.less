@@ -1,0 +1,40 @@
+@import url('../../../styles/_less-variables.less');
+@import url('../../../styles/_less-mixins.less');
+:global {
+    #cart-shop {
+        .subtotal-installments {
+            .installments {
+                color: @lighterGray;
+                font-size: 12px;
+                margin-top: 5px;
+                .text {
+                    margin: 0 5px;
+                    text-transform: uppercase;
+                }
+                .multiplier {
+                    margin: 0 2px;
+                }
+                .price {
+                    .fontSemiBold();
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+    #products {
+        .installments {
+            color: @lighterGray;
+            font-size: 14px;
+            .text {
+                margin: 0 5px;
+            }
+            .multiplier {
+                margin: 0 2px;
+            }
+            .price {
+                  .fontSemiBold();
+                font-size: 14px;
+            }
+        }
+    }
+}

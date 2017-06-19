@@ -1,0 +1,24 @@
+@import '../../../styles/_less-variables.less';
+@import '../../../styles/_less-mixins.less';
+:global {
+    #products {
+        .title:hover {
+            .fontSemiBold();
+        }
+        .title {
+            color: @gray;
+            font-size: 14px;
+            margin-top: 8px;
+        }
+    }
+}
+
+:global {
+    #cart-shop {
+        .title {
+            .fontSemiBold();
+            font-size: 14px;
+            color: @white; // margin-bottom: 8px;
+        }
+    }
+}

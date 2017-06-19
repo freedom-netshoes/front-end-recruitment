@@ -1,0 +1,58 @@
+{
+    "extends": "standard",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true,
+            "modules": true,
+            "experimentalObjectRestSpread": true,
+            "sourceType": "module",
+            "allowImportExportEverywhere": false,
+            "codeFrame": false
+
+        },
+        "sourceType": "module",
+        "ecmaVersion": 8
+    },
+    "env": {
+        "es6": true,
+        "jest": true,
+        "node": true,
+        "mocha": true
+
+    },
+    "plugins": [
+        "react",
+        "jsx-a11y",
+        "import"
+    ],
+    "parser": "babel-eslint",
+    "rules": {
+        "strict": 0,
+        "import/newline-after-import": "off",
+        "no-unused-vars": 0,
+        "max-len": 0,
+        "camelcase": 1,
+        "no-debugger": "off",
+        "no-console": "off",
+        "no-case-declarations": "off",
+        "no-duplicate-imports": "warn",
+        "jsx-quotes": "warn",
+        "no-else-return": "warn",
+        "no-extra-parens": "warn",
+        "no-extra-semi": "warn",
+        "constructor-super": "warn",
+        "no-useless-escape": "off"
+    },
+
+    "globals": {
+        "document": true,
+        "window": true,
+        "module": true,
+        "__dirname": true,
+        "console": true,
+        "localStorage": true,
+        "it": true,
+        "describe": true
+
+    }
+}
