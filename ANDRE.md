@@ -23,11 +23,11 @@ O servidor está rodando em  `http://localhost:3004/api/products`
 ## Frontend
 Usando o React foi possível componetizar a aplicação, sendo assim mais fácil para fazer testes unitários.
 Redux foi usado para gerenciar o estado da aplicação de uma maneira mais simples.
-Para persistir o estado da aplicação no carregamento da página foi usado a biblioteca [redux-persist](https://github.com/rt2zz/redux-persist) :grinning:
+Para persistir o estado da aplicação no carregamento da página foi usado a biblioteca [redux-persist](https://github.com/rt2zz/redux-persist) :smiley:
 
 # Como Executar a Aplicação
 
-## Configuração básica
+## Configuração Básica
 
 > Ter o NodeJS instalado.
 
@@ -35,28 +35,35 @@ Acessar os diretórios `/backend` e `/frontend` e executar o comando:
 ```
 npm install
 ```
-## Executando o servidor
+## Executando o Servidor
 Entrar no diretório do servidor (`/backend`) e executar:
 ```
 npm start
 ```
 O servidor está executando em `http://localhost:3004`
 
-## Executando a aplicação Frontend
+## Executando a Aplicação Frontend
 Entrar no diretório do servidor (`/frontend`) e executar:
 ```
 npm start
 ```
+A aplicação estará disponível em `http://localhost:8080`
 
-#Extras
-## Testes :grinning: :grinning:
+O `npm start` executa a aplicação em modo de desenvolvimento. 
+Para fazer o build da aplicação (`modo produção`), faça:
+```
+npm run production
+```
+
+# Extras
+## Testes
 Foi usado as bibliotecas Jest + Enzyme para os testes unitários.
 Para executar os testes, faça:
 ```
 npm run test
 ```
 
-##Linting
+## Linting
 A ferramenta de lint que usei foi Standard. 
 Dentro do diretório `frontend/src` execute: 
 ```
@@ -67,7 +74,3 @@ ou
 standard --parser babel-eslint --verbose
 ```
 __para este ultimo caso é necessário ter `standard` e `babel-eslint` instalados globalmente (`npm install -g`)__
-
-
-
-
