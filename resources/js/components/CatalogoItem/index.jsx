@@ -5,47 +5,82 @@ import styles from './CatalogoItem.scss';
 @CSSModules(styles)
 class CatalogoItem extends Component{
     render (){
+		
+		const {
+			adicionarProdutoCarrinho,
+			calcularValorPrestacao} = this.props;
+		
+		let valor = this.props.price ? this.props.price.toFixed(2).toString().split(".")[0] : "00";
+		let centavos = this.props.price ? this.props.price.toFixed(2).toString().split(".")[1] : "00";
+		let valorPrestacao = this.props.price && this.props.installments ? 
+			calcularValorPrestacao(this.props.price,this.props.installments).split(".")[0] : "00";
+		let centavosPrestacao = this.props.price && this.props.installments ? 
+			calcularValorPrestacao(this.props.price,this.props.installments).split(".")[1] : "00";
+		
+		let parcelamento = (
+			<p styleName="parcelamento">
+				<span className="descricao">ou {this.props.installments} x </span>
+				<span className="moeda">{this.props.currencyFormat}</span>
+				<span className="valor">{valorPrestacao},{centavosPrestacao}</span>
+			</p>
+		);
+		
+		parcelamento = this.props.installments > 0 ? parcelamento : "";
+		
         return (
-            <li styleName="catalogo__item" className="col-xs-4 center-xs">
+            <li 
+				styleName="catalogo__item" 
+				className="col-xs-4 center-xs"
+				onClick={() => adicionarProdutoCarrinho(this.props)}>
                 <figure>
-                    <img src={this.props.imgPath} alt={this.props.titulo} />
+                    <img src={this.props.imgPath} alt={this.props.title} />
                 </figure>
-                <h4 styleName="titulo">{this.props.titulo}</h4>
+                <h4 styleName="titulo">{this.props.title}{this.props.description != "" ? " - "+this.props.description : ""}</h4>
                 <div styleName="preco">
-                    <span className="moeda">{this.props.moeda}</span>
-                    <span styleName="valor">{this.props.valor},</span>
-                    <span className="centavos">{this.props.centavos}</span>
+                    <span className="moeda">{this.props.currencyFormat}</span>
+                    <span styleName="valor">{valor},</span>
+                    <span className="centavos">{centavos}</span>
                 </div>
-                <p styleName="parcelamento">
-                    <span className="descricao">ou {this.props.nParcelamento} x </span>
-                    <span className="moeda">{this.props.moeda}</span>
-                    <span className="valor">{this.props.valorParcelamento},{this.props.centavosParcelamento}</span>
-                </p>
+				{parcelamento}
             </li>
         )
     }
 }
 
 CatalogoItem.defaultProps = {
-    imgPath: 'img/catalogo-default.jpg',
-    titulo: 'Novo item',
-    moeda: 'R$',
-    valor: '00',
-    centavos: '00',
-    nParcelamento: '0',
-    valorParcelamento: '00',
-    centavosParcelamento: '00'
+	id: '',
+	sku: '',    
+    title: 'Novo item',
+	description: '',
+	availableSizes: '',
+	style:'',
+	price:'',    
+    installments: 0,		        
+	currencyId: 'BRL',
+	currencyFormat: 'R$',
+	isFreeShipping: false,
+	imgPath: 'img/catalogo-default.jpg',
+	imgThumbPath: 'img/carrinho-item-default-thumb.jpg',
+	adicionarProdutoCarrinho: () => {},
+	calcularValorPrestacao: () => {}
 };
 
 CatalogoItem.propTypes = {
-    imgPath:PropTypes.node,
-    titulo: PropTypes.node,
-    moeda: PropTypes.node,
-    valor: PropTypes.node,
-    centavos: PropTypes.node,
-    nParcelamento: PropTypes.node,
-    valorParcelamento: PropTypes.node,
-    centavosParcelamento: PropTypes.node
+	id: PropTypes.node,
+	sku: PropTypes.node,    
+    title: PropTypes.node,
+	description: PropTypes.node,
+	availableSizes: PropTypes.node,
+	style: PropTypes.node,
+	price: PropTypes.node,   
+    installments: PropTypes.node,		        
+	currencyId: PropTypes.node,
+	currencyFormat: PropTypes.node,
+	isFreeShipping: PropTypes.bool,
+	imgPath: PropTypes.node,
+	imgThumbPath: PropTypes.node,
+	adicionarProdutoCarrinho: PropTypes.func,
+	calcularValorPrestacao: PropTypes.func
 };
 
 export default CatalogoItem;

@@ -4,23 +4,45 @@ import styles from './CarrinhoItem.scss';
 
 @CSSModules(styles)
 class CarrinhoItem extends Component{
+	
     render (){
+		
+		const {
+			removerProdutoCarrinho,
+			removerOut,
+			removerOver,
+			classeRemoverDoCarrinho
+		} = this.props;
+		
+		let tamanhosDisponiveis = this.props.availableSizes.join();
+		let valorTotal = this.props.price ? this.props.price * this.props.quantidade : 0.0;
+		let valor = valorTotal.toFixed(2).toString().split(".")[0];
+		let centavos = valorTotal.toFixed(2).toString().split(".")[1];
+		
         return (
-            <li className="row" styleName="carrinho__item" data-id={this.props.id}>
+            <li 
+				className={classeRemoverDoCarrinho + " row"}
+				styleName="carrinho__item" 
+				data-id={this.props.id}>
                 <figure className="thumb">
-                    <img src={this.props.imgPath} alt={this.props.titulo} />
+                    <img src={this.props.imgThumbPath} alt={this.props.title} />
                 </figure>
                 <div className="col-xs-9" styleName="descricao">
-                    <h4 styleName="titulo">{this.props.titulo}</h4>
-                    <div className="subtitulo">{this.props.subtitulo}</div>
+                    <h4 styleName="titulo">{this.props.title}</h4>
+                    <div className="subtitulo">{tamanhosDisponiveis} | {this.props.style}</div>
                     <div className="quantidade">Quantidade: {this.props.quantidade}</div>
                 </div>
                 <div styleName="direita">
-                    <span styleName="remover"></span>
+                    <span 
+						styleName="remover" 
+						onClick={() => removerProdutoCarrinho(this.props)}
+						onMouseOver={removerOver}
+						onMouseOut={removerOut}>
+					</span>
                     <div styleName="preco">
-                        <span className="moeda">{this.props.moeda}</span>
-                        <span styleName="valor">{this.props.valor},</span>
-                        <span className="centavos">{this.props.centavos}</span>
+                        <span className="moeda">{this.props.currencyFormat}</span>
+                        <span styleName="valor">{valor},</span>
+                        <span className="centavos">{centavos}</span>
                     </div>
                 </div>
             </li>            
@@ -29,25 +51,35 @@ class CarrinhoItem extends Component{
 }
 
 CarrinhoItem.defaultProps = {
-    id: '',
-    imgPath: 'img/carrinho-item-default-thumb.jpg',
-    titulo: 'Novo item',
-    subtitulo: 'Subtitulo',
-    quantidade: '0',
-    moeda: 'R$',
-    valor: '00',
-    centavos: '00'   
+	id: '',
+	sku: '',    
+    title: 'Novo item',
+	description: '',
+	availableSizes: '',
+	style:'',
+	price:'',    
+    installments: 0,		        
+	currencyId: 'BRL',
+	currencyFormat: 'R$',
+	isFreeShipping: false,
+	imgPath: 'img/catalogo-default.jpg',
+	imgThumbPath: 'img/carrinho-item-default-thumb.jpg'	
 };
 
 CarrinhoItem.propTypes = {
-    id:PropTypes.node,
-    imgPath:PropTypes.node,
-    titulo: PropTypes.node,
-    subtitulo: PropTypes.node,
-    quantidade: PropTypes.node,
-    moeda: PropTypes.node,
-    valor: PropTypes.node,
-    centavos: PropTypes.node
+	id: PropTypes.node,
+	sku: PropTypes.node,    
+    title: PropTypes.node,
+	description: PropTypes.node,
+	availableSizes: PropTypes.node,
+	style: PropTypes.node,
+	price: PropTypes.node,   
+    installments: PropTypes.node,		        
+	currencyId: PropTypes.node,
+	currencyFormat: PropTypes.node,
+	isFreeShipping: PropTypes.bool,
+	imgPath: PropTypes.node,
+	imgThumbPath: PropTypes.node
 };
 
 export default CarrinhoItem;

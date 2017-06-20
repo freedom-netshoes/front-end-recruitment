@@ -46,11 +46,13 @@
     background-color: #131316;
 }
 
-.carrinho__item--remove {
-    background-color: #131316;
-    text-decoration: line-through;
-    opacity: 0.5;
-    span {
-        text-decoration: line-through;
-    }
+:global{
+	.carrinho__item--remove {
+		background-color: #131316;
+		text-decoration: line-through;
+		opacity: 0.5;
+		span {
+			text-decoration: line-through;
+		}
+	}
 }

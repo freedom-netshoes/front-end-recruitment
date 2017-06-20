@@ -6,11 +6,13 @@
     position: absolute;
     top: 0;
     right: 0;
-    /* display: none; */
+	display: none;
 }
 
-.carrinho--aberto{
-    display: block;
+:global{
+	.carrinho--aberto{
+    	display: block;
+	}
 }
 
 .carrinho__itens{

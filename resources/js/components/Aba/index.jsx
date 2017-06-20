@@ -4,19 +4,21 @@ import styles from './Aba.scss';
 
 @CSSModules(styles)
 class Aba extends Component{
-    render () {
+    render () {	
+		const {abrirCarrinho} = this.props;
+		
         return (
-            <div styleName="aba" onMouseOver={this.onHover}></div>
+            <div styleName="aba" onMouseOver={abrirCarrinho}></div>
         )
-    }
-    
-    onHover () {
-        //TODO - Adicionar classe "carrinho--aberto"
-        console.log('TODO - Adicionar classe "carrinho--aberto"');
     }
 }
 
-Aba.defaultProps = {};
-Aba.propTypes ={};
+Aba.defaultProps = {
+	abrirCarrinho: () => {}
+};
+
+Aba.propTypes ={
+	abrirCarrinho: PropTypes.func
+};
 
 export default Aba;
