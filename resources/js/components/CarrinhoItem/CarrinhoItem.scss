@@ -24,10 +24,10 @@
             right: 15px;
             width: 15px;
             height: 15px;
-            background-color: red;
+            :global{background: url('/img/carrinho-remove.png') no-repeat;} 
         }
         .remover:hover {
-            background-color: green;
+            background-position: -16px 0;
         }
         .preco {
             position: absolute;

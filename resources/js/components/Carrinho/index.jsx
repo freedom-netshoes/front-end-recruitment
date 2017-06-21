@@ -9,15 +9,13 @@ import CarrinhoRodape from 'CarrinhoRodape';
 class Carrinho extends Component {
     render () {
 		
-		const {
-			classeCarrinho,	
-			classeRemoverDoCarrinho,
+		const {			
+			classeCarrinho,				
 			fecharCarrinho,
 			produtosCarrinho,
+            quantidadeCarrinho,
 			removerProdutoCarrinho, 
-			calcularValorPrestacao,
-			removerOut,
-			removerOver
+            subtotalCarrinho
 		} = this.props;
 		
         return (        
@@ -25,22 +23,16 @@ class Carrinho extends Component {
 				className={classeCarrinho}
 				styleName='carrinho'
 				onMouseLeave={fecharCarrinho}>				
-                <CarrinhoCabecalho 
-					produtosCarrinho={produtosCarrinho}/>
+                <CarrinhoCabecalho quantidadeCarrinho={quantidadeCarrinho}/>
                 <ul className="col-xs-12" styleName="carrinho__itens">
 					{produtosCarrinho.map(produto => (
 						<CarrinhoItem 
 							{...produto} 
-							removerProdutoCarrinho={removerProdutoCarrinho}
-							removerOut={removerOut}
-							removerOver={removerOver}
-							classeRemoverDoCarrinho={classeRemoverDoCarrinho}
+							removerProdutoCarrinho={removerProdutoCarrinho}							
 						/>									
 					))}
                 </ul>
-                <CarrinhoRodape 
-					produtosCarrinho={produtosCarrinho}
-					calcularValorPrestacao={calcularValorPrestacao}/>
+                <CarrinhoRodape subtotalCarrinho={subtotalCarrinho}/>
             </div>
         )
     }    

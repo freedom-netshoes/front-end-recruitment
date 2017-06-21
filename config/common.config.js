@@ -25,14 +25,12 @@ Config.structurePath = Pj(Config.srcPath, 'structure');
 /* --- ALIASES --- */
 
 Config.aliases = {
-    MasterPage: Config.structurePath,
-    Actions: Config.actionsPath,
+    MasterPage: Config.structurePath,    
+    Actions: Config.actionsPath,    
     Reducers: Config.reducersPath,
-    RootRoute: Config.routesPath,
+    RootRoute: Config.routesPath,    
     Store: Config.storePath,
-
-    ActionTypes: Pj(Config.actionsPath, 'ActionTypes'),
-    ProductsCart: Pj(Config.reducersPath, 'ProductsCart'),
+    ConstAcoes: Pj(Config.actionsPath, 'ConstAcoes'),    
     Main: Pj(Config.routesPath, 'Main'),
 
     Utils: Pj(Config.helpersPath, 'Utils'),

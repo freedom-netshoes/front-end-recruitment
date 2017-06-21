@@ -1,17 +1,19 @@
-import {ADD_PRODUCT, DEL_PRODUCT} from 'ActionTypes';
+import {ADICIONAR_PRODUTO, REMOVER_PRODUTO} from 'ConstAcoes';
 
-const AddProduct = product => (
+/* --- AÇÃO - Adicionar produto do carrinho --- */
+const AdicionarProduto = produto => (
   {
-    type: ADD_PRODUCT,
-    product
+    type: ADICIONAR_PRODUTO,
+    produto
   }
 );
 
-const DelProduct = product => (
+/* --- AÇÃO - Remover produto do carrinho --- */
+const RemoverProduto = produto => (
   {
-    type: DEL_PRODUCT,
-    product
+    type: REMOVER_PRODUTO,
+    produto
   }
 );
 
-export {AddProduct, DelProduct};
+export {AdicionarProduto, RemoverProduto};

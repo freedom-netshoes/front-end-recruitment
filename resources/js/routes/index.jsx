@@ -1,7 +1,7 @@
 import MasterPage from 'MasterPage';
 
 function errorLoading (err) {
-  console.error('Dynamic page loading failed', err);
+  console.error('Falha ao abrir página', err);
 }
 
 function loadRoute (cb) {

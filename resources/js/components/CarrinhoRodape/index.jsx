@@ -1,32 +1,18 @@
 import React, {Component, PropTypes} from 'react';
 import CSSModules from 'react-css-modules';
 import styles from './CarrinhoRodape.scss';
+import {CalcValorPrestacao} from 'Utils';
 
 @CSSModules(styles)
 class CarrinhoRodape extends Component {
     render () {
 		
-		const {
-			produtosCarrinho,
-			calcularValorPrestacao	
-		} = this.props;		
+		const {subtotalCarrinho} = this.props;		
 		
-		let subtotal = 0.0;
-		
-		if (produtosCarrinho.length === 1){
-			subtotal = produtosCarrinho[0].quantidade * produtosCarrinho[0].price;				
-		}else if(produtosCarrinho.length > 1){
-			subtotal = produtosCarrinho.reduce(function (a,b){
-				return (a.price * a.quantidade) + (b.price * b.quantidade);
-			});
-		}
-		
-	
-		
-		let valor = subtotal.toFixed(2).toString().split(".")[0];
-		let centavos = subtotal.toFixed(2).toString().split(".")[1];
-		let valorPrestacao = calcularValorPrestacao(subtotal,10).split(".")[0];
-		let centavosPrestacao = calcularValorPrestacao(subtotal,10).split(".")[1];
+		let valor = subtotalCarrinho.toFixed(2).toString().split(".")[0];
+		let centavos = subtotalCarrinho.toFixed(2).toString().split(".")[1];
+		let valorPrestacao = CalcValorPrestacao(subtotalCarrinho,10).split(".")[0];
+		let centavosPrestacao = CalcValorPrestacao(subtotalCarrinho,10).split(".")[1];
 		
 		
 		let parcelamento = (
@@ -37,7 +23,7 @@ class CarrinhoRodape extends Component {
 			</p>
 		);
 		
-		parcelamento = subtotal > 1 ? parcelamento : "";
+		parcelamento = subtotalCarrinho > 1 ? parcelamento : "";
 
         return (      
             <div styleName="carrinho__rodape">

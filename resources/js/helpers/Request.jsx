@@ -1,6 +1,6 @@
 import fetch from 'isomorphic-fetch';
 
-async function GetProducts (url) {
+async function GetProdutos (url) {
   return new Promise((resolve, reject) => {
     fetch(url, {
       method: 'GET'
@@ -21,4 +21,4 @@ async function GetProducts (url) {
   });
 }
 
-export default GetProducts;
+export default GetProdutos;

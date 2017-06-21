@@ -1,21 +1,22 @@
 import React, {Component, PropTypes} from 'react';
 import CSSModules from 'react-css-modules';
 import styles from './CatalogoItem.scss';
+import {AdicionarProduto} from 'Actions';
+import Store from 'Store';
+import {CalcValorPrestacao} from 'Utils';
 
 @CSSModules(styles)
 class CatalogoItem extends Component{
     render (){
 		
-		const {
-			adicionarProdutoCarrinho,
-			calcularValorPrestacao} = this.props;
+		const {abrirCarrinho} = this.props;
 		
 		let valor = this.props.price ? this.props.price.toFixed(2).toString().split(".")[0] : "00";
 		let centavos = this.props.price ? this.props.price.toFixed(2).toString().split(".")[1] : "00";
 		let valorPrestacao = this.props.price && this.props.installments ? 
-			calcularValorPrestacao(this.props.price,this.props.installments).split(".")[0] : "00";
+			CalcValorPrestacao(this.props.price,this.props.installments).split(".")[0] : "00";
 		let centavosPrestacao = this.props.price && this.props.installments ? 
-			calcularValorPrestacao(this.props.price,this.props.installments).split(".")[1] : "00";
+			CalcValorPrestacao(this.props.price,this.props.installments).split(".")[1] : "00";
 		
 		let parcelamento = (
 			<p styleName="parcelamento">
@@ -31,7 +32,7 @@ class CatalogoItem extends Component{
             <li 
 				styleName="catalogo__item" 
 				className="col-xs-4 center-xs"
-				onClick={() => adicionarProdutoCarrinho(this.props)}>
+                onClick={() =>  {Store.dispatch(AdicionarProduto(this.props)); abrirCarrinho();}}>			
                 <figure>
                     <img src={this.props.imgPath} alt={this.props.title} />
                 </figure>

@@ -1,35 +1,30 @@
-// Retorna o maior parcelamento
-const getGreaterInstallment = products => Math.max.apply(Math, products.map(item => item.installments));
+const CalcQuantidadeCarrinho = (carrinho) => {
+	let quantidadeTotal = 0;
+	if (carrinho.length === 1) {
+		quantidadeTotal = carrinho[0].quantidade;
+	} else if (carrinho.length > 1) {
+		quantidadeTotal = carrinho.reduce(function (acc, obj) {
+			return acc + obj.quantidade;
+		}, 0);
+	}
+	return quantidadeTotal;
+}
 
-const FormatPrice = {
-  // Splita o número fracionário
-  getSplit: price => {
-    try {
-      price = price.toFixed(2).toString().split('.');
-      return {int: price[0], float: price[1]};
-    } catch (err) {
-      return 0;
-    }
-  },
-  // Calcula o valor da parcela e retorna com vírgula
-  getInstallments: (installments, price) => (
-    installments > 1 ? (price / installments).toFixed(2).replace('.', ',') : ''
-  )
-};
+const CalcSubtotalCarrinho = (carrinho) => {
+	let subtotal = 0.0;
+	if (carrinho.length === 1) {
+		subtotal = carrinho[0].quantidade * carrinho[0].price;
+	} else if (carrinho.length > 1) {
+		subtotal = carrinho.reduce(function (a, b) {
+			return a + (b.price * b.quantidade);
+		}, 0);
+	}
+	return subtotal;
+}
 
-const ToSeo = function (str) {
-  const withAccent = 'áàãâäéèêëíìîïóòõôöúùûüçÁÀÃÂÄÉÈÊËÍÌÎÏÓÒÕÖÔÚÙÛÜÇ/';
-  const noAccent = 'aaaaaeeeeiiiiooooouuuucAAAAAEEEEIIIIOOOOOUUUUC-';
-  let newStr = '';
+const CalcValorPrestacao = (valor, prestacao) => {
+	prestacao = prestacao === 0 ? 1 : prestacao;
+	return (valor / prestacao).toFixed(2);
+}
 
-  for (let i = 0; i < str.length; i++) {
-    if (withAccent.search(str.substr(i, 1)) >= 0) {
-      newStr += noAccent.substr(withAccent.search(str.substr(i, 1)), 1);
-    } else {
-      newStr += str.substr(i, 1);
-    }
-  }
-  return newStr.toLowerCase().replace(/ /g, '-');
-};
-
-export {CalcTotal, FormatPrice, GetQuantity, ReduceCart, SetQuantity, ToSeo};
+export {CalcQuantidadeCarrinho,	CalcSubtotalCarrinho, CalcValorPrestacao};

@@ -46,8 +46,8 @@ module.exports = {
     new Webpack.optimize.UglifyJsPlugin({
       cacheFolder: Config.bundlePath,
       debug      : true,
-      compress   : { warnings: false },
-      output     : { comments: false },
+      compress   : { warnings: true },
+      output     : { comments: false},
       sourceMap  : true
     }),
     ...Config.plugins

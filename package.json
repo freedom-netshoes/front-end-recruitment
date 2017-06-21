@@ -6,6 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack",
+    "serve": "json-server --watch public/data/products.json",
     "test": "jest --coverage"
   },
   "repository": {
@@ -19,6 +20,7 @@
   },
   "homepage": "https://github.com/vmatsumura/front-end-recruitment#readme",
   "dependencies": {
+    "json-server": "^0.10.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.3",
@@ -27,12 +29,12 @@
   },
   "devDependencies": {
     "babel-core": "^6.24.0",
-    "babel-jest": "^19.0.0",
+    "babel-jest": "^20.0.3",
     "babel-loader": "^6.4.1",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-polyfill": "^6.23.0",
-    "babel-preset-es2015": "^6.24.0",
-    "babel-preset-react": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.22.0",
     "chai": "^3.5.0",
     "css-loader": "^0.27.3",
@@ -45,12 +47,14 @@
     "i18n-webpack-plugin": "^0.3.0",
     "immutable": "^3.8.1",
     "isomorphic-fetch": "^2.2.1",
+    "jest": "^20.0.4",
     "jest-cli": "^19.0.2",
     "node-sass": "^4.5.3",
     "path": "^0.12.7",
     "react-breadcrumbs": "^1.5.2",
     "react-css-modules": "^4.1.0",
     "react-hot-loader": "^3.0.0-beta.6",
+    "react-test-renderer": "^15.6.1",
     "redux-devtools": "^3.3.2",
     "sass-loader": "^6.0.6",
     "scriptjs": "^2.5.8",

@@ -1,18 +1,24 @@
 import React, {Component, PropTypes} from 'react';
 import CSSModules from 'react-css-modules';
 import styles from './CarrinhoItem.scss';
+import Store from 'Store';
+import {RemoverProduto} from 'Actions';
 
 @CSSModules(styles)
 class CarrinhoItem extends Component{
 	
+    constructor(props){
+        super(props);
+        
+        this.state = {classeRemove: ""}
+        
+        this.aplicarClasseRemove = this.aplicarClasseRemove.bind(this);
+        this.removerClasseRemove = this.removerClasseRemove.bind(this);
+    }
+    
     render (){
 		
-		const {
-			removerProdutoCarrinho,
-			removerOut,
-			removerOver,
-			classeRemoverDoCarrinho
-		} = this.props;
+		const {removerProdutoCarrinho} = this.props;
 		
 		let tamanhosDisponiveis = this.props.availableSizes.join();
 		let valorTotal = this.props.price ? this.props.price * this.props.quantidade : 0.0;
@@ -21,7 +27,7 @@ class CarrinhoItem extends Component{
 		
         return (
             <li 
-				className={classeRemoverDoCarrinho + " row"}
+				className={this.state.classeRemove + " row"}
 				styleName="carrinho__item" 
 				data-id={this.props.id}>
                 <figure className="thumb">
@@ -35,9 +41,9 @@ class CarrinhoItem extends Component{
                 <div styleName="direita">
                     <span 
 						styleName="remover" 
-						onClick={() => removerProdutoCarrinho(this.props)}
-						onMouseOver={removerOver}
-						onMouseOut={removerOut}>
+						onClick={() => Store.dispatch(RemoverProduto(this.props))}
+						onMouseOver={this.aplicarClasseRemove}
+						onMouseOut={this.removerClasseRemove}>
 					</span>
                     <div styleName="preco">
                         <span className="moeda">{this.props.currencyFormat}</span>
@@ -47,6 +53,18 @@ class CarrinhoItem extends Component{
                 </div>
             </li>            
         )
+    }
+    
+    aplicarClasseRemove (){        
+        this.setState({
+            classeRemove : "carrinho__item--remove"
+        })
+    }
+    
+    removerClasseRemove () {
+        this.setState({
+            classeRemove : ""
+        })
     }
 }
 
