@@ -67,19 +67,19 @@ CatalogoItem.defaultProps = {
 };
 
 CatalogoItem.propTypes = {
-	id: PropTypes.node,
-	sku: PropTypes.node,    
-    title: PropTypes.node,
-	description: PropTypes.node,
-	availableSizes: PropTypes.node,
-	style: PropTypes.node,
-	price: PropTypes.node,   
-    installments: PropTypes.node,		        
-	currencyId: PropTypes.node,
-	currencyFormat: PropTypes.node,
+	id: PropTypes.number,
+	sku: PropTypes.number,    
+    title: PropTypes.string,
+	description: PropTypes.string,
+	availableSizes: PropTypes.array,
+	style: PropTypes.string,
+	price: PropTypes.number,   
+    installments: PropTypes.number,		        
+	currencyId: PropTypes.string,
+	currencyFormat: PropTypes.string,
 	isFreeShipping: PropTypes.bool,
-	imgPath: PropTypes.node,
-	imgThumbPath: PropTypes.node,
+	imgPath: PropTypes.string,
+	imgThumbPath: PropTypes.string,
 	adicionarProdutoCarrinho: PropTypes.func,
 	calcularValorPrestacao: PropTypes.func
 };

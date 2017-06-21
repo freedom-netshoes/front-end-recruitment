@@ -27,6 +27,7 @@ class Carrinho extends Component {
                 <ul className="col-xs-12" styleName="carrinho__itens">
 					{produtosCarrinho.map(produto => (
 						<CarrinhoItem 
+							key={produto.id}
 							{...produto} 
 							removerProdutoCarrinho={removerProdutoCarrinho}							
 						/>									
@@ -50,7 +51,7 @@ Carrinho.defaultProps = {
 };
 
 Carrinho.propTypes = {
-	classeCarrinho: PropTypes.node,
+	classeCarrinho: PropTypes.string,
 	abrirCarrinho: PropTypes.func,
 	fecharCarrinho: PropTypes.func,
 	removerOver: PropTypes.func,

@@ -58,13 +58,15 @@ CarrinhoRodape.defaultProps = {
 	calcularValorPrestacao: () => {}
 };
 CarrinhoRodape.propTypes = {
-    titulo: PropTypes.node,
-    moeda: PropTypes.node,
-    valor: PropTypes.node,
-    centavos: PropTypes.node,
-    nParcelamento: PropTypes.node,
-    valorParcelamento: PropTypes.node,
-    centavosParcelamento: PropTypes.node
+    titulo: PropTypes.string,
+    moeda: PropTypes.string,
+    valor: PropTypes.string,
+    centavos: PropTypes.string,
+    nParcelamento: PropTypes.string,
+    valorParcelamento: PropTypes.string,
+    centavosParcelamento: PropTypes.string,
+	produtosCarrinho: PropTypes.array,
+	calcularValorPrestacao: PropTypes.func
 };    
 
 export default CarrinhoRodape;

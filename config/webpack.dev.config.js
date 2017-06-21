@@ -1,14 +1,14 @@
-const Config            = require('./common.config');
-const Path              = require('path');
-const Webpack           = require('webpack');
+const Config = require('./common.config');
+const Path = require('path');
+const Webpack = require('webpack');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
-const I18nPlugin        = require("i18n-webpack-plugin");
+const I18nPlugin = require('i18n-webpack-plugin');
 
 require('babel-core/register');
 require.resolve('babel-polyfill');
 
 module.exports = {
-  name: "index",
+  name: 'index',
   entry: {
     index: [
       'react-hot-loader/patch',
@@ -19,13 +19,13 @@ module.exports = {
   },
   output: {
     filename: `index.js`,
-    path    : Config.bundlePath
+    path: Config.bundlePath
   },
   devServer: {
-    contentBase       : Config.bundlePath,
+    contentBase: Config.bundlePath,
     historyApiFallback: true,
-    hot               : true,
-    port              : 8080,
+    hot: true,
+    port: 8080
   },
   resolve: Config.resolve,
   devtool: 'source-map',
@@ -33,9 +33,15 @@ module.exports = {
     rules: [
       {
         enforce: 'pre',
-        test   : /\.jsx?$/,
-        loader : 'semistandard-loader',
-        exclude: /node_modules/
+        test: /\.jsx?$/,
+        // loader : 'semistandard-loader',
+        exclude: /node_modules/,
+	  	use: {
+    loader: 'semistandard-loader',
+    options: {
+      parser: 'babel-eslint'
+    }
+  }
       },
       ...Config.rules
     ]
@@ -43,11 +49,11 @@ module.exports = {
   plugins: [
     new Webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV : JSON.stringify('development')
+        NODE_ENV: JSON.stringify('development')
       }
     }),
     new HTMLWebpackPlugin({
-      //basePath: '/',
+      // basePath: '/',
       template: Path.join(__dirname, '..', 'index.ejs')
     }),
     new Webpack.HotModuleReplacementPlugin(),

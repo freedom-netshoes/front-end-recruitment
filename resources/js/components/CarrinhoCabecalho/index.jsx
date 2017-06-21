@@ -25,9 +25,9 @@ CarrinhoCabecalho.defaultProps = {
     contador: '0'
 };
 CarrinhoCabecalho.propTypes = {
-    imgPath: PropTypes.node,
-    titulo: PropTypes.node,
-    contador: PropTypes.node
+    imgPath: PropTypes.string,
+    titulo: PropTypes.string,
+    contador: PropTypes.string
 };    
 
 export default CarrinhoCabecalho;

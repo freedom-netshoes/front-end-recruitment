@@ -85,19 +85,19 @@ CarrinhoItem.defaultProps = {
 };
 
 CarrinhoItem.propTypes = {
-	id: PropTypes.node,
-	sku: PropTypes.node,    
-    title: PropTypes.node,
-	description: PropTypes.node,
-	availableSizes: PropTypes.node,
-	style: PropTypes.node,
-	price: PropTypes.node,   
-    installments: PropTypes.node,		        
-	currencyId: PropTypes.node,
-	currencyFormat: PropTypes.node,
+	id: PropTypes.string,
+	sku: PropTypes.string,    
+    title: PropTypes.string,
+	description: PropTypes.string,
+	availableSizes: PropTypes.string,
+	style: PropTypes.string,
+	price: PropTypes.string,   
+    installments: PropTypes.number,		        
+	currencyId: PropTypes.string,
+	currencyFormat: PropTypes.string,
 	isFreeShipping: PropTypes.bool,
-	imgPath: PropTypes.node,
-	imgThumbPath: PropTypes.node
+	imgPath: PropTypes.string,
+	imgThumbPath: PropTypes.string
 };
 
 export default CarrinhoItem;

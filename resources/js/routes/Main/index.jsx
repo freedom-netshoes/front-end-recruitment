@@ -33,6 +33,7 @@ class Main extends Component {
 				<ul className="col-xs-12 row">
 					{this.state.produtosCatalogo.map(produto => (					
 						<CatalogoItem
+							key={produto.id}
 							{...produto}							
 						    abrirCarrinho={this.abrirCarrinho}
 							adicionarProdutoCarrinho={this.adicionarProdutoCarrinho}
@@ -68,8 +69,7 @@ class Main extends Component {
           });
     }
 	
-	abrirCarrinho () {
-        console.log("cheuioaodjasiojdaoisjdaiosaosfcapio");
+	abrirCarrinho () {        
 		this.setState ({
 			classeCarrinho: "carrinho--aberto"
 		});

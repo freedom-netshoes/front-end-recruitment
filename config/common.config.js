@@ -25,34 +25,34 @@ Config.structurePath = Pj(Config.srcPath, 'structure');
 /* --- ALIASES --- */
 
 Config.aliases = {
-    MasterPage: Config.structurePath,    
-    Actions: Config.actionsPath,    
-    Reducers: Config.reducersPath,
-    RootRoute: Config.routesPath,    
-    Store: Config.storePath,
-    ConstAcoes: Pj(Config.actionsPath, 'ConstAcoes'),    
-    Main: Pj(Config.routesPath, 'Main'),
+  MasterPage: Config.structurePath,
+  Actions: Config.actionsPath,
+  Reducers: Config.reducersPath,
+  RootRoute: Config.routesPath,
+  Store: Config.storePath,
+  ConstAcoes: Pj(Config.actionsPath, 'ConstAcoes'),
+  Main: Pj(Config.routesPath, 'Main'),
 
-    Utils: Pj(Config.helpersPath, 'Utils'),
-    Request: Pj(Config.helpersPath, 'Request'),
+  Utils: Pj(Config.helpersPath, 'Utils'),
+  Request: Pj(Config.helpersPath, 'Request'),
 
-    AppConfig: Pj(Config.srcPath, 'AppConfig'),
-    
+  AppConfig: Pj(Config.srcPath, 'AppConfig'),
+
     /* --- ALIASES/COMPONENTES --- */
-    Aba: Pj(Config.componentsPath,'Aba'),
-    CatalogoItem: Pj(Config.componentsPath, 'CatalogoItem'),
-    Carrinho: Pj(Config.componentsPath, 'Carrinho'),
-    CarrinhoCabecalho: Pj(Config.componentsPath, 'CarrinhoCabecalho'),
-    CarrinhoItem: Pj(Config.componentsPath, 'CarrinhoItem'),
-    CarrinhoRodape: Pj(Config.componentsPath, 'CarrinhoRodape')
+  Aba: Pj(Config.componentsPath, 'Aba'),
+  CatalogoItem: Pj(Config.componentsPath, 'CatalogoItem'),
+  Carrinho: Pj(Config.componentsPath, 'Carrinho'),
+  CarrinhoCabecalho: Pj(Config.componentsPath, 'CarrinhoCabecalho'),
+  CarrinhoItem: Pj(Config.componentsPath, 'CarrinhoItem'),
+  CarrinhoRodape: Pj(Config.componentsPath, 'CarrinhoRodape')
 };
 
 /* --- RESOLVE --- */
 
 Config.resolve = {
-    alias: Config.aliases,
-    modules: [Path.resolve(__dirname), 'node_modules'],
-    extensions: ['.css', '.scss', '.js', '.jsx']
+  alias: Config.aliases,
+  modules: [Path.resolve(__dirname), 'node_modules'],
+  extensions: ['.css', '.scss', '.js', '.jsx']
 };
 
 /* --- VENDOR --- */
@@ -65,41 +65,41 @@ Config.vendor = [
 /* --- RULES --- */
 
 Config.rules = [
-    {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        use: [
-            {
-                loader: 'babel-loader'
-      }
-    ]
+  {
+    test: /\.jsx?$/,
+    exclude: /node_modules/,
+    use: [
+      {
+        loader: 'babel-loader'
+      		}
+    		]
   },
-    {
-        test: /\.(png|gif|woff|woff2|eot|ttf|svg)$/,
-        use: 'url-loader?limit=100000'
+  {
+    test: /\.(png|gif|woff|woff2|eot|ttf|svg)$/,
+    use: 'url-loader?limit=100000'
   },
-    {
-        test: /\.(css|scss)$/,
-        use: ExtractTextPlugin.extract({
-            fallback: 'style-loader',
-            use: [
-                {
-                    loader: 'css-loader',
-                    options: {
-                        importLoaders: 1,
-                        localIdentName: '[name]__[local]__[hash:base64:5]',
-                        minimize: true,
-                        modules: true
-                    }
+  {
+    test: /\.(css|scss)$/,
+    use: ExtractTextPlugin.extract({
+      fallback: 'style-loader',
+      use: [
+        {
+          loader: 'css-loader',
+          options: {
+            importLoaders: 1,
+            localIdentName: '[name]__[local]__[hash:base64:5]',
+            minimize: true,
+            modules: true
+          }
         },
-                {
-                    loader: 'sass-loader',
-                    options: {
-                        sourceMap: true
-                    }
+        {
+          loader: 'sass-loader',
+          options: {
+            sourceMap: true
+          }
         }
       ]
-        })
+    })
   }
 ];
 
@@ -107,13 +107,13 @@ Config.rules = [
 
 Config.plugins = [
   new ExtractTextPlugin({
-        filename: 'index.css',
-        disable: process.env.NODE_ENV === 'development',
-        allChunks: true
-    }),
+    filename: 'index.css',
+    disable: process.env.NODE_ENV === 'development',
+    allChunks: true
+  }),
   new Webpack.ProvidePlugin({
-        Base: 'Base'
-    })
+    Base: 'Base'
+  })
 ];
 
 module.exports = Config;

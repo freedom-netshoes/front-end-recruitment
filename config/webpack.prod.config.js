@@ -1,14 +1,13 @@
-const Config                  = require('./common.config');
-const Path                    = require('path');
-const Webpack                 = require('webpack');
-const HTMLWebpackPlugin       = require('html-webpack-plugin');
-const I18nPlugin              = require("i18n-webpack-plugin");
+const Config = require('./common.config');
+const Path = require('path');
+const Webpack = require('webpack');
+const HTMLWebpackPlugin = require('html-webpack-plugin');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
-require("babel-core/register");
-require("babel-polyfill");
+require('babel-core/register');
+require('babel-polyfill');
 
 module.exports = {
-  name: "index",
+  name: 'index',
   entry: {
     index: [
       'babel-polyfill',
@@ -17,7 +16,7 @@ module.exports = {
   },
   output: {
     filename: `index.js`,
-    path    : Config.bundlePath
+    path: Config.bundlePath
   },
   resolve: Config.resolve,
   devtool: 'source-map',
@@ -33,22 +32,22 @@ module.exports = {
       }
     }),
     new HTMLWebpackPlugin({
-      //basePath: '/',
+      // basePath: '/',
       template: Path.join(__dirname, '..', 'index.ejs')
     }),
     new SWPrecacheWebpackPlugin({
       cacheId: 'dashboard',
       filename: 'service-worker.js',
-      //replacePrefix: 'http://localhost:3000/',
+      // replacePrefix: 'http://localhost:3000/',
       stripPrefix: Config.bundlePath,
       staticFileGlobsIgnorePatterns: [/.*\.html/]
     }),
     new Webpack.optimize.UglifyJsPlugin({
       cacheFolder: Config.bundlePath,
-      debug      : true,
-      compress   : { warnings: true },
-      output     : { comments: false},
-      sourceMap  : true
+      debug: true,
+      compress: { warnings: true },
+      output: { comments: false},
+      sourceMap: true
     }),
     ...Config.plugins
   ]
