@@ -1,12 +1,12 @@
 {
   "name": "front-end-recruitment",
-  "version": "1.0",
+  "version": "1.0.0",
   "description": "Teste Front End da Netshoes",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack",
-    "serve": "json-server --watch public/data/products.json",
+    "server": "json-server --watch public/data/products.json",
     "test": "jest --coverage"
   },
   "repository": {
