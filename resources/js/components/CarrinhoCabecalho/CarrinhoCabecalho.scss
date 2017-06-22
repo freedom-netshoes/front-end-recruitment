@@ -1,0 +1,29 @@
+.carrinho__cabecalho {
+    position: relative;
+    height: 140px;
+    padding-top: 60px;
+    margin: 0;
+    .icone {
+        margin-top: -15px;
+    }
+    .contador {
+        position: absolute;
+        top: 74px;
+        right: 310px;
+        background-color: #dfbd00;
+        color: #000;
+        font-size: 12px;
+        font-weight: bold;
+        border-radius: 10px;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+    }
+    .titulo {
+        font-size: 24px;
+        font-weight: bold;
+        color: #fff;
+        margin-left: 20px;
+        line-height: 20px;
+    }
+}

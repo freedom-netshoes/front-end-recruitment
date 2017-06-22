@@ -1,0 +1,17 @@
+.catalogo{
+    width: 730px;    
+    margin: 0 auto;
+    font-family: 'Open Sans';
+    color: #313135;
+    padding-top: 75px;
+    position: relative;
+    display: block;
+    background-color: #ffffff;
+	min-height: 600px;
+}
+
+:global{
+    .moeda{
+        margin-right: 5px;
+    }
+}

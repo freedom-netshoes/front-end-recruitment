@@ -1,0 +1,58 @@
+.carrinho__item {
+    position: relative;
+    border-top: 2px solid #131316;
+    margin: 0;
+    text-align: justify;
+    padding: 15px;
+    font-size: 12px;
+    color: #999;
+    cursor: pointer;
+    p {
+        line-height: 18px;
+    }
+    .descricao {
+        .titulo {
+            font-size: 14px;
+            font-weight: 600;
+            color: #fff;
+        }        
+    }
+    .direita {
+        .remover {
+            position: absolute;
+            top: 20px;
+            right: 15px;
+            width: 15px;
+            height: 15px;
+            :global{background: url('/img/carrinho-remove.png') no-repeat;} 
+        }
+        .remover:hover {
+            background-position: -16px 0;
+        }
+        .preco {
+            position: absolute;
+            top: 55px;
+            right: 15px;
+            font-size: 14px;
+            color: #dfbd00;
+            .valor {
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.carrinho__item:hover {
+    background-color: #131316;
+}
+
+:global{
+	.carrinho__item--remove {
+		background-color: #131316;
+		text-decoration: line-through;
+		opacity: 0.5;
+		span {
+			text-decoration: line-through;
+		}
+	}
+}

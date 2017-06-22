@@ -1,0 +1,457 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should CarrinhoCabecalho match to snapshot simulating props 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <div
+    className="center-xs row carrinho__cabecalho"
+>
+    <figure
+        className="icone"
+    >
+        <img
+            alt="SACOLA"
+            src="img/bag.svg"
+        />
+    </figure>
+    <div
+        className="contador"
+    >
+        0
+    </div>
+    <div
+        className="titulo"
+    >
+        SACOLA
+    </div>
+</div>,
+  "nodes": Array [
+    <div
+      className="center-xs row carrinho__cabecalho"
+>
+      <figure
+            className="icone"
+      >
+            <img
+                  alt="SACOLA"
+                  src="img/bag.svg"
+            />
+      </figure>
+      <div
+            className="contador"
+      >
+            0
+      </div>
+      <div
+            className="titulo"
+      >
+            SACOLA
+      </div>
+</div>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <CarrinhoCabecalho
+        imgPath="img/bag.svg"
+        quantidadeCarrinho="0"
+        titulo="SACOLA"
+/>,
+      "_debugID": 5,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": WrappedComponent {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "props": Object {
+          "imgPath": "img/bag.svg",
+          "quantidadeCarrinho": "0",
+          "titulo": "SACOLA",
+        },
+        "refs": Object {},
+        "state": null,
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 3,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <div
+          className="center-xs row carrinho__cabecalho"
+>
+          <figure
+                    className="icone"
+          >
+                    <img
+                              alt="SACOLA"
+                              src="img/bag.svg"
+                    />
+          </figure>
+          <div
+                    className="contador"
+          >
+                    0
+          </div>
+          <div
+                    className="titulo"
+          >
+                    SACOLA
+          </div>
+</div>,
+        "_debugID": 6,
+        "_renderedOutput": <div
+          className="center-xs row carrinho__cabecalho"
+>
+          <figure
+                    className="icone"
+          >
+                    <img
+                              alt="SACOLA"
+                              src="img/bag.svg"
+                    />
+          </figure>
+          <div
+                    className="contador"
+          >
+                    0
+          </div>
+          <div
+                    className="titulo"
+          >
+                    SACOLA
+          </div>
+</div>,
+      },
+      "_renderedNodeType": 0,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <CarrinhoCabecalho
+    imgPath="img/bag.svg"
+    quantidadeCarrinho="0"
+    titulo="SACOLA"
+/>,
+}
+`;
+
+exports[`Should CarrinhoCabecalho match to snapshot with anonymous props 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <div
+    className="center-xs row carrinho__cabecalho"
+>
+    <figure
+        className="icone"
+    >
+        <img
+            alt=""
+            src=""
+        />
+    </figure>
+    <div
+        className="contador"
+    />
+    <div
+        className="titulo"
+    />
+</div>,
+  "nodes": Array [
+    <div
+      className="center-xs row carrinho__cabecalho"
+>
+      <figure
+            className="icone"
+      >
+            <img
+                  alt=""
+                  src=""
+            />
+      </figure>
+      <div
+            className="contador"
+      />
+      <div
+            className="titulo"
+      />
+</div>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <CarrinhoCabecalho
+        imgPath=""
+        quantidadeCarrinho=""
+        titulo=""
+/>,
+      "_debugID": 3,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": WrappedComponent {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "props": Object {
+          "imgPath": "",
+          "quantidadeCarrinho": "",
+          "titulo": "",
+        },
+        "refs": Object {},
+        "state": null,
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 2,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <div
+          className="center-xs row carrinho__cabecalho"
+>
+          <figure
+                    className="icone"
+          >
+                    <img
+                              alt=""
+                              src=""
+                    />
+          </figure>
+          <div
+                    className="contador"
+          />
+          <div
+                    className="titulo"
+          />
+</div>,
+        "_debugID": 4,
+        "_renderedOutput": <div
+          className="center-xs row carrinho__cabecalho"
+>
+          <figure
+                    className="icone"
+          >
+                    <img
+                              alt=""
+                              src=""
+                    />
+          </figure>
+          <div
+                    className="contador"
+          />
+          <div
+                    className="titulo"
+          />
+</div>,
+      },
+      "_renderedNodeType": 0,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <CarrinhoCabecalho
+    imgPath=""
+    quantidadeCarrinho=""
+    titulo=""
+/>,
+}
+`;
+
+exports[`Should CarrinhoCabecalho match to snapshot without props 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <div
+    className="center-xs row carrinho__cabecalho"
+>
+    <figure
+        className="icone"
+    >
+        <img
+            alt="SACOLA"
+            src="img/bag.svg"
+        />
+    </figure>
+    <div
+        className="contador"
+    />
+    <div
+        className="titulo"
+    >
+        SACOLA
+    </div>
+</div>,
+  "nodes": Array [
+    <div
+      className="center-xs row carrinho__cabecalho"
+>
+      <figure
+            className="icone"
+      >
+            <img
+                  alt="SACOLA"
+                  src="img/bag.svg"
+            />
+      </figure>
+      <div
+            className="contador"
+      />
+      <div
+            className="titulo"
+      >
+            SACOLA
+      </div>
+</div>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <CarrinhoCabecalho
+        imgPath="img/bag.svg"
+        quantidadeCarrinho=""
+        titulo="SACOLA"
+/>,
+      "_debugID": 1,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": WrappedComponent {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "props": Object {
+          "imgPath": "img/bag.svg",
+          "quantidadeCarrinho": "",
+          "titulo": "SACOLA",
+        },
+        "refs": Object {},
+        "state": null,
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 1,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <div
+          className="center-xs row carrinho__cabecalho"
+>
+          <figure
+                    className="icone"
+          >
+                    <img
+                              alt="SACOLA"
+                              src="img/bag.svg"
+                    />
+          </figure>
+          <div
+                    className="contador"
+          />
+          <div
+                    className="titulo"
+          >
+                    SACOLA
+          </div>
+</div>,
+        "_debugID": 2,
+        "_renderedOutput": <div
+          className="center-xs row carrinho__cabecalho"
+>
+          <figure
+                    className="icone"
+          >
+                    <img
+                              alt="SACOLA"
+                              src="img/bag.svg"
+                    />
+          </figure>
+          <div
+                    className="contador"
+          />
+          <div
+                    className="titulo"
+          >
+                    SACOLA
+          </div>
+</div>,
+      },
+      "_renderedNodeType": 0,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <CarrinhoCabecalho
+    imgPath="img/bag.svg"
+    quantidadeCarrinho=""
+    titulo="SACOLA"
+/>,
+}
+`;

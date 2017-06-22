@@ -21,3 +21,94 @@ The data we provide is a static JSON file under `/public/data`.
 * Persist data on page reload;
 * Test your code;
 * Instructions on how to build/run the project.
+
+# How to install
+
+## Before all
+
+You must install in your PC:
+
+* Git: https://git-scm.com/
+* Node: https://nodejs.org/en/
+
+Optional:
+
+* Yarn: https://yarnpkg.com/en/ => This can be used instead npm, more faster than npm :D
+
+
+## Installation
+
+Go to the directory that you want to deposit the repository
+
+Open the "Git Bash" or any command prompt that can run Git commands
+
+Run this command: 
+
+```cmd
+git clone https://github.com/vmatsumura/front-end-recruitment
+```
+
+And get inside the project's folder:
+
+```cmd
+cd front-end-recruitment/
+```
+
+Now you need install all the libs used on the project
+
+First run this command (you'll need wait a few minutes):
+
+```cmd
+npm install  
+```
+
+After this command return success, run this for install the servers globally:
+
+```
+npm install -g webpack-dev-server json-server babel-eslint
+```
+
+With that, lets run the application
+
+# How to run the app
+
+## Static Server 
+First you'll need start the static server of products JSON, run:
+```
+npm run server
+```
+This static REST API Server works in: http://localhost:3000/products
+
+Now this command prompt is occupied serving the JSON, please open a new command prompt in the same directory
+
+## App Server
+To serving the app, run this command:
+```
+npm start
+```
+The app will works in: http://localhost:8080
+
+And have fun {^_^}
+
+## Test Code
+To test the code, run this command:
+```
+npm run test:watch
+```
+This will open a console to test some components
+
+Click the key 'a' of your keyboard to run the test
+
+# Application
+
+toBuild() this app, was used:
+
+* React
+* Redux
+* Webpack
+* ES6
+* Babel
+* Sass
+* Jest
+
+## Thanks for the opportunity :D

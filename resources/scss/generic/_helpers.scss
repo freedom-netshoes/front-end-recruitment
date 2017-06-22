@@ -1,0 +1,53 @@
+// |------------------------------------------------------
+// |------------------------------------------------------
+// | Helpers
+// |------------------------------------------------------
+// |------------------------------------------------------
+
+.row {
+	display: inline-block;
+	position: relative;
+}
+
+.clear {
+	display: block;
+	clear: both;
+}
+
+.hide-text {
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.block {
+	display: block;
+}
+
+.hidden {
+	display: none;
+}
+
+.center {
+	text-align: center;
+}
+
+.auto {
+	margin: 0 auto;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.lowercase {
+	text-transform: lowercase;
+}

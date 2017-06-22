@@ -1,0 +1,32 @@
+// We are following a pattern called ITCSS (Inverted Triangle CSS).
+// The concept is based mainly around layering on styles based on their reach within
+// the DOM. We are also using this in combination of BEM and name spacing.
+// https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/
+
+// Settings: Global variables, config and  colors definitions.
+@import "settings/colors",
+		"settings/global",
+		"settings/fonts",
+		"settings/screens",
+		"settings/easing";
+
+// Tools: Libraries, mixins and functions.
+@import "tools/mixins";
+@import "tools/flexboxgrid";
+
+// Generic: Ground-zero styles (normalize, reset, box-sizing).
+@import "generic/normalize",
+		"generic/helpers";
+
+// Elements: Unclassed HTML elements (type selectors).
+@import "elements/headings",
+		"elements/paragraphs",
+		"elements/lists",
+		"elements/links";
+
+// Objects: Class-based selectors which define undecorated design patterns.
+@import "objects/header",
+		"objects/sidebar",
+		"objects/footer",
+		"objects/layout";
+
