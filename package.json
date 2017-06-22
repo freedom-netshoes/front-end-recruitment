@@ -8,7 +8,7 @@
 		"build": "webpack",
 		"server": "json-server --watch public/data/products.json",
 		"test": "jest resources/js --no-cache --coverage",
-		"test:watch": "npm test -- --watch"
+		"test:watch": "npm run test -- --watch"
 	},
 	"repository": {
 		"type": "git",

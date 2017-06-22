@@ -93,11 +93,11 @@ And have fun {^_^}
 ## Test Code
 To test the code, run this command:
 ```
-npm test:watch
+npm run test:watch
 ```
 This will open a console to test some components
-Click the key 'u' of your keyboard to update the snapshots
-And click 'a' to run the test
+
+Click the key 'a' of your keyboard to run the test
 
 # Application
 
