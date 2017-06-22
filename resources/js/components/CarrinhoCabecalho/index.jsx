@@ -4,30 +4,30 @@ import styles from './CarrinhoCabecalho.scss';
 
 @CSSModules(styles)
 class CarrinhoCabecalho extends Component {
-    render () {		
-		const {quantidadeCarrinho} = this.props;
-	
-        return (        
-             <div className="center-xs row" styleName="carrinho__cabecalho">
-                <figure styleName="icone">
-                    <img src={this.props.imgPath} alt={this.props.titulo} />
-                </figure>
-                <div styleName="contador">{quantidadeCarrinho}</div>
-                <div styleName="titulo">{this.props.titulo}</div>
-            </div>       
-        )
-    }      
+  render () {
+    const {quantidadeCarrinho} = this.props;
+
+    return (
+      <div className='center-xs row' styleName='carrinho__cabecalho'>
+        <figure styleName='icone'>
+          <img src={this.props.imgPath} alt={this.props.titulo} />
+        </figure>
+        <div styleName='contador'>{quantidadeCarrinho}</div>
+        <div styleName='titulo'>{this.props.titulo}</div>
+      </div>
+    );
+  }
 }
 
 CarrinhoCabecalho.defaultProps = {
-    imgPath: 'img/bag.svg',
-    titulo: 'SACOLA',
-    contador: '0'
+  imgPath: 'img/bag.svg',
+  titulo: 'SACOLA',
+  quantidadeCarrinho: ''
 };
 CarrinhoCabecalho.propTypes = {
-    imgPath: PropTypes.string,
-    titulo: PropTypes.string,
-    contador: PropTypes.string
-};    
+  imgPath: PropTypes.string,
+  titulo: PropTypes.string,
+  quantidadeCarrinho: PropTypes.node
+};
 
 export default CarrinhoCabecalho;

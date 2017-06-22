@@ -65,7 +65,7 @@ npm install
 After this command return success, run this for install the servers globally:
 
 ```
-npm install -g webpack-dev-server json-server
+npm install -g webpack-dev-server json-server babel-eslint
 ```
 
 With that, lets run the application
@@ -90,6 +90,15 @@ The app will works in: http://localhost:8080
 
 And have fun {^_^}
 
+## Test Code
+To test the code, run this command:
+```
+npm test:watch
+```
+This will open a console to test some components
+Click the key 'u' of your keyboard to update the snapshots
+And click 'a' to run the test
+
 # Application
 
 toBuild() this app, was used:
@@ -100,5 +109,6 @@ toBuild() this app, was used:
 * ES6
 * Babel
 * Sass
+* Jest
 
 ## Thanks for the opportunity :D

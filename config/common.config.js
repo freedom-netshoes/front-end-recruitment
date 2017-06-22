@@ -65,14 +65,24 @@ Config.vendor = [
 /* --- RULES --- */
 
 Config.rules = [
-  {
+  { 
     test: /\.jsx?$/,
     exclude: /node_modules/,
-    use: [
-      {
-        loader: 'babel-loader'
-      		}
-    		]
+    use: {
+      loader: 'babel-loader',
+      options: {
+        presets: [
+          ['es2015', { modules: false }],
+          'react',
+          'stage-0'
+        ],
+        plugins: [
+          'transform-decorators-legacy',
+          'transform-class-properties',
+          'react-hot-loader/babel'
+        ]
+      }
+    }
   },
   {
     test: /\.(png|gif|woff|woff2|eot|ttf|svg)$/,

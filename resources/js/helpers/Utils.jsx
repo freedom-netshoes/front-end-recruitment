@@ -27,4 +27,4 @@ const CalcValorPrestacao = (valor, prestacao) => {
   return (valor / prestacao).toFixed(2);
 };
 
-export {CalcQuantidadeCarrinho,	CalcSubtotalCarrinho, CalcValorPrestacao};
+export {CalcQuantidadeCarrinho, CalcSubtotalCarrinho, CalcValorPrestacao};

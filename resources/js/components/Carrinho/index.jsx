@@ -7,58 +7,56 @@ import CarrinhoRodape from 'CarrinhoRodape';
 
 @CSSModules(styles)
 class Carrinho extends Component {
-    render () {
-		
-		const {			
-			classeCarrinho,				
-			fecharCarrinho,
-			produtosCarrinho,
-            quantidadeCarrinho,
-			removerProdutoCarrinho, 
-            subtotalCarrinho
-		} = this.props;
-		
-        return (        
-            <div 
-				className={classeCarrinho}
-				styleName='carrinho'
-				onMouseLeave={fecharCarrinho}>				
-                <CarrinhoCabecalho quantidadeCarrinho={quantidadeCarrinho}/>
-                <ul className="col-xs-12" styleName="carrinho__itens">
-					{produtosCarrinho.map(produto => (
-						<CarrinhoItem 
-							key={produto.id}
-							{...produto} 
-							removerProdutoCarrinho={removerProdutoCarrinho}							
-						/>									
-					))}
-                </ul>
-                <CarrinhoRodape subtotalCarrinho={subtotalCarrinho}/>
-            </div>
-        )
-    }    
+  render () {
+    const {
+      classeCarrinho,
+      fecharCarrinho,
+      produtosCarrinho,
+      quantidadeCarrinho,
+      removerProdutoCarrinho,
+      subtotalCarrinho
+    } = this.props;
+
+    return (
+      <div
+        className={classeCarrinho}
+        styleName='carrinho'
+        onMouseLeave={fecharCarrinho}>
+        <CarrinhoCabecalho quantidadeCarrinho={quantidadeCarrinho} />
+        <ul className='col-xs-12' styleName='carrinho__itens'>
+          {produtosCarrinho.map(produto => (
+            <CarrinhoItem
+              key={produto.id}
+              {...produto}
+              removerProdutoCarrinho={removerProdutoCarrinho} />
+          ))}
+        </ul>
+        <CarrinhoRodape subtotalCarrinho={subtotalCarrinho} />
+      </div>
+    );
+  }
 }
 
 Carrinho.defaultProps = {
-	classeCarrinho: '',
-	abrirCarrinho: () => {},
-	fecharCarrinho: () => {},
-	removerOver: () => {},
-	removerOut: () => {},
-	produtosCarrinho: [],
-	removerProdutoCarrinho: () => {},
-	calcularValorPrestacao: () => {}
+  classeCarrinho: '',
+  abrirCarrinho: () => {},
+  fecharCarrinho: () => {},
+  removerOver: () => {},
+  removerOut: () => {},
+  produtosCarrinho: [],
+  removerProdutoCarrinho: () => {},
+  calcularValorPrestacao: () => {}
 };
 
 Carrinho.propTypes = {
-	classeCarrinho: PropTypes.string,
-	abrirCarrinho: PropTypes.func,
-	fecharCarrinho: PropTypes.func,
-	removerOver: PropTypes.func,
-	removerOut: PropTypes.func,	
-	produtosCarrinho: PropTypes.array,	
-	removerProdutoCarrinho: PropTypes.func,	
-	calcularValorPrestacao: PropTypes.func	
-};    
+  classeCarrinho: PropTypes.string,
+  abrirCarrinho: PropTypes.func,
+  fecharCarrinho: PropTypes.func,
+  removerOver: PropTypes.func,
+  removerOut: PropTypes.func,
+  produtosCarrinho: PropTypes.array,
+  removerProdutoCarrinho: PropTypes.func,
+  calcularValorPrestacao: PropTypes.func
+};
 
 export default Carrinho;
