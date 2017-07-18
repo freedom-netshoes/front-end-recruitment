@@ -1,7 +1,7 @@
 import Hapi from 'hapi';
 import Path from 'path';
 import Inert from 'inert';
-import data from './products'
+import products from './products'
 
 const server = new Hapi.Server({
 	connections: {
@@ -36,8 +36,13 @@ server.register([Inert], (err) => {
     }
   });
 
-  console.log(data());
-
+	server.route({
+    method: 'GET',
+    path: '/products',
+    handler: function (request, reply) {
+      return reply(products());
+    }
+	});
 });
 
 server.start((err) => {
