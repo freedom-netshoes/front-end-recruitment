@@ -11,7 +11,7 @@ $(function() {
                 </a>`;
       });
 
-      $('.products').append(obj);
+      $('.c-products').append(obj);
 
       $('.select').on('click', function() {
 

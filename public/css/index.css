@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+.wrapper {
+  max-width: 980px; }
+
+.c-products {
+  display: inline-block; }
+  .c-products__current {
+    color: #313135;
+    font-size: 8px; }
+  .c-products__installment {
+    color: #999999;
+    font-size: 14px; }
+  .c-products__separation {
+    display: block;
+    height: 2px;
+    width: 16px; }
+  .c-products__title {
+    font-size: 14px; }
