@@ -4,16 +4,18 @@ $(function() {
     type: "GET",
     success: function(data) {
       const obj = data.products.map(function(element) {
-        return `<a class="select" id="${element.id}"><img/>
-                  <h3>${element.title}</h3>
-                  <p>${element.currencyFormat} ${element.price}</p>
-                  <p>ou em até 3x de ${parseFloat((element.price / 3).toFixed(2))}
+        return `<a class="c-products__card js-select" id="${element.id}">
+                  <img class="c-products__image"/>
+                  <hr class="c-products__separation" />
+                  <h3 class="c-products__title">${element.title}</h3>
+                  <p class="c-products__current">${element.currencyFormat}<span class="c-products__price">${element.price}</span></p>
+                  <p class="c-products__installment">ou em até 3x de ${parseFloat((element.price / 3).toFixed(2))}</p>
                 </a>`;
       });
 
       $('.c-products').append(obj);
 
-      $('.select').on('click', function() {
+      $('.js-select').on('click', function() {
 
         const item =  $(this).attr('id');
         const select = data.products.filter(function(element) {
@@ -22,12 +24,16 @@ $(function() {
           }
         });
 
-        $('.cart').append(`<a class="select" id="${select[0].id}"><img/>
-                            <h3>${select[0].title}</h3>
-                            <p>${select[0].currencyFormat} ${select[0].price}</p>
-                            <p>ou em até 3x de ${parseFloat((select[0].price / 3).toFixed(2))}
-                          </a>`);
+        $('.c-cart').append(`<a class="c-cart__card" id="${select[0].id}">
+                              <img class="c-cart__image"/>
+                              <h3 class="c-cart__title">${select[0].title}</h3>
+                              <p class="c-cart__current">${select[0].currencyFormat} <span class="c-cart__price">${select[0].price}</span></p>
+                              <p class="c-cart__installment">ou em até 3x de ${parseFloat((select[0].price / 3).toFixed(2))}</p>
+                              <a class="c-cart__close js-close">x</a>
+                            </a>`);
       });
+
+
     }
   });
 });

@@ -1,18 +1,24 @@
 * {
   margin: 0;
+  font-family: 'Open Sans';
   padding: 0
 }
 
 .wrapper {
-  max-width: 980px
+  margin: 0 auto;
+  max-width: 980px;
 }
 
 .c-products {
-  display: inline-block;
+  &__card {
+    display: inline-block;
+    text-align: center;
+    width: 24%;
+  }
 
   &__current {
     color: #313135;
-    font-size: 8px
+    font-size: 8px;
   }
 
   &__installment {
@@ -20,13 +26,70 @@
     font-size: 14px
   }
 
+  &__image {
+    height: auto;
+    width: 80%;
+  }
+
+  &__price {
+    font-size: 18px;
+  }
+
   &__separation {
-    display: block;
+    background-color: #ecc20f;
+    border: none;
+    display: inline-block;
     height: 2px;
     width: 16px;
   }
 
   &__title {
+    font-size: 14px
+  }
+}
+
+.c-cart {
+  background-color: #1b1a20;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 40%;
+
+  &__card {
+    border: 1px solid #000;
+    display: block;
+    width: 100%;
+  }
+
+  &__current {
+    color: #313135;
+    font-size: 8px;
+  }
+
+  &__installment {
+    color: #999999;
+    font-size: 14px
+  }
+
+  &__image {
+    float: left
+  }
+
+  &__price {
+    font-size: 18px;
+  }
+
+  &__separation {
+    background-color: #ecc20f;
+    border: none;
+    display: inline-block;
+    height: 2px;
+    width: 16px;
+  }
+
+  &__title {
+    color: #ffffff;
     font-size: 14px
   }
 }

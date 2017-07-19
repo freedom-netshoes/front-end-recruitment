@@ -1,6 +1,8 @@
 import Hapi from 'hapi';
 import Path from 'path';
 import Inert from 'inert';
+import Webpack from 'webpack';
+import WebpackPlugin from 'hapi-webpack-plugin';
 import products from './products'
 
 const server = new Hapi.Server({
@@ -19,10 +21,11 @@ server.connection({
 });
 
 
-server.register([Inert], (err) => {
+server.register([{register: WebpackPlugin, options: './webpack.config.js'}, Inert], (err) => {
 	if (err) {
 		throw err;
 	}
+
 
   server.route({
     method: 'GET',
