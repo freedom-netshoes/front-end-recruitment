@@ -36,6 +36,7 @@
   },
   "devDependencies": {
     "extract-text-webpack-plugin": "^2.1.2",
-    "hapi-webpack-plugin": "^2.0.0"
+    "hapi-webpack-plugin": "^2.0.0",
+    "style-loader": "^0.18.2"
   }
 }

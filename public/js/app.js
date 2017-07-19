@@ -24,16 +24,19 @@ $(function() {
           }
         });
 
-        $('.c-cart').append(`<a class="c-cart__card" id="${select[0].id}">
-                              <img class="c-cart__image"/>
-                              <h3 class="c-cart__title">${select[0].title}</h3>
-                              <p class="c-cart__current">${select[0].currencyFormat} <span class="c-cart__price">${select[0].price}</span></p>
-                              <p class="c-cart__installment">ou em até 3x de ${parseFloat((select[0].price / 3).toFixed(2))}</p>
-                              <a class="c-cart__close js-close">x</a>
-                            </a>`);
+        $('.c-cart__itens').append(`<a class="c-cart__card" id="${select[0].id}">
+                                      <img class="c-cart__image"/>
+                                      <h3 class="c-cart__title">${select[0].title}</h3>
+                                      <p class="c-cart__size-color">${select[0].availableSizes} | ${select[0].style}</h3>
+                                      <p class="c-cart__current">${select[0].currencyFormat} <span class="c-cart__price">${select[0].price}</span></p>
+                                      <p class="c-cart__installment">ou em até 3x de ${parseFloat((select[0].price / 3).toFixed(2))}</p>
+                                      <a class="c-cart__close js-close">x</a>
+                                    </a>`);
       });
 
-
+      $('.js-close').on('click', () => {
+        $(this).remove();
+      });
     }
   });
 });

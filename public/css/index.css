@@ -38,12 +38,19 @@
   font-size: 14px; }
 
 .c-cart {
-  background-color: #000;
+  background-color: #1b1a20;
   height: 100%;
   position: absolute;
   right: 0;
   top: 0;
   width: 40%; }
+  .c-cart__buy {
+    display: block;
+    height: 40px;
+    padding: 14px;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%; }
   .c-cart__card {
     border: 1px solid #000;
     display: block;
@@ -55,8 +62,7 @@
     color: #999999;
     font-size: 14px; }
   .c-cart__image {
-    height: auto;
-    width: 80%; }
+    float: left; }
   .c-cart__price {
     font-size: 18px; }
   .c-cart__separation {

@@ -54,7 +54,17 @@
   position: absolute;
   right: 0;
   top: 0;
-  width: 40%;
+  width: 80%;
+
+  &__buy {
+    color: #fff;
+    display: block;
+    height: 40px;
+    padding: 14px;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+  }
 
   &__card {
     border: 1px solid #000;

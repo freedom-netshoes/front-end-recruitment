@@ -8,23 +8,22 @@ module.exports = {
   },
 
   module: {
-    rules: [
-      { // regular css files
-        test: /\.css$/,
+    rules: [{
+        test: /\.scss$/,
         use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: 'css-loader',
-        }),
-      },
-      { // sass / scss loader for webpack
-        test: /\.(sass|scss)$/,
-        loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
-      }
-    ]
+            use: [{
+                loader: "css-loader"
+            }, {
+                loader: "sass-loader"
+            }],
+            // use style-loader in development
+            fallback: "style-loader"
+        })
+    }]
   },
   plugins: [
     new ExtractTextPlugin({ // define where to save the file
-      filename: './public/index.css',
+      filename: './public/css/index.css',
       allChunks: true,
     }),
   ]
