@@ -1,4 +1,5 @@
 * {
+  box-sizing: border-box;
   margin: 0;
   font-family: 'Open Sans';
   padding: 0
@@ -13,6 +14,7 @@
   &__card {
     display: inline-block;
     text-align: center;
+    margin: 30px 0.5%;
     width: 24%;
   }
 
@@ -27,7 +29,9 @@
   }
 
   &__image {
+    display: block;
     height: auto;
+    margin: 0 auto;
     width: 80%;
   }
 
@@ -38,37 +42,57 @@
   &__separation {
     background-color: #ecc20f;
     border: none;
-    display: inline-block;
+    display: block;
     height: 2px;
+    margin: 10px auto;
     width: 16px;
   }
 
   &__title {
-    font-size: 14px
+    font-size: 14px;
+    margin-top: 15px;
   }
 }
 
 .c-cart {
   background-color: #1b1a20;
+  display: none;
   height: 100%;
   position: absolute;
   right: 0;
   top: 0;
-  width: 80%;
+  width: 40%;
+
+  &__bag {
+    height: 140px;
+    padding-top: 64px;
+    text-align: center;
+  }
+
+  &__bag-title {
+    color: #fff;
+  }
 
   &__buy {
+    background-color: #000;
     color: #fff;
     display: block;
-    height: 40px;
+    height: 50px;
     padding: 14px;
+    font-weight: bold;
+    font-size: 14px;
+    margin: 0 auto;
     text-transform: uppercase;
     text-align: center;
-    width: 100%;
+    text-decoration: none;
+    width: 95%;
   }
 
   &__card {
-    border: 1px solid #000;
+    border-top: 1px solid #000;
     display: block;
+    height: 90px;
+    padding: 2% 2.5%;
     width: 100%;
   }
 
@@ -77,17 +101,48 @@
     font-size: 8px;
   }
 
+  &__container-value {
+    display: inline-block;
+    float: right;
+    text-align: right;
+  }
+
   &__installment {
     color: #999999;
     font-size: 14px
   }
 
-  &__image {
-    float: left
+  &__installment-total {
+    font-size: 12px;
+    color: #444448;
   }
+
+  &__info {
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: middle;
+  }
+
+  &__image {
+    display: inline-block;
+    height: 50px;
+    vertical-align: middle;
+    width: 50px;
+  }
+
+  &__itens {
+    max-height: 350px;
+    overflow-y: auto;
+  }
+  
 
   &__price {
     font-size: 18px;
+  }
+
+  &__qtd {
+    color: #79797a;
+    font-size: 12px;
   }
 
   &__separation {
@@ -98,8 +153,38 @@
     width: 16px;
   }
 
+  &__size-color {
+    color: #79797a;
+    font-size: 12px;
+  }
+
+  &__subtotal {
+    color: #5b5b5f;
+    display: inline-block;
+    font-size: 14px;
+    vertical-align: top;
+  }
+
   &__title {
     color: #ffffff;
-    font-size: 14px
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  &__total {
+    height: 105px;
+    padding: 40px 30px;
+  }
+
+  &__options {
+    float: right;
+    text-align: right;
+    vertical-align: middle;
+  }
+
+  &__value-total {
+    color: #ecc20f;
+    font-size: 16px;
+    font-weight: bold;
   }
 }
