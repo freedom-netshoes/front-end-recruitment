@@ -1,8 +1,11 @@
 import React from 'react';
 
 export default props => {
+  const callbackFn = (key) => {
+    props.handleAdd(key)
+  }
   const renderProduct = () => {
-    const list = props.list || []
+    const list = props.products || []
     return list.map(product => (
         <div className="c-product" key={product.id}>
           <img className="c-procut__img" />
@@ -14,7 +17,7 @@ export default props => {
             ,00
           </p>
           <p className="c-product__installments">ou {product.installments}x de {product.currencyFormat} {product.price/product.installments}</p>
-          <button className="c-product__cart" onClick={props.onClick}>Colocar no carrinho</button>
+          <button className="c-product__cart" onClick={callbackFn.bind(this, product)}>Colocar no carrinho</button>
         </div>
       ))
   }

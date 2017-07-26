@@ -6,26 +6,27 @@ import products from '../../services/products'
 export default class App extends Component {
   constructor(props) {
     super(props)
-    this.handleAdd = this.handleAdd.bind(this)
     this.state = {
       products: products(),
       list: []
     }
+    this.handleAdd = this.handleAdd.bind(this)
   }
 
-  handleAdd() {
+  handleAdd(key) {
     // adicionar na lista de carrinho cada produto clicado
-    setState({products: products(), list.push()})
+    console.log(key)
+    // setState({products: products(), list.push()})
   }
 
-  handleRemove() {
-    console.log(this)
+  handleRemove(key) {
+    
   }
 
   render() {
     return (
       <div className="container">
-        <Products list={this.state.products} onClick={this.handleAdd}/>
+        <Products products={this.state.products} handleAdd={this.handleAdd}/>
         <Cart />
       </div>
     )
