@@ -247,6 +247,10 @@ const defaultDatas = {
   data: "./data.json"
 };
 
-export default function Data() {
-  return json['products']
+export default {
+  filter: (target, condition) => {
+     console.log(target, condition)
+    return json['products'].filter(elem => elem[condition] === target)
+  },
+  getData: () => json['products']
 }

@@ -7,16 +7,21 @@ export default class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      products: products(),
+      products: products.getData(),
       list: []
     }
     this.handleAdd = this.handleAdd.bind(this)
+    
   }
 
   handleAdd(key) {
     // adicionar na lista de carrinho cada produto clicado
-    console.log(key)
-    // setState({products: products(), list.push()})
+    const newlist = this.state.list;
+    newlist.push(products.filter(key, 'id')[0])
+    this.setState({
+      products: products.getData(), 
+      list: newlist
+    })
   }
 
   handleRemove(key) {

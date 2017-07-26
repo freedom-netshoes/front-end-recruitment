@@ -17,7 +17,7 @@ export default props => {
             ,00
           </p>
           <p className="c-product__installments">ou {product.installments}x de {product.currencyFormat} {product.price/product.installments}</p>
-          <button className="c-product__cart" onClick={callbackFn.bind(this, product)}>Colocar no carrinho</button>
+          <button className="c-product__cart" onClick={callbackFn.bind(this, product.id)}>Colocar no carrinho</button>
         </div>
       ))
   }
