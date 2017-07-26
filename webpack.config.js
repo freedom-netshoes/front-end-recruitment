@@ -1,30 +1,40 @@
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-
+const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
-  entry: ['./resources/js/index.js', './resources/sass/index.scss'],
+  entry: './src/index.jsx',
   output: {
-    filename: './public/js/bundle.js'
+    path: __dirname + '/public',
+    filename: './bundle.js',
   },
-
-  module: {
-    rules: [{
-        test: /\.scss$/,
-        use: ExtractTextPlugin.extract({
-            use: [{
-                loader: "css-loader"
-            }, {
-                loader: "sass-loader"
-            }],
-            // use style-loader in development
-            fallback: "style-loader"
-        })
-    }]
+  devServer: {
+    port: 8080,
+    contentBase: './public',
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
   },
   plugins: [
-    new ExtractTextPlugin({ // define where to save the file
-      filename: './public/css/index.css',
-      allChunks: true,
-    }),
-  ]
-};
+    new ExtractTextPlugin('app.css')
+  ],
+  module: {
+    loaders: [{
+      test: /.js[x]?$/,
+      loader: 'babel-loader',
+      exclude: /node_modules/,
+      query: {
+        presets: ['es2015', 'react'],
+        plugins: ['transform-object-rest-spread']
+      }
+    }, {
+      test: /\.css$/,
+      loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
+    }, {
+      test: /\.woff|.woff2|.ttf|.eot|.svg*.*$/,
+      loader: 'file'
+    }]
+  },
+  node: {
+    fs: 'empty'
+  } 
+}
