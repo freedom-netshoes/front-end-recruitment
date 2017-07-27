@@ -1,8 +1,12 @@
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const extractSass = new ExtractTextPlugin({
+  filename: 'css/[name].css',
+  allChunks: true,
+})
 
 module.exports = {
-  entry: './src/index.jsx',
+  entry: ['./src/index.jsx', './src/index.scss'],
   output: {
     path: __dirname + '/public',
     filename: './bundle.js',
@@ -15,10 +19,10 @@ module.exports = {
     extensions: ['.js', '.jsx'],
   },
   plugins: [
-    new ExtractTextPlugin('app.css')
+    extractSass
   ],
   module: {
-    loaders: [{
+    rules: [{
       test: /.js[x]?$/,
       loader: 'babel-loader',
       exclude: /node_modules/,
@@ -28,7 +32,10 @@ module.exports = {
       }
     }, {
       test: /\.scss$/,
-      loader: ExtractTextPlugin.extract('style-loader', 'css-loader', 'sass-loader')
+      use: ExtractTextPlugin.extract({
+        fallback: 'style-loader',
+        use: 'css-loader!sass-loader',
+      }),
     }, {
       test: /\.woff|.woff2|.ttf|.eot|.svg*.*$/,
       loader: 'file'
