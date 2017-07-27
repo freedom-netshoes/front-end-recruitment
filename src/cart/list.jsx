@@ -8,9 +8,9 @@ export default props => {
         <img className="c-cart__image" src="{product.url}"/>
         <h3 className="c-cart__title-product">{product.title}</h3>
         <p className="c-cart__size-style">{product.size} | {product.style}</p>
-        <p className="c-cart__amount">{product.amount}</p>
+        <input class="text" className="c-cart__amount" onChange={() => props.hadlenInput()} />
         <h3 className="c-cart__price">{product.currencyFormat} {product.price}</h3>
-        <a href='#'>x</a>
+        {/* <button className="c-cart__close" onClick={() => props.handleRemove(product.id)}>x</button> */}
       </li>
     ))
   }

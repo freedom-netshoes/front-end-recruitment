@@ -248,9 +248,8 @@ const defaultDatas = {
 };
 
 export default {
-  filter: (target, condition) => {
-     console.log(target, condition)
-    return json['products'].filter(elem => elem[condition] === target)
+  filter: (target, condition, data = json) => {
+    return data['products'].filter(elem => elem[condition] === target)
   },
   getData: () => json['products']
 }

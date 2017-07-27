@@ -6,8 +6,8 @@ export default props => {
   }
   const renderProduct = () => {
     const list = props.products || []
-    return list.map(product => (
-        <div className="c-product" key={product.id}>
+    return list.map((product, key) => (
+        <div className="c-product" key={key}>
           <img className="c-procut__img" />
           <h3 className="c-product__title">{product.title}</h3>
           <hr className="c-product__separation" />
@@ -17,7 +17,7 @@ export default props => {
             ,00
           </p>
           <p className="c-product__installments">ou {product.installments}x de {product.currencyFormat} {product.price/product.installments}</p>
-          <button className="c-product__cart" onClick={callbackFn.bind(this, product.id)}>Colocar no carrinho</button>
+          <button className="c-product__cart" onClick={() => props.handleAdd(product.id)}>Colocar no carrinho</button>
         </div>
       ))
   }
