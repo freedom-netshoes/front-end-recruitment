@@ -1,0 +1,79 @@
+$font-text: 'Open Sans', sans-serif;
+
+$color-border: #dfbd00;
+$color-gray: #999999;
+
+.c-product {
+  display: inline-block;
+  text-align: center;
+  margin-bottom: em(50);
+  width: 25%;
+
+  @media only screen and (max-width: 1024px) {
+    width: 33%;
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: 50%;
+  }
+
+  @media only screen and (max-width: 480px) {
+    width: 100%;
+  }
+
+  &__cart {
+    background-color: #ff691e;
+    border: none;
+    color: #fff;
+    cursor: pointer;  
+    font-family: $font-text;
+    font-weight: bold;
+    height: 35px;
+    outline: none;
+    width: 170px;
+
+    &:hover {
+      background-color: #e05813
+    }
+  }
+
+  &__currencyFormat {
+    color: #000;
+    font-family: $font-text;
+    font-size: em(12);
+  }
+
+  &__img {
+    height: 230px;
+    width: 180px
+  }
+
+  &__installments{
+    color: $color-gray;
+    font-family: $font-text;
+    font-size: em(14);
+  }
+
+  &__separation {
+    border: em(2) solid $color-border;
+    width: em(15);
+  }   
+
+  &__title {
+    color: #000;
+    font-family: $font-text;
+    font-size: em(14);
+  }
+
+  &__value {
+    font-weight: bold;
+
+    &--price {
+      font-size: em(24);
+      margin-left: 6px;
+    }
+  }  
+
+  
+}
+ 

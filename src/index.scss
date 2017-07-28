@@ -1,3 +1,7 @@
-.container {
-  max-height: 980px;
-}
+// Defaults e Mixins
+@import './sass/default/index';
+@import './sass/default/em';
+
+// Components
+@import './sass/products/index';
+@import './sass/cart/index';

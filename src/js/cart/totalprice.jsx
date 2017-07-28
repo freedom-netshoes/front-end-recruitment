@@ -21,7 +21,7 @@ export default props => {
     return totalPrice
   }
   return (
-    <div>
+    <div className="c-cart__info-total">
       <h3 className="c-cart__total-price">R$ {updatePrice()}</h3>
       <p className="c-cart__installments">ou em até {updateInstallment()} X R$ {updatePrice() / updateInstallment()}</p>
     </div>

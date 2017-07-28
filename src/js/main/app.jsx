@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Products from '../products/products'
 import Cart from '../cart/cart'
-import products from '../../services/products'
+import products from '../../../services/products'
 
 export default class App extends Component {
   constructor(props) {
