@@ -56,6 +56,7 @@ $color-gray: #999999;
 
   &__separation {
     border: em(2) solid $color-border;
+    margin: 0 auto;
     width: em(15);
   }   
 

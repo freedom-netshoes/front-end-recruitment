@@ -1,4 +1,5 @@
 import React from 'react';
+import utils from '../utils/utils'
 
 export default props => {
   const callbackFn = (key) => {
@@ -13,10 +14,10 @@ export default props => {
           <hr className="c-product__separation" />
           <p className="c-product__currencyFormat">
             {product.currencyFormat}
-            <span className="c-product__value c-product__value--price">{product.price}</span>
-            ,00
+            <span className="c-product__value c-product__value--price">{utils.converteFloatMoeda(product.price, 'int')}</span>
+            ,{utils.converteFloatMoeda(product.price, 'dec')}
           </p>
-          <p className="c-product__installments">ou {product.installments}x de <span className="c-product__value"> {product.currencyFormat} {product.price/product.installments}</span></p>
+          <p className="c-product__installments">ou {product.installments}x de <span className="c-product__value"> {product.currencyFormat} {utils.converteFloatMoeda(product.price/product.installments)}</span></p>
           <button className="c-product__cart" onClick={() => props.handleAdd(product.id)}>Adicionar no carrinho</button>
         </div>
       ))

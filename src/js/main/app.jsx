@@ -11,6 +11,7 @@ export default class App extends Component {
       list: []
     }
     this.handleAdd = this.handleAdd.bind(this)
+    this.handleOnChange = this.handleOnChange.bind(this)
     this.handleRemove = this.handleRemove.bind(this)
   }
 
@@ -28,7 +29,20 @@ export default class App extends Component {
   handleAdd(key) {
     // adicionar na lista de carrinho cada produto clicado
     const newlist = this.state.list;
-    newlist.push(products.filter(key, 'id')[0])
+    const flag = newlist.filter(elem => elem.id === key)
+    
+    if (flag.length === 0) {
+      const obj = products.filter(key, 'id')[0];
+      obj.amount = 1;
+      newlist.push(obj)
+    } else {
+      newlist.forEach((elem) => {
+        if(elem.id === key) {
+          elem.amount += 1;
+        }
+      })
+    }
+
     this.refresh(newlist)
   }
 
@@ -36,6 +50,9 @@ export default class App extends Component {
     // Cria uma nova lista retirando item clicado
     const newlist = this.state.list.filter(elem => elem["id"] != key)
     this.refresh(newlist)
+  }
+
+  handleOnChange(e, key) {
   }
 
   render() {
@@ -48,6 +65,7 @@ export default class App extends Component {
         <Cart 
           list={this.state.list}
           handleRemove={this.handleRemove}
+          handleOnChange={this.handleOnChange}
         />
       </div>
     )
