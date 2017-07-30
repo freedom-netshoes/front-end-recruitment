@@ -1,0 +1,16 @@
+.c-menu {
+  background-color: #202025; 
+  height: 50px;
+  margin-bottom: 20px;
+  padding-top: 3px;
+  text-align: center;
+  width: 100%; 
+
+  &__link {
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.8
+    }
+  }
+}
