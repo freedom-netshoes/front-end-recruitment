@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Products from '../products/products'
 import Cart from '../cart/cart'
+import Menu from '../menu/menu'
 import products from '../../../services/products'
 
 export default class App extends Component {
@@ -8,11 +9,14 @@ export default class App extends Component {
     super(props)
     this.state = {
       products: products.getData(),
-      list: []
+      list: [],
+      cartStyle: {display:'none'},
     }
     this.handleAdd = this.handleAdd.bind(this)
     this.handleOnChange = this.handleOnChange.bind(this)
     this.handleRemove = this.handleRemove.bind(this)
+    this.updateCartStyle = this.updateCartStyle.bind(this)
+    this.addAmount = this.addAmount.bind(this)
   }
 
   filter() {
@@ -37,8 +41,8 @@ export default class App extends Component {
       newlist.push(obj)
     } else {
       newlist.forEach((elem) => {
-        if(elem.id === key) {
-          elem.amount += 1;
+        if(elem.id == key) {
+          elem.amount = parseInt(elem.amount) + 1;
         }
       })
     }
@@ -52,20 +56,45 @@ export default class App extends Component {
     this.refresh(newlist)
   }
 
-  handleOnChange(e, key) {
+  addAmount(id, valor) {
+    const newlist = this.state.list;
+    newlist.forEach((elem) => {
+      if(elem.id == id) {
+        elem.amount = valor;
+      }
+    })
+    this.refresh(newlist)
+  }
+
+  handleOnChange(e) {
+    this.addAmount(e.currentTarget.id, e.currentTarget.value)
+  }
+
+  updateCartStyle(style) {
+    this.setState({
+      ...this.state,
+      cartStyle: {display: style}
+    })
   }
 
   render() {
     return (
       <div className="container">
+        <Menu 
+          cartStyle={this.updateCartStyle}
+          list={this.state.list}
+        />
+        
         <Products 
           products={this.state.products} 
           handleAdd={this.handleAdd}
         />
         <Cart 
           list={this.state.list}
+          cartStyle={this.updateCartStyle}
           handleRemove={this.handleRemove}
           handleOnChange={this.handleOnChange}
+          style={this.state.cartStyle}
         />
       </div>
     )

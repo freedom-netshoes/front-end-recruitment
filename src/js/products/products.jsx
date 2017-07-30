@@ -9,7 +9,7 @@ export default props => {
     const list = props.products || []
     return list.map((product, key) => (
         <div className="c-product" key={key}>
-          <img className="c-procut__img" src="images/img-1.jpg"/>
+          <img className="c-product__img" src={`images/img-${product.id}.jpg`}/>
           <h3 className="c-product__title">{product.title}</h3>
           <hr className="c-product__separation" />
           <p className="c-product__currencyFormat">

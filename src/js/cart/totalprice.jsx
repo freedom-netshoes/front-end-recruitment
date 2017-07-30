@@ -26,7 +26,7 @@ export default props => {
   return (
     <div className="c-cart__info-total">
       <h3 className="c-cart__total-price">R$ <span className="c-cart__total-price--bold">{utils.converteFloatMoeda(updatePrice())}</span></h3>
-      <p className="c-cart__installments">ou em até {updateInstallment()} X R$ {utils.converteFloatMoeda(updatePrice() / updateInstallment())}</p>
+      <p className="c-cart__installments">ou em até {updateInstallment()} X R$ {utils.converteFloatMoeda(updatePrice() / updateInstallment()) || 0}</p>
     </div>
   )
 }

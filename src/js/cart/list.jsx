@@ -17,7 +17,7 @@ export default props => {
           <h3 className="c-cart__title-product">{product.title}</h3>
           <p className="c-cart__info">Tam <select className="c-cart__select">{renderOptions(product.availableSizes)}</select> | {product.style}</p>
           <label className="c-cart__info">Quantidade </label>
-          <input type="number"className="c-cart__amount" defaultValue={product.amount} onChange={() => props.handleOnChange(e, product.id)}  name="amount" min="1" max="10" />
+          <input type="number"className="c-cart__amount" value={product.amount} id={product.id} onChange={(e) => props.handleOnChange(e)}  name="amount"   />
         </div>  
         <div className="c-cart__infos-final">
           <a className="c-cart__close" onClick={() => props.handleRemove(product.id)}><i className="fa fa-times" aria-hidden="true"></i></a> 

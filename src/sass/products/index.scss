@@ -45,7 +45,7 @@ $color-gray: #999999;
 
   &__img {
     height: 230px;
-    width: 180px
+    width: 230px
   }
 
   &__installments{
@@ -58,6 +58,7 @@ $color-gray: #999999;
     border: em(2) solid $color-border;
     margin: 0 auto;
     width: em(15);
+    margin: 10px auto;
   }   
 
   &__title {

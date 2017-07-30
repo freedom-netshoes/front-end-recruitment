@@ -5,6 +5,7 @@ $font-text: 'Open Sans', sans-serif;
 
 .c-cart {
   background-color: #202025;  
+  display: none;
   min-height: 630px;
   height: 100%;
   max-width: 517px;
@@ -50,6 +51,7 @@ $font-text: 'Open Sans', sans-serif;
     left: 35px;
     padding-top: 3px;
     position: relative;
+    text-align: center;
     top: 5px;
     vertical-align: bottom;
     width: 20px;
@@ -121,9 +123,10 @@ $font-text: 'Open Sans', sans-serif;
     border-bottom: 2px solid #131316;
     padding: 25px 0;
     list-style: none;
+    padding: 20px 5%;
 
-    &:last-child{
-      border: none
+    &:hover {
+      background-color: #131316
     }
 
   }
@@ -138,8 +141,8 @@ $font-text: 'Open Sans', sans-serif;
     border-top:2px solid #131316;
     border-bottom:2px solid #131316;
     height: 47%;
-    margin: 0 auto 5%;
-    max-width: 475px;
+    min-width: 512px;
+    margin-bottom: 30px;
     padding: 0;
     overflow: auto; 
   }

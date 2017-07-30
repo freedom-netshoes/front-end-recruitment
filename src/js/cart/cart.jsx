@@ -6,12 +6,11 @@ import Total from './totalprice'
 export default class Cart extends Component {
   render() {
     return(
-      <div className="c-cart">
-        <a className="c-cart__close-content"><i className="fa fa-times" aria-hidden="true"></i></a>
+      <div className="c-cart" style={this.props.style}>
+        <a className="c-cart__close-content" onClick={() => this.props.cartStyle("none")}><i className="fa fa-times" aria-hidden="true"></i></a>
         <div className="c-cart__header">
           <i className="c-cart__count">{this.props.list.length}</i>
           <img className="c-cart__icon-bag" src="images/bag.png"/>
-          
           <h2 className="c-cart__title">Sacola</h2>
         </div>
         <List 
