@@ -1,3 +1,5 @@
+@import '../../../styles/colors.scss';
+
 .icon-bag {
   background-image: url(/assets/bag.svg);
   height: 40px;
@@ -8,8 +10,8 @@
 
   .badge {
     position: absolute;
-    background: #ecbe00;
-    color: #000;
+    background: $bg-amarelo;
+    color: $bg-preto;
     font-size: 12px;
     padding: 5px;
     border-radius: 100%;

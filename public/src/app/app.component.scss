@@ -11,7 +11,7 @@ header {
 
      span { display: none }
      &::after  {
-      color: #fff;
+      color: $bg-branco;
       font-family: "icons";
       font-size: 25px;
       text-indent: 0;
@@ -27,7 +27,7 @@ header {
      padding: 10px;
 
      a {
-       color: #FFF;
+       color: $bg-branco;
      }
    }
 

@@ -4,7 +4,7 @@ import { IProducts } from '../interfaces/products';
 
 import { Store } from '@ngrx/store';
 import { Cart } from '../state-management/state/cart.state';
-import { ADD_TO_CART, TOTAL_CART } from '../state-management/actions/cart.actions';
+import { ADD_TO_CART } from '../state-management/actions/cart.actions';
 
 @Component({
   selector: 'app-home',

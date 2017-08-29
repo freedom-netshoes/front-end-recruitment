@@ -3,8 +3,7 @@ import { ActionReducer, Action } from '@ngrx/store';
 import { Cart, intitialState } from '../state/cart.state';
 import {
   ADD_TO_CART,
-  REMOVE_TO_CART,
-  TOTAL_CART
+  REMOVE_TO_CART
 } from '../actions/cart.actions';
 
 export function cartReducer (state = intitialState, action: Action) {
@@ -41,10 +40,6 @@ export function cartReducer (state = intitialState, action: Action) {
 
       localStorage.setItem('products', JSON.stringify(cartFilter));
       return {products: cartFilter};
-    }
-
-    case TOTAL_CART: {
-      return console.log(cartItem);
     }
 
     default:
