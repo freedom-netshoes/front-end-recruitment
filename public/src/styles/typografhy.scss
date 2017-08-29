@@ -1,0 +1,31 @@
+@import './colors.scss';
+
+$base-font: 14px;
+$medium--smallest-font: 16px;
+$medium--small-font: 18px;
+$medium-font: 24px;
+$medium--big-font: 28px;
+$big--small-font: 30px;
+$big-font: 36px;
+
+@font-face {
+  font-family: 'icons';
+  src:url('assets/fonts/icons.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+body {
+  font-family: 'Itau', sans-serif;
+  font-size: $base-font;
+}
+
+a {
+  font-weight: bold;
+  text-decoration: none;
+
+  &:hover, &:focus {
+    text-decoration: none;
+  }
+}

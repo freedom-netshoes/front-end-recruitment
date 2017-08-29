@@ -1,0 +1,22 @@
+<div class="checkout-container">
+  <div *ngIf="cartListItems.length > 0">
+    <ul *ngFor='let itemProduct of cartListItems'>
+      <app-product-item
+        (onClickChange)="onRemoveCartItem(itemProduct.products)"
+        activeCheckout="true"
+        [title]="itemProduct.products.title"
+        [image]="itemProduct.products.pathImageThumb"
+        [price]="itemProduct.products.price"
+        [installments]="itemProduct.products.installments"
+        [removeCartItem]="true"
+        [amount]="itemProduct.products.amount"
+        [subtotal]="itemProduct.products.subtotal"></app-product-item>
+    </ul>
+    <app-total [cartListItems]="cartListItems"></app-total>
+  </div>
+  <div *ngIf="cartListItems.length === 0">
+    <p>Carrinho vazio <a [routerLink]="['/']">Voltar a comprar</a></p>
+  </div>
+</div>
+
+

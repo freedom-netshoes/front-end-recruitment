@@ -1,0 +1,25 @@
+:host {
+  height: 55px;
+  display: inline-block;
+  width: 100%;
+
+  .title-total {
+    color: #7a7a7c;
+    font-size: 18px;
+    font-weight: bold;
+    float: left;
+  }
+
+  .value-total {
+    float: right;
+    font-size: 25px;
+    color: #e4b701;
+    font-weight: bold;
+  }
+
+  .installments {
+    float: right;
+    clear: both;
+    color: #978950;
+  }
+}

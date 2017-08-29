@@ -1,0 +1,38 @@
+@import '../styles/colors.scss';
+
+header {
+   background-color: $bg-roxo;
+   padding: 20px;
+   height: 90px;
+
+   .logo {
+     float: left;
+     margin: 3px 20px 0 0;
+
+     span { display: none }
+     &::after  {
+      color: #fff;
+      font-family: "icons";
+      font-size: 25px;
+      text-indent: 0;
+      font-weight: normal;
+      font-style: normal;
+      text-transform: lowercase;
+      content: "n";
+     }
+   }
+
+   .navigator {
+     float: left;
+     padding: 10px;
+
+     a {
+       color: #FFF;
+     }
+   }
+
+   .badge {
+      float: right;
+      background: transparent;
+   }
+ }
