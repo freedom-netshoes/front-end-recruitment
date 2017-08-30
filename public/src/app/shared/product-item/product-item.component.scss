@@ -9,6 +9,10 @@
     width: 181px;
     cursor: pointer;
 
+    .product__container {
+      height: 378px;
+    }
+
     .product__details-product {
       min-height: 69px;
 
@@ -37,6 +41,8 @@
     }
 
     .product__details-price {
+      min-height: 49px;
+
       .product__price {
         font-size: 16px;
         color: $bg-azul;
@@ -81,10 +87,15 @@
     margin: 0;
     cursor: pointer;
 
+    .product__container {
+      height: auto;
+    }
+
     &:hover {
       background: $bg-cinza-escuro;;
       opacity: 0.5;
       transition: opacity 1s;
+
 
       .product__details-price,
       .product__details-product {
@@ -95,6 +106,10 @@
         .product__title {
           text-decoration: line-through;
         }
+      }
+
+      .product__details-price {
+        min-height: 49px;
       }
 
       .product__button-remove {
@@ -151,6 +166,10 @@
     width: 100%;
     display: inline-block;
     margin: 0;
+
+    .product__container {
+      height: auto;
+    }
 
     .product__image {
       float: left;

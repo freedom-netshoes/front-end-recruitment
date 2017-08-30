@@ -1,3 +1,5 @@
+<app-nav-filter (onClickChange)="filterProducts($event)" [list]="listProducts"></app-nav-filter>
+
 <ul class="list-products">
   <app-product-item
     (onClickChange)="addToCart(product)"

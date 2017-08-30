@@ -14,11 +14,12 @@ export class TotalComponent implements DoCheck {
 
   @Input() installments = 10;
 
-
   constructor(
     private cartService: CartService,
   ) { }
+
   ngDoCheck() {
     this.total = this.cartService.getCartTotal(this.total, this.cartListItems);
   }
+
 }

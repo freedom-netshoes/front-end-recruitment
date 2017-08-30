@@ -1,0 +1,22 @@
+@import '../../../styles/colors.scss';
+
+.filter {
+  font-size: 14px;
+  font-weight: bold;
+  text-align: right;
+  padding: 20px 0;
+
+  .button {
+    border: none;
+    background-color: transparent;
+    color: $bg-azul;
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+  .button[disabled] {
+    font-weight: bold;
+    font-size: 14px;
+    cursor: not-allowed;
+  }
+}

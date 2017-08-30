@@ -1,11 +1,11 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-product-item',
   templateUrl: './product-item.component.html',
   styleUrls: ['./product-item.component.scss']
 })
-export class ProductItemComponent implements OnInit {
+export class ProductItemComponent {
 
   @Input() title: string;
 
@@ -30,11 +30,6 @@ export class ProductItemComponent implements OnInit {
   @Output() onClickChange = new EventEmitter();
 
   @Output() onClickOneChange = new EventEmitter();
-
-  constructor() { }
-
-  ngOnInit() {
-  }
 
   onClick($event) {
     this.onClickChange.emit({

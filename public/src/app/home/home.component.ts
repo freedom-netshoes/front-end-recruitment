@@ -29,8 +29,14 @@ export class HomeComponent implements OnInit {
     });
 
     this.productService.getProducts().subscribe(
-      (products: any) => this.listProducts = products.products
+      (products: any) => {
+        this.listProducts = products.products;
+      }
     );
+  }
+
+  filterProducts(payload) {
+    this.listProducts = payload.list;
   }
 
   addToCart(payload) {

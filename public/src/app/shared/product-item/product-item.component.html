@@ -1,10 +1,10 @@
 <li class="product"
   [attr.bag]="activeBag"
   [attr.checkout]="activeCheckout">
-  <div (click)="onClick($event)">
+  <div class="product__container" (click)="onClick($event)">
     <img
       class="product__image"
-      alt="{{ alt }}"
+      alt="{{ title }}"
       title="{{ title }}"
       src="../assets/products/{{ image }}"/>
     <div class="product__details-product">
@@ -16,7 +16,7 @@
       <p class="product__price">
         {{ price | currency: 'BRL':true:'1.2-2'}}
       </p>
-      <p class="product__installments">
+      <p class="product__installments" *ngIf="installments > 0">
         {{ installments }}x {{ price / installments | currency: 'BRL':true:'1.2-2' }}
       </p>
       <p class="product__subtotal" *ngIf="amount">Subtotal: {{ subtotal | currency: 'BRL':true:'1.2-2'}}</p>

@@ -3,7 +3,7 @@
     <a [routerLink]="['/']" class="logo">
       <span>Netshoes - sem limites entre você e o esporte</span>
     </a>
-    <div class="navigator">
+    <div *ngIf="currentUrl !== '/checkout'" class="navigator">
       <a [routerLink]="['/checkout']">Carrinho</a>
     </div>
     <app-amount-badge *ngIf="currentUrl !== '/checkout' && amountTotal > 0" class="badge" [cartListItems]="cartListItems"></app-amount-badge>
