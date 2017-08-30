@@ -1,0 +1,22 @@
+body {
+  color: $color-text;
+  font-family: "trebuchet ms",sans-serif;
+  font-size: 13px
+}
+
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+abbr {
+  text-decoration: none;
+}
+
+html {
+  font-size:62.5%;
+}
+
+*:focus {
+  outline: none;
+}

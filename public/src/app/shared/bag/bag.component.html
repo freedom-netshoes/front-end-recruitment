@@ -1,0 +1,30 @@
+<div class="bag" *ngIf="cartListItems.length > 0">
+  <div class="container-bag">
+    <h4 class="title">
+      <app-amount-badge [cartListItems]="cartListItems"></app-amount-badge>
+      <span class="text">Sacola</span>
+    </h4>
+    <p (click)="onCloseBag($event)" class="close-bag" title="Fechar Sacola" alt="Fechar Sacola">Fechar X</p>
+    <ul class="product-list">
+      <app-product-item
+        *ngFor='let itemProduct of cartListItems'
+        activeBag="true"
+        (onClickChange)="onRemoveCartItem(itemProduct.products)"
+        [title]="itemProduct.products.title"
+        [image]="itemProduct.products.pathImageThumb"
+        [price]="itemProduct.products.price"
+        [installments]="itemProduct.products.installments"
+        [removeCartItem]="true"
+        [amount]="itemProduct.products.amount"
+        [subtotal]="itemProduct.products.subtotal"></app-product-item>
+    </ul>
+    <app-total [cartListItems]="cartListItems"></app-total>
+    <p class="bt-keep-buying" (click)="onCloseBag($event)">
+      continuar comprando
+    </p>
+    <a (click)="onFinalizeBuy()" class="bt-finalize-buy">
+      Finalizar comprar
+    </a>
+  </div>
+  <div class="overlay" (click)="onCloseBag($event)"></div>
+</div>

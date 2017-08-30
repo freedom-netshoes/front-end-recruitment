@@ -1,0 +1,14 @@
+<app-nav-filter (onClickChange)="filterProducts($event)" [list]="listProducts"></app-nav-filter>
+
+<ul class="list-products">
+  <app-product-item
+    (onClickChange)="addToCart(product)"
+    (onClickOneChange)="oneClick(product)"
+    *ngFor='let product of listProducts'
+    [title]="product.title"
+    [image]="product.pathImage"
+    [price]="product.price"
+    [isFreeShipping]="product.isFreeShipping"
+    [installments]="product.installments"></app-product-item>
+</ul>
+<app-bag [cartListItems]="cartListItems"></app-bag>

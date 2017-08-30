@@ -1,0 +1,27 @@
+@import '../../../styles/colors.scss';
+
+:host {
+  height: 55px;
+  display: inline-block;
+  width: 100%;
+
+  .title-total {
+    color: $bg-cinza;
+    font-size: 18px;
+    font-weight: bold;
+    float: left;
+  }
+
+  .value-total {
+    float: right;
+    font-size: 25px;
+    color: $bg-amarelo-medio;
+    font-weight: bold;
+  }
+
+  .installments {
+    float: right;
+    clear: both;
+    color: $bg-amarelo-claro;
+  }
+}
