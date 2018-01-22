@@ -14,7 +14,7 @@
           {{ item.title }}
         </div>
         <div class="separator-container">
-          <div class="separator"></div>
+          <div class="separator"/>
         </div>
         <div class="amount">
           <div class="currency">

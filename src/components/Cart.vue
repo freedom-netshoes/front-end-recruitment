@@ -3,7 +3,10 @@
     class="cart"
     :style="style"
    >
-   <div class="close" @click="$emit('close')">
+   <div
+      class="close"
+      @click="$emit('close')"
+    >
     <CloseIcon class="close-icon"/>
   </div>
     <div class="title">
@@ -121,11 +124,6 @@ export default {
     },
     finalPrice: function () {
       return getCartFinalPrice(this.$store.getters.cart)
-    }
-  },
-  data: function () {
-    return {
-      closeIconFill: 'black'
     }
   },
   methods: {

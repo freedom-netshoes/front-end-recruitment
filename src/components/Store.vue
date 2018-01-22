@@ -7,7 +7,10 @@
     <div class="store">
       <div class="header">
         <Search/>
-        <button class="button carrinho" @click.prevent.stop="toggleCart">
+        <button
+          class="button carrinho" 
+          @click.prevent.stop="toggleCart"
+        >
           carrinho
         </button>
       </div>
