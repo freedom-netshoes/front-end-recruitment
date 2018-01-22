@@ -7,7 +7,7 @@
 
 <script>
 import { ADD_TO_CART } from './store'
-import { getItemFromStorage, setItemInStorage, removeItemFromStorage  } from './util/storage'
+import { getItemFromStorage, setItemInStorage, removeItemFromStorage } from './util/storage'
 import Store from './components/Store'
 
 export default {
@@ -26,7 +26,7 @@ export default {
       getItemFromStorage('cart-items').then(items => {
         if (items && (Array.isArray(items))) {
           items.forEach(item => {
-            this.$store.commit(ADD_TO_CART, item)          
+            this.$store.commit(ADD_TO_CART, item)
           })
         }
       })
@@ -51,7 +51,7 @@ export default {
     margin: 0;
   }
   .button {
-    appearance: none;      
+    appearance: none;
     background: black;
     color: white;
     width: 100%;

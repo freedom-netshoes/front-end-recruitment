@@ -11,8 +11,8 @@ const state = {
 }
 
 const fetchProducts = function () {
-  _axios.get('/products').then(resp => { 
-    state.products = resp.data 
+  _axios.get('/products').then(resp => {
+    state.products = resp.data
   })
 }
 fetchProducts()

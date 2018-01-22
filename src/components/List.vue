@@ -1,9 +1,9 @@
 <template>
-  <div 
-    v-if="products" 
+  <div
+    v-if="products"
     class="products-list"
   >
-    <div 
+    <div
       v-for="(item, index) in products"
       :class="{ 'product': true, 'product-in-cart': $store.getters.productInCart(item) }"
       :key="index"
@@ -14,7 +14,7 @@
           {{ item.title }}
         </div>
         <div class="separator-container">
-          <div class="separator"></div>        
+          <div class="separator"></div>
         </div>
         <div class="amount">
           <div class="currency">
@@ -22,7 +22,7 @@
           </div>
           <div class="price-container">
             <div class="price">
-              {{ getMainPrice(item.price) }}              
+              {{ getMainPrice(item.price) }}
             </div>
             <div class="price-decimal">
               {{ getDecimalPrice(item.price) }}
@@ -33,8 +33,8 @@
           {{ getInstallmentsMessage(item) }}
         </div>
       </div>
-      <button 
-        @click="addToCart(item)" 
+      <button
+        @click="addToCart(item)"
         :disabled="$store.getters.productInCart(item)"
         class="button"
       >
@@ -45,7 +45,7 @@
 </template>
 <script>
 import { getMainPrice, getDecimalPrice, getProInstallmentPrice } from '../util/product'
-import { ADD_TO_CART, PUSH_SNACKBAR } from '../store'
+import { ADD_TO_CART } from '../store'
 
 export default {
   name: 'List',
@@ -79,7 +79,6 @@ export default {
   .meta {
     height: 88px;
   }
-  
   .installments {
     color: $grey;
     display: flex;
@@ -103,12 +102,11 @@ export default {
 
     &.product-in-cart {
       opacity: 0.4;
-    }    
+    }
 
     img {
       width: 100%;
     }
-    
     .title {
       font-size: 14px;
       color: $color-primary;
@@ -135,7 +133,7 @@ export default {
       font-size: 24px;
       line-height: 24px;
       color: black;
-      font-weight: bold;  
+      font-weight: bold;
     }
 
     .amount {

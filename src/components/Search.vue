@@ -16,7 +16,7 @@ export default {
 </script>
 <style scoped lang="scss">
   .search {
-    position: relative;  
+    position: relative;
 
     input {
       font-size: $font-size-sm;

@@ -26,7 +26,7 @@
       <div class="results">
         1 - 20 | 230 resultados
       </div>
-      <Paginator/>     
+      <Paginator/>
     </div>
   </div>
 </template>

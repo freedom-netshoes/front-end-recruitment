@@ -55,7 +55,7 @@ Now that all dependencies were installed, let's run the application.
 ## Json Data Server 
 In order to start the json server so that we can retrieve data from it, run the following command:
 ```
-npm run server
+npm run service
 ```
 The REST Service should be running now and available on http://localhost:3000/products
 
@@ -78,4 +78,4 @@ List of main technologies used to build this webapp:
 * Babel
 * Sass
 * POSTCSS
-* Lint
+* ESLint

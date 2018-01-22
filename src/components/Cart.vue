@@ -14,11 +14,15 @@
         </div>
       </div>
       <div class="content">
-       sacola
+        sacola
       </div>
     </div>
     <div class="list">
-      <div v-for="(item) in $store.getters.cart" class="product">
+      <div
+        v-for="item in $store.getters.cart"
+        class="product"
+        :key="item.id"
+      >
         <div class="image">
           <img :src="getImagePath(item)"/>
         </div>
@@ -31,7 +35,7 @@
               <div class="size">
                 {{ formatSizes(item.availableSizes) }}
               </div>
-              <div 
+              <div
                 v-if="item.availableSizes.length > 0 && item.style.length > 0"
                 class="separator"
               />
@@ -44,10 +48,10 @@
             </div>
           </div>
           <div class="info-extra">
-            <div 
-              class="close" 
-              @click="removeItem(item)" 
-              @mouseover="deleteIntention" 
+            <div
+              class="close"
+              @click="removeItem(item)"
+              @mouseover="deleteIntention"
               @mouseleave="noDeleteIntention"
             >
               <CloseIcon class="close-icon"/>
@@ -141,7 +145,7 @@ export default {
     },
     removeItem: function (item) {
       this.$store.commit(REMOVE_FROM_CART, item)
-      this.$notify({  title: 'Removido do Carrinho' })
+      this.$notify({ title: 'Removido do Carrinho' })
     },
     formatSizes: function (sizes) {
       return sizes.map(size => size).join(' ')
@@ -167,7 +171,6 @@ export default {
 <style scoped lang="scss">
   .list {
     margin-bottom: 20px;
-    
     .product:last-child {
       border-bottom: 2px solid black;
     }
@@ -179,12 +182,10 @@ export default {
 
   .amount {
     color: $yellow;
-    display: flex;   
-    
+    display: flex;
     .currency {
       margin-right: $spacing-xsm;
     }
-    
     .price {
       font-weight: bold;
     }
@@ -206,14 +207,13 @@ export default {
   .info {
     display: flex;
     flex-direction: column;
-
     .title {
       color: white;
     }
+
     .size-n-style {
       display: flex;
       align-items: center;
-      
       .separator {
         width: 1px;
         height: 1em;
@@ -235,7 +235,6 @@ export default {
     align-items: center;
     padding: 0 10px;
     color: $grey;
-
     .amount-container {
       display: flex;
       flex-direction: column;
@@ -252,7 +251,6 @@ export default {
     border-top: 1px solid black;
     display: flex;
     padding: 20px;
-
     &.delete-intention {
       .info,
       .info-extra .amount,
@@ -314,14 +312,12 @@ export default {
 
     .bag-icon {
       width: 48px;
-      height: 48px;
-
       fill: white;
     }
   }
 
   .cart {
-    position: fixed;  
+    position: fixed;
     background: $cart-background;
     top: 0;
     bottom: 0;
@@ -337,11 +333,9 @@ export default {
       flex-grow: 1;
       justify-content: flex-end;
       fill: white;
-  
       .close-icon {
         width: 24px;
-        height: 24px;        
-        
+        height: 24px;
         &:hover {
           cursor: pointer;
         }
@@ -352,13 +346,13 @@ export default {
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-bottom: 40px;        
+      margin-bottom: 40px;
 
       .content {
         color: white;
         text-transform: uppercase;
         font-size: $font-size-xlg;
-        margin-left: $spacing-lg;        
+        margin-left: $spacing-lg;
       }
     }
   }

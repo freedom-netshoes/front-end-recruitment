@@ -3,13 +3,14 @@
     <div class="previous">
       anterior
     </div>
-    <div 
+    <div
       v-for="page in pages"
       @click="paginate(page)"
       class="pages-container"
+      :key="page"
     >
       <div
-        :class="{ 'page': true, 'current' : isPageCurrent(page) }"       
+        :class="{ 'page': true, 'current' : isPageCurrent(page) }"
       >
         {{ page }}
         <div class="separator"/>
@@ -39,7 +40,7 @@ export default {
     },
     lastPage: function (page) {
       return page === Math.max(...this.pages)
-    } 
+    }
   }
 }
 </script>
@@ -67,7 +68,6 @@ export default {
       background: $grey;
       width: 2px;
     }
-  
     .page {
       padding: 0 $spacing-sm;
       height: 100%;
