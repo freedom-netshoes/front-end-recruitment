@@ -73,9 +73,15 @@ List of main technologies used to build this webapp:
 
 * Vue
 * Vuex
-* localforage
+* localforage (indexedDB)
 * ES6 (spread operator, string templates, const, lets, arrows functions, etc.)
 * Babel
 * Sass
 * POSTCSS
 * ESLint
+
+# Screens
+
+![image](https://i.imgur.com/8ecyrtn.png)
+![image](https://i.imgur.com/kFJJvJ9.png)
+![image](https://i.imgur.com/eV6OljW.png)
