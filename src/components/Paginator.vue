@@ -5,13 +5,17 @@
     </div>
     <div 
       v-for="page in pages"
-      :class="{ 'page': true, 'current' : isPageCurrent(page) }" 
       @click="paginate(page)"
+      class="pages-container"
     >
-      {{ page }}
-      <div class="separator"/>
+      <div
+        :class="{ 'page': true, 'current' : isPageCurrent(page) }"       
+      >
+        {{ page }}
+        <div class="separator"/>
+      </div>
+      <div v-if="!lastPage(page)"  class="separator-right"/>
     </div>
-    <div class="separator-right"/>
     <div class="next">
       próximo
     </div>
@@ -32,11 +36,19 @@ export default {
     },
     paginate: function (page) {
       this.currentPage = page
-    }
+    },
+    lastPage: function (page) {
+      return page === Math.max(...this.pages)
+    } 
   }
 }
 </script>
 <style scoped lang="scss">
+  .pages-container {
+    display: flex;
+    align-items: center;
+  }
+
   .paginator {
     height: 48px;
     max-width: 440px;
