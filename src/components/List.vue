@@ -5,7 +5,8 @@
   >
     <div
       v-for="(item, index) in products"
-      :class="{ 'product': true, 'product-in-cart': $store.getters.productInCart(item) }"
+      :class="{ 'product': true, 'product-in-cart':
+                  $store.getters.productInCart(item) }"
       :key="index"
     >
       <img :src="getImagePath(item)">
@@ -22,10 +23,10 @@
           </div>
           <div class="price-container">
             <div class="price">
-              {{ getMainPrice(item.price) }}
+              {{ formatMainPrice(item.price) }}
             </div>
             <div class="price-decimal">
-              {{ getDecimalPrice(item.price) }}
+              {{ formatDecimalsFromPrice(item.price) }}
             </div>
           </div>
         </div>
@@ -34,7 +35,7 @@
         </div>
       </div>
       <button
-        @click="addToCart(item)"
+        @click.prevent.stop="addToCart(item)"
         :disabled="$store.getters.productInCart(item)"
         class="button"
       >
@@ -44,7 +45,8 @@
   </div>
 </template>
 <script>
-import { getMainPrice, getDecimalPrice, getProInstallmentPrice } from '../util/product'
+import { formatMainPrice, formatDecimalsFromPrice,
+  getInstallmentPrice } from '../util/product'
 import { ADD_TO_CART } from '../store'
 
 export default {
@@ -63,14 +65,15 @@ export default {
       this.$store.commit(ADD_TO_CART, item)
       this.$notify({ title: 'Adicionado ao Carrinho' })
     },
-    getMainPrice: function (price) {
-      return getMainPrice(price)
+    formatMainPrice: function (price) {
+      return formatMainPrice(price)
     },
-    getDecimalPrice: function (price) {
-      return getDecimalPrice(price)
+    formatDecimalsFromPrice: function (price) {
+      return `,${formatDecimalsFromPrice(price)}`
     },
     getInstallmentsMessage: function (item) {
-      return `ou ${item.installments} x R$ ${getProInstallmentPrice(item.price, item.installments)}`
+      return `ou ${item.installments} x R$ 
+              ${getInstallmentPrice(item.price, item.installments)}`
     }
   }
 }

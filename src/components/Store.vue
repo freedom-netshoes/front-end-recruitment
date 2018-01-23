@@ -1,6 +1,7 @@
 <template>
   <div>
     <Cart
+      :cart="$store.getters.cart"
       :open="cartIsOpen"
       @close="toggleCart"
     />
@@ -8,7 +9,7 @@
       <div class="header">
         <Search/>
         <button
-          class="button carrinho" 
+          class="button carrinho"
           @click.prevent.stop="toggleCart"
         >
           carrinho

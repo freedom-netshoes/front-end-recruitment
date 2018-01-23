@@ -13,7 +13,7 @@
       <div class="bag">
         <BagIcon class="bag-icon"/>
         <div class="counter">
-          {{ $store.getters.cart.length }}
+          {{ cart.length }}
         </div>
       </div>
       <div class="content">
@@ -22,7 +22,7 @@
     </div>
     <div class="list">
       <div
-        v-for="item in $store.getters.cart"
+        v-for="item in cart"
         class="product"
         :key="item.id"
       >
@@ -64,10 +64,10 @@
                 R$
               </div>
               <div class="price">
-                {{ getMainPrice(item.price) }}
+                {{ formatMainPrice(item.price) }}
               </div>
               <div class="price-decimal">
-                {{ getDecimalPrice(item.price) }}
+                {{ formatDecimalsFromPrice(item.price) }}
               </div>
             </div>
           </div>
@@ -82,14 +82,14 @@
             R$
           </div>
           <div class="price">
-            {{ getFinalPrice() }}
+            {{ getCartMainPrice }}
           </div>
           <div class="price-decimal">
-            {{ getFinalDecimalPrice() }}
+            {{ getCartDecimalsPrice }}
           </div>
         </div>
-        <div class="installments">
-          {{ getFinalInstallmentsMessage() }}
+        <div v-if="cart.length > 0" class="installments">
+          {{ getCartInstallmentsMessage }}
         </div>
       </div>
     </div>
@@ -99,7 +99,8 @@
   </div>
 </template>
 <script>
-import { getMainPrice, getDecimalPrice, getCartFinalPrice, getProInstallmentPrice } from '../util/product'
+import { formatMainPrice, formatDecimalsFromPrice,
+  getCartPrice, getInstallmentPrice } from '../util/product'
 import { REMOVE_FROM_CART } from '../store'
 import CloseIcon from './icons/CloseIcon'
 import BagIcon from './icons/BagIcon'
@@ -114,6 +115,10 @@ export default {
     open: {
       type: Boolean,
       required: true
+    },
+    cart: {
+      type: Array,
+      required: true
     }
   },
   computed: {
@@ -122,8 +127,18 @@ export default {
         right: this.open ? '0' : '-600px'
       }
     },
-    finalPrice: function () {
-      return getCartFinalPrice(this.$store.getters.cart)
+    cartPrice: function () {
+      return getCartPrice(this.cart)
+    },
+    getCartMainPrice: function () {
+      return formatMainPrice(this.cartPrice)
+    },
+    getCartDecimalsPrice: function () {
+      return `,${formatDecimalsFromPrice(this.cartPrice)}`
+    },
+    getCartInstallmentsMessage: function (item) {
+      return `ou em até 10 x R$ 
+              ${getInstallmentPrice(this.cartPrice, 10)}`
     }
   },
   methods: {
@@ -148,20 +163,11 @@ export default {
     formatSizes: function (sizes) {
       return sizes.map(size => size).join(' ')
     },
-    getMainPrice: function (price) {
-      return getMainPrice(price)
+    formatMainPrice: function (price) {
+      return formatMainPrice(price)
     },
-    getDecimalPrice: function (price) {
-      return getDecimalPrice(price)
-    },
-    getFinalPrice: function () {
-      return getMainPrice(this.finalPrice)
-    },
-    getFinalDecimalPrice: function () {
-      return getDecimalPrice(this.finalPrice)
-    },
-    getFinalInstallmentsMessage: function (item) {
-      return `ou em até 10 x R$ ${getProInstallmentPrice(this.finalPrice, 10)}`
+    formatDecimalsFromPrice: function (price) {
+      return `,${formatDecimalsFromPrice(price)}`
     }
   }
 }
@@ -249,6 +255,7 @@ export default {
     border-top: 1px solid black;
     display: flex;
     padding: 20px;
+
     &.delete-intention {
       .info,
       .info-extra .amount,
@@ -321,10 +328,10 @@ export default {
     bottom: 0;
     right: 0;
     width: 600px;
-    transition: all .2s ease-in-out;
     padding: $spacing-sm $spacing-md $spacing-xl;
     z-index: 4000;
     overflow-y: scroll;
+    transition: right .2s ease-in-out;
 
     > .close {
       display: flex;

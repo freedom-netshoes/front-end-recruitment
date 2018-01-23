@@ -1,5 +1,7 @@
+'use strict'
+
 import _axios from '../axios'
-import { itemInCart } from '../util/store'
+import { itemIsInCart } from '../util/store'
 
 export const ADD_TO_CART = 'cart/ADD_TO_CART'
 export const REMOVE_FROM_CART = 'cart/REMOVE_FROM_CART'
@@ -19,7 +21,7 @@ fetchProducts()
 
 const mutations = {
   [ADD_TO_CART] (state, item) {
-    if (!itemInCart(state.cart, item)) {
+    if (!itemIsInCart(state.cart, item)) {
       state.cart.push(item)
     }
   },
@@ -32,7 +34,7 @@ const getters = {
   cart: state => state.cart,
   products: state => state.products,
   error: state => state.error,
-  productInCart: state => item => itemInCart(state.cart, item)
+  productInCart: state => item => itemIsInCart(state.cart, item)
 }
 
 export default {

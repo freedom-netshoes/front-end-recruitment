@@ -60,7 +60,6 @@ export default {
     border-radius: 4px;
     font-weight: bold;
     border: 0;
-
     &:disabled {
       &:hover {
         cursor: initial;

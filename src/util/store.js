@@ -1,4 +1,6 @@
-export const itemInCart = function (cart, item) {
+'use strict'
+
+export const itemIsInCart = function (cart, item) {
   let alreadyAdded = false
   for (let i = 0; i < cart.length; i++) {
     if (cart[i].sku === item.sku) {

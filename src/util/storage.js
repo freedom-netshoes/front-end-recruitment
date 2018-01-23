@@ -1,3 +1,5 @@
+'use strict'
+
 import storage from '../storage'
 
 export const getItemFromStorage = key => storage.getItem(key)
