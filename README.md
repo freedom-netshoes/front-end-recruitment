@@ -49,8 +49,14 @@ Install all npm libraries required in order to run the program by typing:
 npm i  
 ```
 
+# Testing the code
+To run all the tests:
+```
+npm test
+```
+
 # Starting the servers
-Now that all dependencies were installed, let's run the application.
+Now that all dependencies were installed and the tests were perfomed, let's run the application.
 
 ## Json Data Server 
 In order to start the json server so that we can retrieve data from it, run the following command:
@@ -74,6 +80,7 @@ List of main technologies used to build this webapp:
 * Vue
 * Vuex
 * localforage (indexedDB)
+* Jest
 * ES6 (spread operator, string templates, const, lets, arrows functions, etc.)
 * Babel
 * Sass
