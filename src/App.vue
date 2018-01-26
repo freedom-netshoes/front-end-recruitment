@@ -44,7 +44,7 @@ export default {
     box-sizing: border-box;
   }
   html {
-    font-family: 'Open Sans';
+    font-family: 'Open Sans', sans-serif;
     font-size: 14px;
   }
   body {
