@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cart.test.js has the expected html structure 1`] = `
+<div
+  class="cart"
+  style="right: 0px;"
+>
+  <div
+    class="close"
+  >
+    <!---->
+  </div>
+   
+  <div
+    class="title"
+  >
+    <div
+      class="bag"
+    >
+      <!---->
+       
+      <div
+        class="counter"
+      >
+        
+        0
+      
+      </div>
+    </div>
+     
+    <div
+      class="content"
+    >
+      
+      sacola
+    
+    </div>
+  </div>
+   
+  <div
+    class="list"
+  />
+   
+  <div
+    class="subtotal"
+  >
+    
+    subtotal
+    
+    <div
+      class="amount-container"
+    >
+      <div
+        class="amount"
+      >
+        <div
+          class="currency"
+        >
+          
+          R$
+        
+        </div>
+         
+        <div
+          class="price"
+        >
+          
+          0
+        
+        </div>
+         
+        <div
+          class="price-decimal"
+        >
+          
+          ,00
+        
+        </div>
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <button
+    class="button big"
+  >
+    
+    comprar
+  
+  </button>
+</div>
+`;

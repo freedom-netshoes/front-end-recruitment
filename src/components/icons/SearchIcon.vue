@@ -1,0 +1,8 @@
+<template>
+  <div>
+    <svg width="100%" height="100%" viewBox="0 0 5 5" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;"><path id="Shape-2" serif:id="Shape 2" d="M2.94,3.504c-0.739,0.508 -1.756,0.432 -2.412,-0.23c-0.743,-0.749 -0.743,-1.963 0,-2.712c0.742,-0.749 1.946,-0.749 2.689,0c0.641,0.647 0.728,1.641 0.261,2.382l0.978,0.986c0.151,0.153 0.067,0.314 -0.084,0.466c-0.151,0.153 -0.311,0.237 -0.462,0.085l-0.97,-0.977Zm-1.942,-2.468c-0.483,0.487 -0.483,1.276 0,1.763c0.483,0.487 1.265,0.487 1.748,0c0.483,-0.487 0.483,-1.276 0,-1.763c-0.483,-0.486 -1.265,-0.486 -1.748,0Z"/></svg>
+  </div>
+</template>
+<script>
+export default { name: 'SearchIcon' }
+</script>

@@ -1,0 +1,148 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Paginator.test.js has the expected html structure 1`] = `
+<div
+  class="paginator"
+>
+  <div
+    class="previous"
+  >
+    
+    anterior
+  
+  </div>
+   
+  <div
+    class="pages-container"
+  >
+    <div
+      class="page current"
+    >
+      
+      1
+      
+      <div
+        class="separator"
+      />
+    </div>
+     
+    <div
+      class="separator-right"
+    />
+  </div>
+  <div
+    class="pages-container"
+  >
+    <div
+      class="page"
+    >
+      
+      2
+      
+      <div
+        class="separator"
+      />
+    </div>
+     
+    <div
+      class="separator-right"
+    />
+  </div>
+  <div
+    class="pages-container"
+  >
+    <div
+      class="page"
+    >
+      
+      3
+      
+      <div
+        class="separator"
+      />
+    </div>
+     
+    <div
+      class="separator-right"
+    />
+  </div>
+  <div
+    class="pages-container"
+  >
+    <div
+      class="page"
+    >
+      
+      4
+      
+      <div
+        class="separator"
+      />
+    </div>
+     
+    <div
+      class="separator-right"
+    />
+  </div>
+  <div
+    class="pages-container"
+  >
+    <div
+      class="page"
+    >
+      
+      5
+      
+      <div
+        class="separator"
+      />
+    </div>
+     
+    <div
+      class="separator-right"
+    />
+  </div>
+  <div
+    class="pages-container"
+  >
+    <div
+      class="page"
+    >
+      
+      6
+      
+      <div
+        class="separator"
+      />
+    </div>
+     
+    <div
+      class="separator-right"
+    />
+  </div>
+  <div
+    class="pages-container"
+  >
+    <div
+      class="page"
+    >
+      
+      7
+      
+      <div
+        class="separator"
+      />
+    </div>
+     
+    <!---->
+  </div>
+   
+  <div
+    class="next"
+  >
+    
+    próximo
+  
+  </div>
+</div>
+`;
