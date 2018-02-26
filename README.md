@@ -10,6 +10,11 @@ Ou
 
 ## Instalação do projeto manual
 
+Instale o vue-cli
+```
+npm install -g vue-cli
+```
+
 Após fazer o git clone do projeto
 entre nas pastas e instale as dependencias
 ```
