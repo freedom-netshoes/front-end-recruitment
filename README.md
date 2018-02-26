@@ -1,27 +1,42 @@
-## Install project
+## Instalação do projeto automatizado
 
-After git clone the project, go to the folder
+Para instalação do projeto e inicialização, use o comando a baixo.
+```
+sh run.sh or sudo sh run.sh
+```
+Abra o navegador com o endereço http://localhost:8081
+
+Ou
+
+## Instalação do projeto manual
+
+Após fazer o git clone do projeto
+entre nas pastas e instale as dependencias
 ```
 cd backend and cd frontend
 ```
 
-And Install dependencies for both
 ```
 npm install
 ```
 
-## Build the project frontend
+## Gerar build do projeto
 
-Go to folder /frontend and build the project
+Entre na pasta /frontend
 ```
-cd frontend && npm run build
+cd frontend
+```
+
+Rode o comando para fazer o build
+```
+npm run build
 ```
 
 ## Running server
 
-In the root of the project, execute
+Na pasta raiz do projeto rode o comando
 ```
 npm start
 ```
 
-Server running at port 8081
+Abra o navegador com o endereço http://localhost:8081

@@ -84,7 +84,6 @@ const products = [
     "currencyFormat": "R$",
     "isFreeShipping": false
   },
-
   {
     "id": 6,
     "sku": 6090484789343891,
