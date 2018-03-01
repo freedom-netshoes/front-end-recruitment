@@ -2,17 +2,22 @@
 
 Para instalação do projeto e inicialização, use o comando a baixo.
 ```
-sh run.sh or sudo sh run.sh
+sh run.sh
 ```
+Ou
+```
+sudo sh run.sh
+```
+
 Abra o navegador com o endereço http://localhost:8081
 
 Ou
 
 ## Instalação do projeto manual
 
-Instale o vue-cli
+Instale o vue-cli e o nodemon
 ```
-npm install -g vue-cli
+npm install -g vue-cli nodemon
 ```
 
 Após fazer o git clone do projeto
