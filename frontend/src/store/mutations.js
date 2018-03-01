@@ -22,7 +22,7 @@ export default {
     state.snackBar.message = payload.message
     state.snackBar.status = payload.status
     setTimeout(() => {
-      state.snackBar.show = false;
+      state.snackBar.show = false
     }, payload.timer)
   },
   'BUY' (state, payload) {

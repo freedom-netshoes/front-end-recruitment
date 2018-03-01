@@ -2,7 +2,7 @@ export default {
   snackBar: {
     show: false,
     message: '',
-    status: '',
+    status: ''
   },
   modal: {
     show: false,
