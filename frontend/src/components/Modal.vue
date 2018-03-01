@@ -42,6 +42,7 @@ export default {
         quantify: quantify,
         product: this.$store.state.modal.product
       })
+      this.$data.quantify = 1;
     }
   },
   data () {

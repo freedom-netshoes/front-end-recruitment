@@ -1,48 +1,59 @@
 <template>
-  <transition name="fade" appear mode="out-in">
-    <div class="cart" v-if="cart.show">
-      <div class="title">
-        <div class="bag">
-          <div class="image">
-            <img src="../../static/img/cart/icon-bag.png" height="40" width="33" alt="">
-            <div class="badget">{{cart.products.length}}</div>
-            <span>SACOLA</span>
-          </div>
-        </div>
+  <div>
+    <transition name="fade" appear mode="out-in">
+      <div class="overlay" v-if="cart.show"></div>
+    </transition>
+    <div class="cart" v-bind:class="{ opened: cart.show }">
+
+      <div class="btn-action" @click="actionCart()">
+        <span v-show="cart.show">></span>
+        <span v-show="!cart.show"><</span>
       </div>
 
-      <ul class="cart-products">
-        <!-- <li class="removed"> -->
-        <li v-for="product in cart.products" :key="product.id">
-          <div class="image"><img :src="'../../static/img/store/' + product.title.toLowerCase().replace(/ /g, '-') + '_thumb.jpg'" alt="placeholder+image"></div>
-          <div class="description">
-            <h3>{{product.title}}</h3>
-            <p>{{product.size}} | {{product.style}}</p>
-            <p>Quantidade: {{product.quantify}}</p>
+      <div class="content-cart">
+        <div class="title">
+          <div class="bag">
+            <div class="image">
+              <img src="../../static/img/cart/icon-bag.png" height="40" width="33" alt="">
+              <div class="badget">{{cart.products.length}}</div>
+              <span>SACOLA</span>
+            </div>
           </div>
-          <div class="price">
-            <div class="btn-remove">X</div>
-            <div class="price-total">{{product.currencyFormat}} {{product.price.toFixed(2).toString().replace('.',',')}}</div>
-          </div>
-        </li>
-      </ul>
-
-      <div class="total">
-        <div class="sub-total">
-          <p>SUBTOTAL</p>
         </div>
 
-        <div class="parcels">
-          <h3>R$ {{cart.total.toFixed(2).toString().replace('.',',')}}</h3>
-          <p>ou em até 10 X R$ {{(cart.total / 10).toFixed(2).toString().replace('.',',')}}</p>
-        </div>
-      </div>
+        <ul class="cart-products">
+          <!-- <li class="removed"> -->
+          <li v-for="product in cart.products" :key="product.id">
+            <div class="image"><img :src="'../../static/img/store/' + product.title.toLowerCase().replace(/ /g, '-') + '_thumb.jpg'" alt="placeholder+image"></div>
+            <div class="description">
+              <h3>{{product.title}}</h3>
+              <p>{{product.size}} | {{product.style}}</p>
+              <p>Quantidade: {{product.quantify}}</p>
+            </div>
+            <div class="price">
+              <div class="btn-remove">X</div>
+              <div class="price-total">{{product.currencyFormat}} {{product.price.toFixed(2).toString().replace('.',',')}}</div>
+            </div>
+          </li>
+        </ul>
 
-      <div class="btn-buy">
-        <button type="button" @click="buy">COMPRAR</button>
+        <div class="total">
+          <div class="sub-total">
+            <p>SUBTOTAL</p>
+          </div>
+
+          <div class="parcels">
+            <h3>R$ {{cart.total.toFixed(2).toString().replace('.',',')}}</h3>
+            <p>ou em até 10 X R$ {{(cart.total / 10).toFixed(2).toString().replace('.',',')}}</p>
+          </div>
+        </div>
+
+        <div class="btn-buy">
+          <button type="button" @click="buy">COMPRAR</button>
+        </div>
       </div>
     </div>
-  </transition>
+  </div>
 </template>
 
 <script>
@@ -53,6 +64,9 @@ export default {
       this.$store.commit('BUY', {
         show: false
       })
+    },
+    actionCart () {
+      this.$store.commit('SHOW_AND_HIDE_CART', !this.$store.state.cart.show);
     }
   },
   computed: {
@@ -69,16 +83,44 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: none rgba(255,255,255, 0.8);
+    top: 0;
+  }
+
   .cart {
     position: fixed;
     top: 0;
-    right: 0;
+    right: -45%;
     width: 45%;
     height: 100%;
     background: #202025;
     z-index: 2;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    transition: right .5s ease;
+
+    .content-cart {
+      height: 100%;
+      overflow-y: scroll;
+      overflow-x: hidden;
+    }
+
+    .btn-action {
+      position: absolute;
+      left: -7%;
+      top: 0;
+      background: #202025;
+      color: white;
+      font-weight: bold;
+      width: 7%;
+      padding: 3% 0;
+      /* height: 20%; */
+      text-align: center;
+      border-radius: 10px 0px 0px 10px;
+      cursor: pointer;
+    }
 
     .title {
       padding: 5% 0;
@@ -237,5 +279,9 @@ export default {
         margin-top: 5%;
       }
     }
+  }
+
+  .cart.opened {
+    right: 0;
   }
 </style>

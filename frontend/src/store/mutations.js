@@ -10,6 +10,9 @@ export default {
     state.cart.total += payload.product.price
     state.modal.show = false
   },
+  'SHOW_AND_HIDE_CART' (state, payload) {
+    state.cart.show = payload;
+  },
   'BUY' (state, payload) {
     state.cart = {
       show: false,
