@@ -6,8 +6,8 @@
     <div class="cart" v-bind:class="{ opened: cart.show }">
 
       <div class="btn-action" @click="actionCart()">
-        <span v-show="cart.show">></span>
-        <span v-show="!cart.show"><</span>
+        <span v-show="cart.show">&#8594;</span>
+        <span v-show="!cart.show">&#x2190;</span>
       </div>
 
       <div class="content-cart">

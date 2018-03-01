@@ -143,7 +143,7 @@ const products = [
   {
     "id": 10,
     "sku": 27250082398145995,
-    "title": "Jaqueta Corinthians Urban c/ Capuz",
+    "title": "Jaqueta Corinthians Urban com Capuz",
     "description": "",
     "availableSizes": ["G", "GG"],
     "style": "",

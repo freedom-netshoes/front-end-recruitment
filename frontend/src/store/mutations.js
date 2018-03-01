@@ -15,7 +15,7 @@ export default {
     state.cart.products.splice(payload.index, 1)
   },
   'SHOW_AND_HIDE_CART' (state, payload) {
-    state.cart.show = payload;
+    state.cart.show = payload
   },
   'BUY' (state, payload) {
     state.cart = {
