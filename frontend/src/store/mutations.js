@@ -17,6 +17,14 @@ export default {
   'SHOW_AND_HIDE_CART' (state, payload) {
     state.cart.show = payload
   },
+  'SNACK_BAR' (state, payload) {
+    state.snackBar.show = true
+    state.snackBar.message = payload.message
+    state.snackBar.status = payload.status
+    setTimeout(() => {
+      state.snackBar.show = false;
+    }, payload.timer)
+  },
   'BUY' (state, payload) {
     state.cart = {
       show: false,

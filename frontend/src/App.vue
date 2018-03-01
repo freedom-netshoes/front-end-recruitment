@@ -1,5 +1,6 @@
 <template>
   <div class="app">
+    <CcSnackBar />
     <CcModal />
     <CcHeader />
     <CcCart />
@@ -9,6 +10,7 @@
 </template>
 
 <script>
+import CcSnackBar from './components/SnackBar'
 import CcModal from './components/Modal'
 import CcHeader from './components/Header'
 import CcStore from './components/Store'
@@ -18,6 +20,7 @@ import CcFooter from './components/Footer'
 export default {
   name: 'App',
   components: {
+    CcSnackBar,
     CcModal,
     CcHeader,
     CcStore,

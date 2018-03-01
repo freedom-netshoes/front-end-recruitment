@@ -1,9 +1,9 @@
 export default {
-  // snackbar: {
-  //   active: false,
-  //   message:'',
-  //   color: '',
-  // },
+  snackBar: {
+    show: false,
+    message: '',
+    status: '',
+  },
   modal: {
     show: false,
     product: null

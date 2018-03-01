@@ -65,6 +65,12 @@ export default {
       this.$store.commit('BUY', {
         show: false
       })
+
+      this.$store.commit('SNACK_BAR', {
+        message: 'Compra realizada com sucesso!',
+        timer: 2000,
+        status: 'success'
+      })
     },
     actionCart () {
       this.$store.commit('SHOW_AND_HIDE_CART', !this.$store.state.cart.show)
