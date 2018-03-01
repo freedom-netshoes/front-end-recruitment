@@ -13,12 +13,12 @@
 
       <ul class="cart-products">
         <!-- <li class="removed"> -->
-        <li v-for="product in cart.products">
+        <li v-for="product in cart.products" :key="product.id">
           <div class="image"><img :src="'../../static/img/store/' + product.title.toLowerCase().replace(/ /g, '-') + '_thumb.jpg'" alt="placeholder+image"></div>
           <div class="description">
             <h3>{{product.title}}</h3>
             <p>{{product.size}} | {{product.style}}</p>
-            <p>Quantidade: 1</p>
+            <p>Quantidade: {{product.quantify}}</p>
           </div>
           <div class="price">
             <div class="btn-remove">X</div>
@@ -46,26 +46,26 @@
 </template>
 
 <script>
-  export default {
-    name: 'Cart',
-    methods: {
-      buy () {
-        this.$store.commit('BUY', {
-          show: false
-        });
-      }
-    },
-    computed: {
-      cart () {
-        return this.$store.state.cart;
-      }
-    },
-    data () {
-      return {
+export default {
+  name: 'Cart',
+  methods: {
+    buy () {
+      this.$store.commit('BUY', {
+        show: false
+      })
+    }
+  },
+  computed: {
+    cart () {
+      return this.$store.state.cart
+    }
+  },
+  data () {
+    return {
 
-      }
     }
   }
+}
 </script>
 
 <style lang="scss" scoped>

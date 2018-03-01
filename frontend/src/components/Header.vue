@@ -5,9 +5,9 @@
 </template>
 
 <script>
-  export default {
-    name: 'CcHeader'
-  }
+export default {
+  name: 'CcHeader'
+}
 </script>
 
 <style lang="scss" scoped>

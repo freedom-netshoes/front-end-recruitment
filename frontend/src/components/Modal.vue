@@ -4,9 +4,12 @@
       <transition name="fade" appear mode="out-in">
         <div class="content">
           <div class="btn-close" @click="closeModal">X</div>
-          <h2>Qual tamanho?</h2>
+          <h2>Selecione a quantidade</h2>
+          <input type="number" class="quantify" v-model="quantify">
+
+          <h2>Selecione o tamanho</h2>
           <ul>
-            <li v-for="availableSize in product.availableSizes" @click="addToCart(availableSize)">{{availableSize}}</li>
+            <li v-for="availableSize in product.availableSizes" :key="availableSize" @click="addToCart(availableSize, quantify)">{{availableSize}}</li>
           </ul>
         </div>
       </transition>
@@ -19,10 +22,10 @@ export default {
   name: 'Modal',
   computed: {
     product () {
-      return this.$store.state.modal.product;
+      return this.$store.state.modal.product
     },
     modal () {
-      return this.$store.state.modal.show;
+      return this.$store.state.modal.show
     }
   },
   methods: {
@@ -30,19 +33,20 @@ export default {
       this.$store.commit('MODAL', {
         show: false,
         product: null
-      });
+      })
     },
-    addToCart (availableSize) {
+    addToCart (availableSize, quantify) {
       this.$store.commit('ADD_PROD_CART', {
         show: true,
         size: availableSize,
+        quantify: quantify,
         product: this.$store.state.modal.product
-      });
+      })
     }
   },
   data () {
     return {
-
+      quantify: 1
     }
   }
 }
@@ -86,7 +90,15 @@ export default {
       h2 {
         text-align: center;
         padding: 0 0 5% 0;
-        font-size: 1.5vw;
+        font-size: 1.4vw;
+      }
+
+      .quantify {
+        width: 20%;
+        margin: 0 0 5% 38%;
+        text-align: center;
+        border-radius: 5px;
+        padding: 1%;
       }
 
       ul {
@@ -108,6 +120,7 @@ export default {
           padding: 2%;
           text-align: center;
           cursor: pointer;
+          border-radius: 5px;
         }
       }
     }

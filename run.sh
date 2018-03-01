@@ -1,3 +1,6 @@
+npm install -g vue-cli
+npm install -g nodemon
+
 cd ./backend
 npm i
 cd ../frontend
