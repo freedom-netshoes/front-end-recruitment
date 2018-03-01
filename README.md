@@ -1,3 +1,10 @@
+# Netshoes Test - Tiago Juvenal de Lima
+
+## Desenvolvimento
+
+Neste desenvolvimento eu utilizei vuejs para componentizar a aplicação front-end, vuex para gerenciamento de estado, webpack para o bundle, sass para estilo e animações e axios para os requests no servidor. O server eu usei o Nodejs, NPM, Nodemon, Express com suas melhores práticas de MVC(models, views, controllers and routes) para API RESTful, lib body-parser para parsear o JSON, lib Consign para carregar os modulos dinamicos e libeirei o cors geral.
+
+
 ## Instalação do projeto automatizado
 
 Para instalação do projeto e inicialização, use o comando a baixo.
