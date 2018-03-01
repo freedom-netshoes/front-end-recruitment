@@ -22,19 +22,20 @@
         </div>
 
         <ul class="cart-products">
-          <!-- <li class="removed"> -->
-          <li v-for="product in cart.products" :key="product.id">
-            <div class="image"><img :src="'../../static/img/store/' + product.title.toLowerCase().replace(/ /g, '-') + '_thumb.jpg'" alt="placeholder+image"></div>
-            <div class="description">
-              <h3>{{product.title}}</h3>
-              <p>{{product.size}} | {{product.style}}</p>
-              <p>Quantidade: {{product.quantify}}</p>
-            </div>
-            <div class="price">
-              <div class="btn-remove">X</div>
-              <div class="price-total">{{product.currencyFormat}} {{product.price.toFixed(2).toString().replace('.',',')}}</div>
-            </div>
-          </li>
+          <transition-group name="fade" appear mode="out-in">
+            <li v-for="(product, index) in cart.products" :key="index">
+              <div class="image"><img :src="'../../static/img/store/' + product.title.toLowerCase().replace(/ /g, '-') + '_thumb.jpg'" alt="placeholder+image"></div>
+              <div class="description">
+                <h3>{{product.title}}</h3>
+                <p>{{product.size}} | {{product.style}}</p>
+                <p>Quantidade: {{product.quantify}}</p>
+              </div>
+              <div class="price">
+                <div class="btn-remove" @click="removeProduct(product, index)">X</div>
+                <div class="price-total">{{product.currencyFormat}} {{product.price.toFixed(2).toString().replace('.',',')}}</div>
+              </div>
+            </li>
+          </transition-group>
         </ul>
 
         <div class="total">
@@ -66,7 +67,13 @@ export default {
       })
     },
     actionCart () {
-      this.$store.commit('SHOW_AND_HIDE_CART', !this.$store.state.cart.show);
+      this.$store.commit('SHOW_AND_HIDE_CART', !this.$store.state.cart.show)
+    },
+    removeProduct (product, index) {
+      this.$store.commit('REMOVE_PROD_CART', {
+        index: index,
+        product: product
+      })
     }
   },
   computed: {
@@ -120,6 +127,10 @@ export default {
       text-align: center;
       border-radius: 10px 0px 0px 10px;
       cursor: pointer;
+
+      &:hover {
+        box-shadow: 0 0 45px black inset;
+      }
     }
 
     .title {
@@ -202,12 +213,17 @@ export default {
           padding-right: 3%;
 
           .btn-remove {
+            cursor: pointer;
             color: black;
             font-weight: bold;
             font-size: 1.5vw;
             text-align: right;
             width: 100%;
             margin-bottom: 25%;
+
+            &:hover {
+              color: red;
+            }
           }
 
           .price-total {
@@ -277,6 +293,11 @@ export default {
         border: 0;
         height: 50px;
         margin-top: 5%;
+        cursor: pointer;
+
+        &:hover {
+          background: green;
+        }
       }
     }
   }
