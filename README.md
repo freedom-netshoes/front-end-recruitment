@@ -11,7 +11,6 @@ sudo sh run.sh
 
 Abra o navegador com o endereço http://localhost:8081
 
-Ou
 
 ## Instalação do projeto manual
 
