@@ -50,7 +50,7 @@
         </div>
 
         <div class="btn-buy">
-          <button type="button" @click="buy">COMPRAR</button>
+          <button type="button" @click="buy" :disabled="cart.products.length == 0" :class="[cart.products.length == 0 ? 'disabled' : '']">COMPRAR</button>
         </div>
       </div>
     </div>
@@ -297,6 +297,17 @@ export default {
 
         &:hover {
           background: green;
+        }
+      }
+
+      button.disabled {
+        cursor: not-allowed;
+        color: #4e4e4e;
+        background: black;
+
+        &:hover {
+          background: black;
+          color: #4e4e4e;
         }
       }
     }
