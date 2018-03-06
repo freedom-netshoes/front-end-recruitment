@@ -1,23 +1,58 @@
-# Netshoes Cart Test
+# Netshoes Test - Tiago Juvenal de Lima
 
-## Expected result
+## Desenvolvimento
 
-* See a list of products;
-* Be able to add or remove items to the cart and get instant visual feedback;
-* See the products added to the cart.
+Neste desenvolvimento eu utilizei vuejs para componentizar a aplicação front-end, vuex para gerenciamento de estado, webpack para o bundle, sass para estilo e animações e axios para os requests no servidor. O server eu usei o Nodejs, NPM, Nodemon, Express com suas melhores práticas de MVC(models, views, controllers and routes) para API RESTful, lib body-parser para parsear o JSON, lib Consign para carregar os modulos dinamicos e libeirei o cors geral.
 
-## Data
 
-The data we provide is a static JSON file under `/public/data`.
+## Instalação do projeto automatizado
 
-## Notes
+Para instalação do projeto e inicialização, use o comando a baixo.
+```
+sh run.sh
+```
+Ou
+```
+sudo sh run.sh
+```
 
-* You can use whatever stack or tooling you want to help you;
-* Feel free to ask us questions during the process (but trust your guts, please!);
-* You should create a static server in order to access the JSON data provided.
+Abra o navegador com o endereço http://localhost:8081
 
-## Bonus
 
-* Persist data on page reload;
-* Test your code;
-* Instructions on how to build/run the project.
+## Instalação do projeto manual
+
+Instale o vue-cli e o nodemon
+```
+npm install -g vue-cli nodemon
+```
+
+Após fazer o git clone do projeto
+entre nas pastas e instale as dependencias
+```
+cd backend and cd frontend
+```
+
+```
+npm install
+```
+
+## Gerar build do projeto
+
+Entre na pasta /frontend
+```
+cd frontend
+```
+
+Rode o comando para fazer o build
+```
+npm run build
+```
+
+## Running server
+
+Na pasta raiz do projeto rode o comando
+```
+npm start
+```
+
+Abra o navegador com o endereço http://localhost:8081
