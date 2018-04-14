@@ -1,23 +1,14 @@
-# Netshoes Cart Test
+# Teste - Netshoes - Carrinho de compras (gtotti2)
+Thanks in advance for the opportunity.
 
-## Expected result
+## getting started
 
-* See a list of products;
-* Be able to add or remove items to the cart and get instant visual feedback;
-* See the products added to the cart.
+install dependencies and start local dev server
 
-## Data
+To build/run the project u will need:[Node.js](https://nodejs.org/en/)
 
-The data we provide is a static JSON file under `/public/data`.
 
-## Notes
+then open terminal and run:
 
-* You can use whatever stack or tooling you want to help you;
-* Feel free to ask us questions during the process (but trust your guts, please!);
-* You should create a static server in order to access the JSON data provided.
-
-## Bonus
-
-* Persist data on page reload;
-* Test your code;
-* Instructions on how to build/run the project.
+npm install
+npm start

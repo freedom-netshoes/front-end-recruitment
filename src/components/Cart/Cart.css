@@ -1,0 +1,180 @@
+.bag{
+    text-align: center;
+    padding: 50px 0px;
+}
+.bag .icon_title{
+    padding: 0px 0px 50px;
+}
+.bag .icon_bag{
+    position: relative;
+}
+.bag .icon_bag .qty{
+    border-radius: 100%;
+    background: #dfbd00;
+    font-size: .85em;
+    position: absolute;
+    color: #000;
+    padding: 0.8px 6px;
+    bottom: -2px;
+    right: -3px;
+}
+.bag .txt{
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.7em;
+    margin-left: 20px;
+}
+
+
+.item_bag{
+    padding: 25px 0;
+    margin: 0px 25px;
+    transition: .3s all;
+    position: relative;
+}
+.item_bag:before{
+    transition: .3s all;
+    display: block;
+    content: " ";
+    position: absolute;
+    background: transparent;
+    width: calc(100% + 50px);
+    height: 100%;
+    top: 0;
+    z-index: -1;
+    left: -25px;
+    cursor: pointer;
+}
+
+
+.item_bag:hover:before{
+    display: block;
+    content: " ";
+    position: absolute;
+    background: #131316;
+    width: calc(100% + 50px);
+    height: 100%;
+    top: 0;
+    left: -25px;
+    cursor: pointer;
+}
+.item_bag:first-child:after{
+    border-top: 2px solid #000;
+}
+.item_bag:after{
+    border-bottom: 2px solid #000;
+    display: block;
+    content: " ";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: -1;
+    left: 0px;
+    cursor: pointer;
+    transition: .3s all;
+}
+.item_bag:hover:after{
+    border-top: 2px solid #000;
+    width: calc(100% + 50px);
+    left: -25px;
+}
+
+.item_bag > div{
+    display: inline-block;
+    vertical-align: middle;
+}
+.item_bag .i{
+    margin-right: 20px;
+}
+.item_bag .p{
+    margin-right: 50px;
+    width: 53%;
+    text-align: left;
+}
+.item_bag .p *:not(.title){
+    font-weight: 400;
+    color: #999;
+    font-size: .85em;
+}
+
+.item_bag.remove-product *{
+    text-decoration: line-through;
+}
+.item_bag.remove-product .p,.item_bag.remove-product .x .value,.item_bag.remove-product .i{
+    opacity: .2;
+}
+
+.item_bag .p .title{
+    font-weight: 600;
+    color: #fff;
+}
+.item_bag .x{
+    vertical-align: middle;
+    text-align: -webkit-right;
+}
+.item_bag .x .btn{
+    width: 14px;
+    height: 14px;
+    display: block;
+    margin-bottom: 17px;
+    background: url(./assets/img/btn_close.png);
+}
+.item_bag .x:hover ~ div{
+    display: none;
+}
+.item_bag .x .btn:hover{
+    cursor: pointer;
+    background: url(./assets/img/btn_close_white.png);
+}
+
+.item_bag .x .value{
+    color: #dfbd00;
+}
+
+
+.subtotal > div{
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0px 25px;
+    padding: 25px 0;
+    color: rgba(255, 255, 255, .2);
+    font-size: 1em;
+}
+
+.subtotal .txt{
+    text-transform: uppercase;
+    
+}
+.subtotal .price{
+    vertical-align: middle;
+    text-align: -webkit-right;
+    min-width: 64%;
+}
+
+.subtotal .price .value{
+    color: #dfbd00;
+    font-size: 1.7em;
+}
+
+.subtotal .price .parceling{
+    font-size: .8em;
+}
+
+.btn_buy{
+    margin: 0 25px;
+    text-align: center;
+}
+.btn_buy button{
+    width: 100%;
+    background: #000000;
+    color: #fff;
+    border: 0;
+    text-transform: uppercase;
+    padding: 20px;
+    font-weight: 700;
+    font-size: 1em;
+    font-family: 'Open Sans',Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
