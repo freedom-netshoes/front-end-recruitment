@@ -5,7 +5,10 @@ import { connect } from 'react-redux';
 import { fetchProducts } from '../../services/products/actions';
 
 import Product from './Product';
+import ShelfHeader from './Header';
 import Clearfix from '../Clearfix';
+
+import './style.scss';
 
 class Shelf extends Component {
 
@@ -32,6 +35,7 @@ class Shelf extends Component {
     return (
       <React.Fragment>
         <div className="shelf-container">
+          <ShelfHeader productsLength={products.length}/>
           {p}
           <Clearfix />
         </div>
