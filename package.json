@@ -31,8 +31,13 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.7.0",
+    "enzyme-to-json": "^3.3.4",
     "node-sass": "^4.10.0",
     "nodemon": "^1.18.6",
-    "prop-types": "^15.6.2"
+    "prop-types": "^15.6.2",
+    "react-test-renderer": "^16.6.3",
+    "sinon": "^7.1.1"
   }
 }

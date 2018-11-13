@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Banner should render correctly 1`] = `
+<div
+  className="main-banner"
+>
+  <img
+    alt="Timão"
+    src="http://localhost:8001/static/images/banner.png"
+  />
+</div>
+`;
