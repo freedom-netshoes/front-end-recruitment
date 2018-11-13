@@ -18,14 +18,18 @@ const compare = {
   }
 }
 
-export const fetchProducts = (sortBy) => dispatch => {
+export const fetchProducts = (sortBy, callback) => dispatch => {
 
   axios.get('/products')
     .then(res => {
       let { products } = res.data;
 
-      if(!!sortBy){
+      if(!!sortBy) {
         products = products.sort(compare[sortBy]);
+      }
+
+      if(!!callback) {
+        callback();
       }
 
       return dispatch({

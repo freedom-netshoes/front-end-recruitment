@@ -7,10 +7,14 @@ import { fetchProducts } from '../../services/products/actions';
 import Product from './Product';
 import ShelfHeader from './Header';
 import Clearfix from '../Clearfix';
+import Spinner from '../Spinner';
 
 import './style.scss';
 
 class Shelf extends Component {
+  state = {
+    loading: false,
+  }
 
   componentWillMount() {
     const { sort } = this.props;
@@ -27,7 +31,10 @@ class Shelf extends Component {
   }
 
   handleFetchProducts = (sort) => {
-    this.props.fetchProducts(sort);
+    this.setState({ loading: true });
+    this.props.fetchProducts(sort, () => {
+      this.setState({ loading: false });
+    });
   }
 
   render() {
@@ -44,6 +51,9 @@ class Shelf extends Component {
 
     return (
       <React.Fragment>
+        {this.state.loading &&
+          <Spinner />
+        }
         <div className="shelf-container">
           <ShelfHeader productsLength={products.length}/>
           {p}
