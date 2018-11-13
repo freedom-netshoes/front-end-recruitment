@@ -1,5 +1,13 @@
 # Front end Recruitment Test
 
+## Why components/services as folder structure?
+I believe that a component should be self-contained, each component,
+scene or service (a feature) must have everything it needs to work on its own,
+such as its own styles, images, translations, set of actions as well as 
+unit tests. I learned that this pattern help my projects to be
+both scalable and reusable.
+
+
 #### Features
 - Add and remove products from the floating cart
 - Sort products by highest to lowest and lowest to highest price
@@ -32,12 +40,17 @@
 ``` javascript
 
 /* Install the needed packages */
-npm i
 
-/* Run both Node server and React */
+npm install
+
+/* 
+After the execution of the command below,
+the React app should open automatically  on localhost:3000
+*/
+
 npm start
 
-/* The React app should open automatically  on localhost:3000 */
+/*  */
 
 
 ```
