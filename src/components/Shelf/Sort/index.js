@@ -12,6 +12,10 @@ const sortBy = [
 ]
 
 class Sort extends Component {
+  static propTypes = {
+    updateSort: PropTypes.func.isRequired,
+    sort: PropTypes.string.isRequired,
+  }
 
   handleSort = (value) => {
     this.props.updateSort(value);
@@ -24,11 +28,6 @@ class Sort extends Component {
       </div>
     );
   }
-}
-
-Sort.propTypes = {
-  updateSort: PropTypes.func.isRequired,
-  sort: PropTypes.string.isRequired,
 }
 
 const mapStateToProps = state => ({

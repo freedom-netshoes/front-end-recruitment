@@ -7,7 +7,7 @@ import util from '../../../services/util';
 const imagesPath = 'http://localhost:8001/static/images/';
 
 
-const Product = (props) => {
+const Product = props => {
   const product = props.product;
 
   product.quantity = 1;
@@ -29,7 +29,7 @@ const Product = (props) => {
   return (
     <div className="shelf-item" data-sku={product.sku}>
       {product.isFreeShipping &&
-        <div className="shelf-stopper">Free shipping</div>
+        <div className="shelf-stopper">Frete grátis</div>
       }
       <Thumb
         classes="shelf-item__thumb"

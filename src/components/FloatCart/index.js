@@ -11,6 +11,14 @@ import './style.scss';
 
 
 class FloatCart extends Component {
+  static propTypes = {
+    loadCart: PropTypes.func.isRequired,
+    updateCart: PropTypes.func.isRequired,
+    cartProducts: PropTypes.array.isRequired,
+    newProduct: PropTypes.object,
+    removeProduct: PropTypes.func,
+    productToRemove: PropTypes.object,
+  };
   
   state = {
     isOpen: false,
@@ -69,7 +77,7 @@ class FloatCart extends Component {
     const { totalPrice, productQuantity, currencyFormat, currencyId } = this.props.cartTotal;
 
     if (!productQuantity) {
-      alert("Adiciona algum produto na sacola!");
+      alert("Adicione algum produto na sacola!");
     }else {
       alert(`Checkout - Subtotal: ${currencyFormat} ${util.formatPrice(totalPrice, currencyId)}`);
     }
@@ -130,7 +138,7 @@ class FloatCart extends Component {
             {products}
             {!products.length && (
               <p className="shelf-empty">
-                Adiciona algum produto à sacola! <br />:)
+                Adicione algum produto na sacola! <br />:)
               </p>
             )}
           </div>
@@ -158,15 +166,6 @@ class FloatCart extends Component {
     );
   }
 }
-
-FloatCart.propTypes = {
-  loadCart: PropTypes.func.isRequired,
-  updateCart: PropTypes.func.isRequired,
-  cartProducts: PropTypes.array.isRequired,
-  newProduct: PropTypes.object,
-  removeProduct: PropTypes.func,
-  productToRemove: PropTypes.object,
-};
 
 const mapStateToProps = state => ({
   cartProducts: state.cart.products,

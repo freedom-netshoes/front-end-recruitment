@@ -7,6 +7,10 @@ import util from '../../../services/util';
 const imagesPath = 'http://localhost:8001/static/images/';
 
 class CartProduct extends Component {
+  static propTypes = {
+    product: PropTypes.object.isRequired,
+    removeProduct: PropTypes.func.isRequired,
+  };
 
   state = {
     isMouseOver: false,
@@ -59,11 +63,5 @@ class CartProduct extends Component {
     );
   }
 }
-
-
-CartProduct.propTypes = {
-  product: PropTypes.object.isRequired,
-  removeProduct: PropTypes.func.isRequired,
-};
 
 export default CartProduct;

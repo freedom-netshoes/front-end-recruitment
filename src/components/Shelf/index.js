@@ -14,6 +14,14 @@ import Spinner from '../Spinner';
 import './style.scss';
 
 class Shelf extends Component {
+  static propTypes = {
+    fetchProducts: PropTypes.func.isRequired,
+    products: PropTypes.array.isRequired,
+    addProduct: PropTypes.func.isRequired,
+    filters: PropTypes.array,
+    sort: PropTypes.string,
+  }
+
   state = {
     loading: false,
   }
@@ -71,14 +79,6 @@ class Shelf extends Component {
       </React.Fragment>
     )
   }
-}
-
-Shelf.propTypes = {
-  fetchProducts: PropTypes.func.isRequired,
-  products: PropTypes.array.isRequired,
-  addProduct: PropTypes.func.isRequired,
-  filters: PropTypes.array,
-  sort: PropTypes.string,
 }
 
 const mapStateToProps = state => ({

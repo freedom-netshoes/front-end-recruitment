@@ -3,6 +3,11 @@ import PropTypes from "prop-types";
 
 
 class Selectbox extends Component {
+  static propTypes = {
+    options: PropTypes.array.isRequired,
+    classes: PropTypes.string,
+    handleOnChange: PropTypes.func.isRequired,
+  };
 
   state = {
     selected: '',
@@ -24,11 +29,5 @@ class Selectbox extends Component {
     );
   }
 }
-
-Selectbox.propTypes = {
-  options: PropTypes.array.isRequired,
-  classes: PropTypes.string,
-  handleOnChange: PropTypes.func.isRequired,
-};
 
 export default Selectbox;
