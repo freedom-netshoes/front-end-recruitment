@@ -26,7 +26,6 @@ class FloatCart extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.newProduct !== this.props.newProduct) {
-      console.log('componentWillReceiveProps', nextProps);
       this.addProduct(nextProps.newProduct);
     }
 
@@ -58,7 +57,6 @@ class FloatCart extends Component {
       cartProducts.push(product);
     }
 
-    console.log('updateCart', cartProducts);
     updateCart(cartProducts);
     this.openFloatCart();
   }
