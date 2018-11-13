@@ -1,8 +1,12 @@
 import { combineReducers } from 'redux';
 import productsReducer from './products/reducer';
 import sortReducer from './sort/reducer';
+import floatCartReducer from './floatCart/reducer';
+import cartTotalReducer from './cartTotal/reducer';
 
 export default combineReducers({
-  products: productsReducer,
-  sort: sortReducer
+  shelf: productsReducer,
+  cart: floatCartReducer,
+  total: cartTotalReducer,
+  sort: sortReducer,
 });

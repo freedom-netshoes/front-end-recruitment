@@ -48,7 +48,7 @@ const Product = (props) => {
         </div>
         {productInstallment}
       </div>
-      <div className="shelf-item__buy-btn">Add to cart</div>
+      <div onClick={() => props.addProduct(product)} className="shelf-item__buy-btn">Add to cart</div>
     </div>
   );
 }
@@ -56,6 +56,7 @@ const Product = (props) => {
 
 Product.propTypes = {
   product: PropTypes.object.isRequired,
+  addProduct: PropTypes.func.isRequired,
 };
 
 export default Product;
