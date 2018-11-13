@@ -9,7 +9,7 @@
   z-index: 10;
   border-radius: 5px;
   background-color: #000;
-
+  
   div {
     box-sizing: border-box;
     display: block;
@@ -36,7 +36,7 @@
     0% {
       transform: rotate(0deg);
     }
-  
+    
     100% {
       transform: rotate(360deg);
     }
