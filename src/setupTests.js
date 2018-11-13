@@ -1,4 +1,5 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import Enzyme, { shallow, render, mount } from 'enzyme';
 import adapter from 'enzyme-adapter-react-16';
 import { createSerializer } from 'enzyme-to-json';
@@ -14,3 +15,5 @@ global.shallow = shallow;
 global.render = render;
 global.mount = mount;
 global.sinon = sinon;
+global.Provider = Provider;
+

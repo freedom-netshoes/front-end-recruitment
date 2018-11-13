@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sort should mount correctly 1`] = `
+<div
+  className="sort"
+>
+  Ordenar por 
+  <select
+    onChange={[Function]}
+  >
+    <option
+      key=""
+      value=""
+    >
+      Selecionar
+    </option>
+    <option
+      key="lowestprice"
+      value="lowestprice"
+    >
+      Menor Preço
+    </option>
+    <option
+      key="highestprice"
+      value="highestprice"
+    >
+      Maior Preço
+    </option>
+  </select>
+</div>
+`;

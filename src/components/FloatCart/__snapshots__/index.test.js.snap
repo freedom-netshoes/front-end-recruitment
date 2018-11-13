@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FloatCart should render correctly 1`] = `
+<div
+  class="float-cart"
+>
+  <span
+    class="bag bag--float-cart-closed"
+  >
+    <span
+      class="bag__quantity"
+    >
+      0
+    </span>
+  </span>
+  <div
+    class="float-cart__content"
+  >
+    <div
+      class="float-cart__header"
+    >
+      <span
+        class="bag"
+      >
+        <span
+          class="bag__quantity"
+        >
+          0
+        </span>
+      </span>
+      <span
+        class="header-title"
+      >
+        Bag
+      </span>
+    </div>
+    <div
+      class="float-cart__shelf-container"
+    >
+      <p
+        class="shelf-empty"
+      >
+        Adicione algum produto na sacola! 
+        <br />
+        :)
+      </p>
+    </div>
+    <div
+      class="float-cart__footer"
+    >
+      <div
+        class="sub"
+      >
+        SUBTOTAL
+      </div>
+      <div
+        class="sub-price"
+      >
+        <p
+          class="sub-price__val"
+        >
+          undefined 0.00
+        </p>
+        <small
+          class="sub-price__installment"
+        />
+      </div>
+      <div
+        class="buy-btn"
+      >
+        Checkout
+      </div>
+    </div>
+  </div>
+</div>
+`;
