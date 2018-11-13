@@ -21,7 +21,7 @@ const Product = (props) => {
 
     productInstallment = (
       <div className="installment">
-        <span>or {product.installments} x</span><b> {product.currencyFormat} {util.formatPrice(installmentPrice, product.currencyId)}</b>
+        <span>ou {product.installments} x</span><b> {product.currencyFormat} {util.formatPrice(installmentPrice, product.currencyId)}</b>
       </div>
     );
   }
@@ -48,7 +48,7 @@ const Product = (props) => {
         </div>
         {productInstallment}
       </div>
-      <div onClick={() => props.addProduct(product)} className="shelf-item__buy-btn">Add to cart</div>
+      <div onClick={() => props.addProduct(product)} className="shelf-item__buy-btn">Adicionar Produto</div>
     </div>
   );
 }

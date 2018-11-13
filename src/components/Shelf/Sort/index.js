@@ -6,9 +6,9 @@ import { updateSort } from '../../../services/sort/actions';
 import Selectbox from '../../Selectbox';
 
 const sortBy = [
-  { value: '', label: 'Select'  },
-  { value: 'lowestprice', label: 'Lowest to highest' },
-  { value: 'highestprice', label: 'Highest to lowest' },
+  { value: '', label: 'Selecionar'  },
+  { value: 'lowestprice', label: 'Menor Preço' },
+  { value: 'highestprice', label: 'Maior Preço' },
 ]
 
 class Sort extends Component {
@@ -20,7 +20,7 @@ class Sort extends Component {
   render() {
     return (
       <div className="sort">
-        Order by <Selectbox options={sortBy} handleOnChange={this.handleSort} />
+        Ordenar por <Selectbox options={sortBy} handleOnChange={this.handleSort} />
       </div>
     );
   }

@@ -16,16 +16,6 @@ class FloatCart extends Component {
     isOpen: false,
   };
 
-  componentWillMount() {
-    this.props.loadCart([]);
-  }
-
-  componentDidMount() {
-    setTimeout(() => {
-      this.props.updateCart(this.props.cartProducts);
-    }, 0);
-  }
-
   componentWillReceiveProps(nextProps) {
     if (nextProps.newProduct !== this.props.newProduct) {
       console.log('componentWillReceiveProps', nextProps);
