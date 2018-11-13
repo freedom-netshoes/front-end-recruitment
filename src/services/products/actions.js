@@ -1,11 +1,32 @@
 import { FETCH_PRODUCTS } from './actionTypes';
 import axios from '../axios';
 
-export const fetchProducts = () => dispatch => {
+const compare = {
+  'lowestprice': (a, b) => {
+    if (a.price < b.price)
+      return -1;
+    if (a.price > b.price)
+      return 1;
+    return 0;
+  },
+  'highestprice': (a, b) => {
+    if (a.price > b.price)
+      return -1;
+    if (a.price < b.price)
+      return 1;
+    return 0;
+  }
+}
+
+export const fetchProducts = (sortBy) => dispatch => {
 
   axios.get('/products')
     .then(res => {
       let { products } = res.data;
+
+      if(!!sortBy){
+        products = products.sort(compare[sortBy]);
+      }
 
       return dispatch({
         type: FETCH_PRODUCTS,
@@ -18,3 +39,5 @@ export const fetchProducts = () => dispatch => {
       throw new Error('Could not fetch products. Try again later.');
     });
 }
+
+

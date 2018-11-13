@@ -13,11 +13,21 @@ import './style.scss';
 class Shelf extends Component {
 
   componentWillMount() {
-    this.handleFetchProducts();
+    const { sort } = this.props;
+
+    this.handleFetchProducts(sort);
   }
 
-  handleFetchProducts = () => {
-    this.props.fetchProducts();
+  componentWillReceiveProps(nextProps) {
+    const { sort: nextSort } = nextProps;
+
+    if (nextSort !== this.props.sort) {
+      this.handleFetchProducts(nextSort);
+    }
+  }
+
+  handleFetchProducts = (sort) => {
+    this.props.fetchProducts(sort);
   }
 
   render() {
@@ -48,10 +58,12 @@ class Shelf extends Component {
 Shelf.propTypes = {
   fetchProducts: PropTypes.func.isRequired,
   products: PropTypes.array.isRequired,
+  sort: PropTypes.string,
 }
 
 const mapStateToProps = state => ({
   products: state.products.products,
+  sort: state.sort.type,
 })
 
 export default connect(mapStateToProps, { fetchProducts })(Shelf);
