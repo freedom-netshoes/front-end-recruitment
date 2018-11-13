@@ -5,7 +5,7 @@ I believe that a component should be self-contained, each component,
 scene or service (a feature) must have everything it needs to work on its own,
 such as its own styles, images, translations, set of actions as well as 
 unit tests. I learned that this pattern help my projects to be
-both scalable and reusable.
+both more scalable and reusable.
 
 
 #### Features
@@ -40,20 +40,13 @@ both scalable and reusable.
 ``` javascript
 
 /* Install the needed packages */
-
 npm install
 
-/* 
-After the execution of the command below,
-the React app should open automatically  on localhost:3000
-*/
-
+/* Just execute the command below*/
 npm start
-
-/*  */
-
 
 ```
 
+The React app should open automatically  on localhost:3000
 
 
