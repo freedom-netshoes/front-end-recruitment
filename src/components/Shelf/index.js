@@ -6,6 +6,7 @@ import { fetchProducts } from '../../services/products/actions';
 import { addProduct } from '../../services/floatCart/actions';
 
 import Product from './Product';
+import Filter from './Filter';
 import ShelfHeader from './Header';
 import Clearfix from '../Clearfix';
 import Spinner from '../Spinner';
@@ -18,22 +19,26 @@ class Shelf extends Component {
   }
 
   componentWillMount() {
-    const { sort } = this.props;
+    const { filters, sort } = this.props;
 
-    this.handleFetchProducts(sort);
+    this.handleFetchProducts(filters, sort);
   }
 
   componentWillReceiveProps(nextProps) {
-    const { sort: nextSort } = nextProps;
+    const { filters: nextFilters, sort: nextSort } = nextProps;
+
+    if (nextFilters !== this.props.filters) {
+      this.handleFetchProducts(nextFilters, undefined);
+    }
 
     if (nextSort !== this.props.sort) {
-      this.handleFetchProducts(nextSort);
+      this.handleFetchProducts(undefined, nextSort);
     }
   }
 
-  handleFetchProducts = (sort) => {
+  handleFetchProducts = (filters = this.props.filters, sort = this.props.sort) => {
     this.setState({ loading: true });
-    this.props.fetchProducts(sort, () => {
+    this.props.fetchProducts(filters, sort, () => {
       this.setState({ loading: false });
     });
   }
@@ -56,6 +61,7 @@ class Shelf extends Component {
         {this.state.loading &&
           <Spinner />
         }
+        <Filter />
         <div className="shelf-container">
           <ShelfHeader productsLength={products.length}/>
           {p}
@@ -71,11 +77,13 @@ Shelf.propTypes = {
   fetchProducts: PropTypes.func.isRequired,
   products: PropTypes.array.isRequired,
   addProduct: PropTypes.func.isRequired,
+  filters: PropTypes.array,
   sort: PropTypes.string,
 }
 
 const mapStateToProps = state => ({
   products: state.shelf.products,
+  filters: state.filters.items,
   sort: state.sort.type,
 })
 
